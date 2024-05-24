@@ -4,21 +4,60 @@
 
 @layer base{
     h1, .xxl{
-        font-size:4.765rem;
+        font-size: 7.066rem;
     }
-    h2, .xl {
-        font-size: 2.945rem;
+    h2 {
+        font-size: 4.997rem;
+
+        /* Fallback: Set a background color. */
+        background-color: #0288d1;
+        
+        /* Create the gradient. */
+        background-image: 
+            linear-gradient(45deg, #0d47a1 25%, #e91e63 50%);
+        
+        /* Set the background size and repeat properties. */
+        background-size: 100%;
+        background-repeat: repeat;
+      
+        /* Use the text as a mask for the background. */
+        /* This will show the gradient as a text color rather than element bg. */
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent; 
+        -moz-background-clip: text;
+        -moz-text-fill-color: transparent;
+
+        border: 3px solid;
+        border-image-slice: 1;
+        border-width: 5px;
+        border-image-source:  linear-gradient(to right, #0288d1, #0d47a1, #e91e63, #f48fb1);
+        border-left: 0;
+        border-right: 0;
+        border-top: 0;
     }
     h3, .lar {
-        font-size: 2.618rem;
+        font-size: 3.534rem;
     }
     h4, .med  {
-        font-size: 1.82rem;
+        font-size: 2.499rem;
     } 
     h5, .sma{
-        font-size: 1.618rem;    
+        font-size: 1.767rem;    
     }
-    body, h6 {
+    h6, body {
+        font-size: 1.25rem;
+    }
+    small{
         font-size: 1.125rem;
     }
+    ul{
+        padding-left:1.5em;
+        list-style-type: disc;
+    }
+
+    ol {
+        list-style-type: decimal;
+        padding-left:1.5em;
+    }
+
 }
