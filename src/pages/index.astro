@@ -1,16 +1,115 @@
 ---
-
+// Import the global.css file here so that it is included on
+// all pages through the use of the <BaseHead /> component.
+import "../styles/global.css";
 ---
 
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+
+    <!-- Add typography -->
+    <link rel="stylesheet" href="styles/typography.css" />
+
+    <title>Astro</title>
+  </head>
+  <body>
+    <h1>Heading One</h1>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+      tempor incididunt ut labore et dolore magna aliqua. Vitae ultricies leo
+      integer malesuada nunc vel risus commodo viverra. Adipiscing enim eu
+      turpis egestas pretium. Euismod elementum nisi quis eleifend quam
+      adipiscing. In hac habitasse platea dictumst vestibulum. Sagittis purus
+      sit amet volutpat. Netus et malesuada fames ac turpis egestas. Eget magna
+      fermentum iaculis eu non diam phasellus vestibulum lorem. Varius sit amet
+      mattis vulputate enim. Habitasse platea dictumst quisque sagittis. Integer
+      quis auctor elit sed vulputate mi. Dictumst quisque sagittis purus sit
+      amet.
+    </p>
+    <h2>Heading Two</h2>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+      tempor incididunt ut labore et dolore magna aliqua. Vitae ultricies leo
+      integer malesuada nunc vel risus commodo viverra. Adipiscing enim eu
+      turpis egestas pretium. Euismod elementum nisi quis eleifend quam
+      adipiscing. In hac habitasse platea dictumst vestibulum. Sagittis purus
+      sit amet volutpat. Netus et malesuada fames ac turpis egestas. Eget magna
+      fermentum iaculis eu non diam phasellus vestibulum lorem. Varius sit amet
+      mattis vulputate enim. Habitasse platea dictumst quisque sagittis. Integer
+      quis auctor elit sed vulputate mi. Dictumst quisque sagittis purus sit
+      amet.
+    </p>
+    <h3>Heading Three</h3>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+      tempor incididunt ut labore et dolore magna aliqua. Vitae ultricies leo
+      integer malesuada nunc vel risus commodo viverra. Adipiscing enim eu
+      turpis egestas pretium. Euismod elementum nisi quis eleifend quam
+      adipiscing. In hac habitasse platea dictumst vestibulum. Sagittis purus
+      sit amet volutpat. Netus et malesuada fames ac turpis egestas. Eget magna
+      fermentum iaculis eu non diam phasellus vestibulum lorem. Varius sit amet
+      mattis vulputate enim. Habitasse platea dictumst quisque sagittis. Integer
+      quis auctor elit sed vulputate mi. Dictumst quisque sagittis purus sit
+      amet.
+    </p>
+    <h4>Heading Four</h4>
+    <h5>Heading Five</h5>
+    <h6>Heading Six</h6>
+
+    An Unordered list
+    <ul>
+      <li>Item 1</li>
+      <li>Item 2</li>
+      <li>
+        Item 3
+        <ul>
+          <li>a</li>
+          <li>b</li>
+        </ul>
+      </li>
+    </ul>
+
+    An Ordered List
+    <ol>
+      <li>Item 1</li>
+      <li>Item 2</li>
+      <li>
+        Item 3
+        <ol>
+          <li>a</li>
+          <li>b</li>
+        </ol>
+      </li>
+    </ol>
+
+    This is a blockquote
+    <blockquote>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga dolorem nemo
+      tempore fugiat? Dolores atque possimus reiciendis ipsam quaerat
+      necessitatibus magnam et! Similique veritatis explicabo magni obcaecati
+      reprehenderit temporibus sapiente.
+      <cite>- Victor Hugo</cite>
+    </blockquote>
+
+    This is an image
+    <figure>
+      <img src="https://picsum.photos/id/30/900/600" alt="Mug on a table" />
+      <figcaption>A mug on a table</figcaption>
+    </figure>
+    <pre>
+This is some text written in a pre tag.
+  </pre>
+    <code> This is code. &lt;hr /&gt; </code>
+
+    Use <kbd>Ctrl</kbd> + <kbd>v</kbd> to paste.
+
+    <small>This is small text</small>
+    <button>This is a button</button>
+    <time>May 23 2024</time>
+    <a href="https://beautyofmathematics.com">This is a link</a>
+  </body>
 </html>
