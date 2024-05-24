@@ -10,15 +10,15 @@
         font-size: 2.945rem;
     }
     h3, .lar {
+        font-size: 2.618rem;
+    }
+    h4, .med  {
         font-size: 1.82rem;
-    }
-    body, h4, .med{
-        font-size: 1.125rem;
-    }
+    } 
     h5, .sma{
-        font-size: 0.695rem;    
+        font-size: 1.618rem;    
     }
-    h6, .xs{
-        font-size: 0.43rem;
+    body, h6 {
+        font-size: 1.125rem;
     }
 }
