@@ -1,0 +1,24 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base{
+    h1, .xxl{
+        font-size:4.765rem;
+    }
+    h2, .xl {
+        font-size: 2.945rem;
+    }
+    h3, .lar {
+        font-size: 1.82rem;
+    }
+    body, h4, .med{
+        font-size: 1.125rem;
+    }
+    h5, .sma{
+        font-size: 0.695rem;    
+    }
+    h6, .xs{
+        font-size: 0.43rem;
+    }
+}
