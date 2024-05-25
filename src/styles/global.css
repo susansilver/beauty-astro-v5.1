@@ -115,4 +115,9 @@
         background-color: #26A69A;
         color: #000;
     }
+    time {
+        text-transform: uppercase;
+        font-family: Superclarendon, 'Bookman Old Style', 'URW Bookman', 'URW Bookman L', 'Georgia Pro', Georgia, serif;
+        font-weight: 500;
+    }
 }
