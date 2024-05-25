@@ -2,7 +2,9 @@
 import type { CollectionEntry } from "astro:content";
 import BaseHead from "../components/base/BaseHead.astro";
 
-type Props = CollectionEntry<"blog">["data"];
+interface Props {
+  frontmatter: CollectionEntry<"blog">["data"];
+}
 
 const { frontmatter } = Astro.props;
 ---
