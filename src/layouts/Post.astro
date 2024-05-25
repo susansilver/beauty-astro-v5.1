@@ -1,0 +1,47 @@
+---
+import type { CollectionEntry } from "astro:content";
+import BaseHead from "../components/base/BaseHead.astro";
+
+type Props = CollectionEntry<"blog">["data"];
+
+const { frontmatter } = Astro.props;
+---
+
+<html lang="en" class="scroll-smooth">
+  <head>
+    <BaseHead title={frontmatter.title} description={frontmatter.description} />
+  </head>
+
+  <body class="dark:bg-black-900">
+    <main>
+      <article id="single-article">
+        <div
+          id="meta"
+          class="text-balance dark:bg-primary-200 dark:text-slate-900 bg-primary-200 text-black-900 p-20"
+        >
+          <h1
+            class="title flex justify-center place-items-center text-center font-display font-semibold"
+          >
+            {frontmatter.title}
+          </h1>
+
+          <div
+            class="flex justify-center place-items-center text-xl lg:text-3xl mt-5 font-display font-bold"
+          >
+            <p>Last updated on {frontmatter.updatedDate}</p>
+          </div>
+        </div>
+        <hr />
+        <div>
+          <div class="mt-8 mx-auto grid grid-cols-12">
+            <div
+              class="dark:prose-invert prose prose-slate prose-xl col-span-10 col-start-2 col-end-12 md:col-span-6 md:col-start-4 md:col-end-10 mx-auto"
+            >
+              <slot />
+            </div>
+          </div>
+        </div>
+      </article>
+    </main>
+  </body>
+</html>

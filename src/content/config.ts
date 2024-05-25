@@ -43,4 +43,4 @@ const blog = defineCollection({
 	}),
 }); */
 
-export const collections = { blog /*, authors */};
+export const collections = { blog };
