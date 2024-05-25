@@ -1,0 +1,77 @@
+---
+layout: ../../layouts/BlogPostSingle.astro
+title: 10 Question Interview With Bernhard Werner
+description: "An interview with mathematcian Bernhard Werner who publishes videos about math."
+draft: false
+pubDate: 2024-03-05T20:09:53.331Z
+updatedDate: March 5th, 2024
+heroImage:
+  alt: The symbol for the angle in color of pink, blue, and green on a white background.
+  src: /src/assets/header-image-beauty-of-mathematics-angle-symbol.jpg
+tags:
+  - math-communications
+categories: interviews
+author: susan-silver
+thumbnail: /src/assets/header-image-beauty-of-mathematics-angle-symbol.jpg
+---
+import { YouTube } from '@astro-community/astro-embed-youtube';
+import BlockQuoteBook from '../../components/blog/BlockQuoteBook.astro';
+import BlockQuoteQuote from '../../components/blog/BlockQuoteQuote.astro';
+import AlignRight from '../../components/blog/AlignRight.astro';
+import AlignCenter from '../../components/blog/AlignCenter.astro';
+import BreakoutImage from '../../components/blog/BreakoutImage.astro';
+import Toc from '../../components/blog/Toc.astro';
+import { Image } from "astro:assets";
+import RelatedArticles from '../../components/blog/RelatedArticles.astro';
+
+Hello, this is the next installment of the 10 Question Interview. I ask people in the math community the same 10 questions in the style of the Actors Studio. Those who would like a feature should email: [BeautyOfMathematics@SusanSilver.net](mailto:BeautyOfMathematics@SusanSilver.net).
+
+This is an interview with **Bernhard Werner**. Here is Bernhard's introduction.
+
+_I’m Bernhard Werner. I studied mathematics at the Technical University of Munich — focusing on mostly algebra and geometry — and finished with a Ph.D. on handwriting recognition. It was part of a much bigger project where we created an interactive schoolbook for iPads on the topic of fractions for 6th graders. As a post-doc, I was working for a web platform that provides lessons for teacher trainees. Since October 2023 I am a Learning Technology Officer at the Munich University of Applied Sciences. In that role, I support our students and lecturers by creating online courses, operating a small film studio, helping with organising hybrid lectures and many more big and small tasks._
+
+You can visit Berhard's YouTube channel here: [Sum and Product](https://www.youtube.com/@sumandproduct)
+
+1. When did you consider yourself a mathematician?
+
+I think that happened when I was teaching an Intro To Projective Geometry course for the third time or so. I found a quite simple and easy to prove statement from Linear Algebra that had a really nice interpretation in the context of the course. I got really giddy and put it on the next exercise sheet for my students. In the first tutoring session, I then tried to explain to the students why this statement makes me so happy. But they obviously couldn’t relate, since they didn’t stumble over it the same way I did; I just handed it to them. In any way, finding such big and small connections (on my own) made me fell like actually doing maths.
+
+2. What is one of your favorite problems in mathematics?
+
+The famous computer scientist Jim Blinn is using something called tensor diagrams to do the maths necessary for computer graphics. It's a technique that replaces long strings of indices with easy to read diagram. One of the simpler diagrams describes the inverse of a matrix. But to do so, you have to plug in two copies of the matrix. I wondered how to interpret the diagram if you use two different matrices. I asked my Ph.D. advisor — who's been teaching this diagram technique for many years — as well as Jim Blinn himself, but they didn’t know the answer. After a few years of thinking about it every now and then I found an answer: You can link this diagram to a relatively simple statement about conic sections. While both the solution itself and the way to the solution aren't that interesting, it still fascinates me how such a simple question can lie around unanswered.
+
+3. When did you get interested in mathematics?
+
+Since I was little, I was good at maths. And I always enjoyed it in school. But I didn’t think too much about it. And even in uni it took me a semester or two to get actually invested in what’s going on. But seeing things like the Cantor set or Zermelo-Fraenkel set theory made me realise that there are many weird and wonderful things to find in maths.
+
+4. Why is math important to you?
+
+It is both essential to my work as a programmer and incredibly entertaining to me personally. It also helps, I think, that I’m not a “career mathematician” who has to apply for grants and whose career doesn’t depend on producing theorems. But my job is close enough to maths that I can spend as little or as much time a day permits on thinking about maths problems. So… it’s more a toy than tool which helps enjoying it more.
+
+5. Where do you communicate about your work?
+
+Technically, I do have a blog where I write about mathematics and computer science. But it is more or less completely dormant right now. Similarly, I try to write sci comm threads on social media platforms, but rarely have the time and energy to do so. One thing that is somewhat active is my YouTube channel, even though it only has ten videos so far. I also try to make my software projects as open as possible, and advertise them wherever possible.
+
+6. How would you explain your work to a non-mathematician?
+
+Luckily, I don’t have to; I can always show something. Most of my work — be it more focussed on research or a software product — always involved a program or website I can show off. And the little “pure” mathematical research I’m doing mostly revolves around 2D geometry. So, I always have something visual to present to people.
+
+7. Do you have a favorite historical mathematician?
+
+I want to say John Conway. But calling him “historical” feels a bit weird. So, I would go with Muhammad ibn Musa al-Khwarizmi. In general, I'm quite weary of the practice of naming things after mathematicians. But having two words essential to the whole field of mathematics named after you is quite the flex. And is actual scientific contributions are, of course, extremely admirable.
+
+8. Do you think math is beautiful or do you think it has other qualities?
+
+I think that parts of maths are beautiful. I think you can talk about maths beautifully. But maths as a whole often feels like an Eldritch accumulation of things humans do not fully understand. Which… is also something I can appreciate on a deep level. I have a similar feeling when being out in nature: sometimes it’s beautiful and enjoyable, sometimes it’s just overwhelming and exhausting. But the latter can still be a very positive experience.
+
+9. Where do you get your best ideas or what inspires you?
+
+Somewhat weirdly, on social media. There are many people posting little maths problem and proofs. And often I think to myself, “Oh, I could visualize that in a really nice way!” And right away, I’m at my computer coding a little interactive widget that explores what I saw.
+
+10. Does your interest in math relate to any of your other interests or hobbies?
+
+Oh, definitely! Since I was little, I liked to draw and always had an interest in photography. In the last few years I had to learn a lot about the intricacies of colour vision and colour spaces, and it shone an entirely new light (pun intended) on my understanding of visual art. I'm also quite the passionate, yet average Go player. And since I'm interested in Game Theory and Machine Learning anyway, it's a nice fit. But weirdly enough, despite playing the guitar and just starting to learn the drums, I do not care at all about the maths of music at all.
+
+To be interviewed next, please email me at [BeautyOfMathematics@SusanSilver.net](mailto:BeautyOfMathematics@SusanSilver.net).
+
+<RelatedArticles oneTitle="Join Me on the Finite Group Math Comm Discord" oneURL="/join-me-on-the-finite-group-math-comm-discord" twoTitle="What Is Math Communications? an Existential Question" twoURL="/what-is-math-communication" threeTitle="Carnival of Mathematics #221" threeURL="/carnival-of-mathematics-221"  />
