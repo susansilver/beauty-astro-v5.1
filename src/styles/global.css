@@ -76,4 +76,29 @@
         border-right: 0;
         border-top: 0;
     }
+
+    blockquote {
+        border: 3px solid;
+        border-image-slice: 1;
+        border-width: 5px;
+        border-image-source:  linear-gradient(180deg, #0288d1, #0d47a1, #e91e63, #f48fb1);
+        border-right: 0;
+        border-bottom: 0;
+        border-top: 0;
+        padding: 0.5em;
+    }
+
+    cite {
+        background-color: #cbd5e1;
+        padding: 0.25em;
+        filter:drop-shadow(#26A69A 0.5em 0.5em 0);
+       
+    }
+    figcaption {
+        background-color: #cbd5e1;
+        filter:drop-shadow(#26A69A 1em 1em 0);
+        max-width:30ch;
+        transform: translate(5em, -10ex);
+        padding:2.5em;
+    } 
 }
