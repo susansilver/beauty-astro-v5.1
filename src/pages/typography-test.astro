@@ -1,65 +1,13 @@
 ---
-import { AstroFont } from "astro-font";
-
-// Import the global.css file here so that it is included on
-// all pages through the use of the <BaseHead /> component.
-import "../styles/global.css";
+import BaseHead from "../components/base/BaseHead.astro";
 ---
 
 <html lang="en">
   <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-
-    <AstroFont
-      config={[
-        {
-          name: "Poiret",
-          src: [
-            {
-              style: "normal",
-              weight: "400",
-              path: "/fonts/poiret-one-v16-latin-regular.woff2",
-            },
-          ],
-          preload: true,
-          display: "swap",
-          selector: "h1",
-          fallback: "sans-serif",
-        },
-        {
-          name: "Ouroboros",
-          src: [
-            {
-              weight: "400",
-              style: "normal",
-              path: "/fonts/Ouroboros-Regular.woff2",
-            },
-          ],
-          preload: true,
-          display: "swap",
-          selector: "#LTUAE",
-          fallback: "sans-serif",
-        },
-        {
-          name: "Righteous",
-          src: [
-            {
-              weight: "400",
-              style: "normal",
-              path: "/fonts/righteous-v13-latin-regular.woff2",
-            },
-          ],
-          preload: true,
-          display: "swap",
-          selector: ".logo",
-          fallback: "sans-serif",
-        },
-      ]}
+    <BaseHead
+      title="Typography Test"
+      description="A page to test typography styling"
     />
-    <title>Typography Test</title>
   </head>
   <body>
     <h1>Heading One</h1>
