@@ -27,7 +27,7 @@ import "../styles/global.css";
           preload: true,
           display: "swap",
           selector: "h1",
-          fallback: "arial",
+          fallback: "sans-serif",
         },
         {
           name: "Ouroboros",
@@ -41,7 +41,7 @@ import "../styles/global.css";
           preload: true,
           display: "swap",
           selector: "#LTUAE",
-          fallback: "arial",
+          fallback: "sans-serif",
         },
         {
           name: "Righteous",
@@ -55,7 +55,7 @@ import "../styles/global.css";
           preload: true,
           display: "swap",
           selector: ".logo",
-          fallback: "arial",
+          fallback: "sans-serif",
         },
       ]}
     />
@@ -105,7 +105,7 @@ import "../styles/global.css";
     <h5>Heading Five</h5>
     <h6>Heading Six</h6>
 
-    An Unordered list
+    <p>An Unordered list</p>
     <ul>
       <li>Item 1</li>
       <li>Item 2</li>
@@ -118,7 +118,7 @@ import "../styles/global.css";
       </li>
     </ul>
 
-    An Ordered List
+    <p>An Ordered List</p>
     <ol>
       <li>Item 1</li>
       <li>Item 2</li>
@@ -131,7 +131,7 @@ import "../styles/global.css";
       </li>
     </ol>
 
-    This is a blockquote
+    <p>This is a blockquote</p>
     <blockquote>
       Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga dolorem nemo
       tempore fugiat? Dolores atque possimus reiciendis ipsam quaerat
@@ -140,13 +140,13 @@ import "../styles/global.css";
       <cite>Victor Hugo</cite>
     </blockquote>
 
-    This is an image
-    <div style="margin:5em 5em">
-      <figure>
-        <img src="https://picsum.photos/id/30/300" alt="Mug on a table" />
-        <figcaption>this is a mug on a table.</figcaption>
-      </figure>
-    </div>
+    <p>This is an image</p>
+
+    <figure>
+      <img src="https://picsum.photos/id/30/300" alt="Mug on a table" />
+      <figcaption>this is a mug on a table.</figcaption>
+    </figure>
+
     <p>
       <pre>
 This is some text written in a pre tag.
@@ -170,9 +170,8 @@ This is some text written in a pre tag.
           <time>May 23 2024</time>
         </p>
         <p>
-          <a href="https://beautyofmathematics.com" class="link"
-            >This is a link</a
-          >
+          <a href="https://beautyofmathematics.com">This is an external link</a>
+          and some text <a href="/">An internal link</a>
         </p>
       </p>
     </p>

@@ -1,0 +1,12 @@
+---
+const { oneTitle, oneURL, twoTitle, twoURL, threeTitle, threeURL } =
+  Astro.props;
+---
+
+<h3>Continue Reading</h3>
+
+<ol>
+  <li><a href={oneURL}>{oneTitle}</a></li>
+  <li><a href={twoURL}>{twoTitle}</a></li>
+  <li><a href={threeURL}>{threeTitle}</a></li>
+</ol>

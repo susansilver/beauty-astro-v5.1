@@ -1,0 +1,34 @@
+<h2>
+  <button
+    id="tocButton"
+    aria-expanded="false"
+    aria-controls="tocList"
+    class="flex flex-row"
+  >
+    <svg
+      class="hover:scale-150 h-12 w-12 fill-primary-400"
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+      style="transform: ;msFilter:;"><path d="m11.998 17 7-8h-14z"></path></svg
+    > Table of Contents</button
+  >
+</h2>
+<section>
+  <div id="tocList" class="hidden" aria-labelledby="tocButton">
+    <slot />
+  </div>
+  <!--  <a href="#comment-box"><button class="btn">Skip to Comments</button></a> -->
+</section>
+
+<script>
+  const tocButton = document.getElementById("tocButton");
+  const tocList = document.getElementById("tocList");
+
+  tocButton.addEventListener("click", () => {
+    tocList.classList.toggle("hidden");
+    tocButton.setAttribute(
+      "aria-expanded",
+      tocList.classList.contains("hidden") ? "false" : "true"
+    );
+  });
+</script>
