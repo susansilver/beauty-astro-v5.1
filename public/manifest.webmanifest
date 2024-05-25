@@ -1,0 +1,26 @@
+{
+  "name": "Beauty of Mathematics",
+  "short_name": "Beauty of Mathematics",
+  "description": "Mathematics blog taking you from math anxiety to math confdence",
+  "dir": "auto",
+  "lang": "en-US",
+  "display": "standalone",
+  "orientation": "any",
+  "start_url": "/?homescreen=1",
+  "background_color": "#fff",
+  "theme_color": "#D6BDE2",
+  "icons": [
+    {
+      "src": "/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}
