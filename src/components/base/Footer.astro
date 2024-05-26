@@ -9,13 +9,7 @@
 </footer>
 
 <script>
-  const copyElement = document.querySelector("#copy");
-
-  if (copyElement !== null) {
-    (copyElement as HTMLElement).textContent = new Date()
-      .getFullYear()
-      .toString();
-  } else {
-    console.error('Element with ID "copy" not found.');
-  }
+  document.querySelector("#copy").textContent = new Date()
+    .getFullYear()
+    .toString();
 </script>
