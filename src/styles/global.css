@@ -159,7 +159,6 @@
 
      button:hover{
         background-color: #4DB6AC;
-       /*  border:5px solid #212121; */
     }
     time {
         text-transform: uppercase;
@@ -169,7 +168,10 @@
 
     a{
         text-decoration: underline;
-        color:#0D47A1;
+        color:#0D47A1; 
+        margin:0 0.25em;
+    }
+    article a{
         margin: 0 1em 0 0;
     }
 
