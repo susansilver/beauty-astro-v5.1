@@ -1,0 +1,39 @@
+---
+import HeaderLink from "./HeaderLink.astro";
+import { SITE_TITLE } from "../../consts";
+import {
+  Astronav,
+  MenuItems,
+  MenuIcon,
+  Dropdown,
+  DropdownItems,
+  DropdownSubmenu,
+} from "astro-navbar";
+---
+
+<header class="lg:flex p-5 gap-5">
+  <Astronav>
+    <div class="flex w-full justify-between">
+      <div class="flex lg:flex-row lg:w-full flex-col">
+        <img src="/android-chrome-512x512.png" alt="logo" class="h-11 w-11" />
+        <span class="logo med">{SITE_TITLE}</span>
+      </div>
+      <div class="block lg:hidden">
+        <MenuIcon class="w-4 h-4 text-gray-800" />
+      </div>
+    </div>
+    <MenuItems class="hidden lg:flex">
+      <ul class="flex flex-col lg:flex-row list-none lg:items-center">
+        <li><HeaderLink href="/">Home</HeaderLink></li>
+        <li>
+          <HeaderLink href="/typography-test">Typography</HeaderLink>
+        </li>
+        <li>
+          <a href="mailto:beautyofmathematics@susansilver.net" target="_blank"
+            ><button>Contact</button></a
+          >
+        </li>
+      </ul>
+    </MenuItems>
+  </Astronav>
+</header>

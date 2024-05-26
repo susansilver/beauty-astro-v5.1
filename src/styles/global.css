@@ -3,11 +3,14 @@
 @tailwind utilities;
 
 @layer base{
+    body{
+        color:#212121;
+    }
     h1, .xxl{
-        font-size: 7.066rem;
+        font-size: 4.209em;
     }
     h2 {
-        font-size: 4.997rem;
+        font-size: 3.157em;
          /* Fallback: Set a background color. */
          background-color: #0288d1;
         
@@ -35,16 +38,16 @@
          border-top: 0;
     }
     .xl {
-        font-size: 4.997rem;
+        font-size: 3.157em;
     }
     h3, .lar {
-        font-size: 3.534rem;
+        font-size: 2.369em;
     }
     h4, .med  {
-        font-size: 2.499rem;
+        font-size: 1.777em;
     } 
     h5, .sma{
-        font-size: 1.767rem;    
+        font-size: 1.333em;    
     }
     h6, body {
         font-size: 1.25rem;
@@ -146,15 +149,16 @@
     button{
         padding:1.5em;
         border:5px solid #4DB6AC;
-        padding:0.25em;
-        background-color: #212121;
-        color: #E0F2F1;
+        padding:0.5em;
+        background-color: #E0F2F1;
+        color: #212121;
         transition: color 0.3s ease-out;
+        border-top-left-radius:  15px;
+        border-bottom-right-radius:  15px;
     }
 
      button:hover{
         background-color: #4DB6AC;
-        color: #212121;
        /*  border:5px solid #212121; */
     }
     time {
