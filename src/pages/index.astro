@@ -22,7 +22,7 @@ const allPosts = (await getCollection("blog"))
           allPosts.map((post) => (
             <>
               <div class="relative lg:text-7xl text-2xl">
-                <div class="wrap blue-four-hundred">
+                <div class="wrap">
                   <Image
                     src={post.data.heroImage.src}
                     alt={post.data.heroImage.alt}
@@ -115,6 +115,24 @@ const allPosts = (await getCollection("blog"))
           -50%
         ); /* This is a shorthand of
                                          translateX(-50%) and translateY(-50%) */
+      }
+
+      .wrap {
+        position: relative;
+      }
+
+      .wrap:after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(66, 165, 245, 0.75);
+      }
+      .wrap img {
+        -webkit-filter: grayscale(100%);
+        filter: grayscale(100%);
       }
     </style>
   </body>

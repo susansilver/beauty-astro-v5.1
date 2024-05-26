@@ -1,0 +1,195 @@
+body{
+    color:#212121;
+}
+h1, .xxl{
+    font-size: 4.209em;
+}
+h2 {
+    font-size: 3.157em;
+     /* Fallback: Set a background color. */
+     background-color: #0288d1;
+    
+     /* Create the gradient. */
+     background-image: 
+         linear-gradient(180deg,#0288d1,#f48fb1);
+     
+     /* Set the background size and repeat properties. */
+     background-size: 100%;
+     background-repeat: repeat;
+   
+     /* Use the text as a mask for the background. */
+     /* This will show the gradient as a text color rather than element bg. */
+     -webkit-background-clip: text;
+     -webkit-text-fill-color: transparent; 
+     -moz-background-clip: text;
+     -moz-text-fill-color: transparent;
+
+     border: 3px solid;
+     border-image-slice: 1;
+     border-width: 5px;
+     border-image-source:  linear-gradient(to right, #0288d1, #f48fb1);
+     border-left: 0;
+     border-right: 0;
+     border-top: 0;
+}
+.xl {
+    font-size: 3.157em;
+}
+h3, .lar {
+    font-size: 2.369em;
+}
+h4, .med  {
+    font-size: 1.777em;
+} 
+h5, .sma{
+    font-size: 1.333em;    
+}
+h6, body {
+    font-size: 1.25rem;
+}
+small{
+    font-size: 1.125rem;
+}
+.xs{
+    font-size: 1rem;
+}
+ul, ol{
+    padding-left:1.5em;
+    margin-top: 0.25em 0;
+    list-style-type: disc;
+}
+
+ul > li > ul {
+    list-style-type: circle;
+}
+
+ol {
+    list-style-type: decimal;
+    padding-left:1.5em;
+}
+
+ol > li > ol {
+    list-style-type: lower-alpha;
+}
+
+p{
+    margin: 1.125em 0;
+}
+.gradient-text{
+
+    /* Fallback: Set a background color. */
+    background-color: #0288d1;
+    
+    /* Create the gradient. */
+    background-image: 
+        linear-gradient(180deg,#0288d1,#f48fb1);
+    
+    /* Set the background size and repeat properties. */
+    background-size: 100%;
+    background-repeat: repeat;
+  
+    /* Use the text as a mask for the background. */
+    /* This will show the gradient as a text color rather than element bg. */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; 
+    -moz-background-clip: text;
+    -moz-text-fill-color: transparent;
+
+    border: 3px solid;
+    border-image-slice: 1;
+    border-width: 5px;
+    border-image-source:  linear-gradient(to right, #0288d1, #f48fb1);
+    border-left: 0;
+    border-right: 0;
+    border-top: 0;
+}
+
+blockquote {
+    border: 3px solid;
+    border-image-slice: 1;
+    border-width: 5px;
+    border-image-source:  linear-gradient(180deg, #0288d1, #f48fb1);
+    border-right: 0;
+    border-bottom: 0;
+    border-top: 0;
+    padding: 0.5em;
+    margin:0.5em 0;
+}
+
+cite {
+    background-color: #E0F2F1;
+    padding: 0.25em;
+    filter:drop-shadow(#4DB6AC 0.5em 0.5em 0);
+   
+}
+figure{
+    position:relative;
+    margin: 2.5em 0;
+}
+figure img {
+    display: block;
+}
+figcaption {
+    position: absolute;
+    background-color: #E0F2F1;
+    filter:drop-shadow(#4DB6AC 1em 1em 0);
+    max-width:30ch;
+   /*  transform: translate(75%, -2ex);   */
+    padding:2.5em;
+    bottom: 0;
+    left: 10em;
+    right: 0;
+}  
+
+button{
+    padding:1.5em;
+    border:5px solid #4DB6AC;
+    padding:0.5em;
+    background-color: #E0F2F1;
+    color: #212121;
+    transition: color 0.3s ease-out;
+    border-top-left-radius:  15px;
+    border-bottom-right-radius:  15px;
+}
+
+ button:hover{
+    background-color: #4DB6AC;
+}
+time {
+    text-transform: uppercase;
+    font-family: Superclarendon, 'Bookman Old Style', 'URW Bookman', 'URW Bookman L', 'Georgia Pro', Georgia, serif;
+    font-weight: 500;
+}
+
+a{
+    text-decoration: underline;
+    color:#0D47A1; 
+    margin:0 0.25em;
+}
+article a{
+    margin: 0 1em 0 0;
+}
+
+a:hover{
+    color:#880E4F;
+}
+
+a:visited{
+    color:#EC407A;
+}
+
+ article a[class^='https'] {
+    padding-right: 1.25em;
+  }
+  
+  article a[href^='https']::after {
+    position: absolute;
+    content: '';
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    margin-left: 0.25em;
+    background-size: 100%;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewbox='0 0 12.2 12.2' width='14' height='14'%3E%3Cpath d='M5.7 0v1.5h4L4.5 6.7l1 1.1 5.3-5.2v3.9h1.4V0z'/%3E%3Cpath fill='none' d='M3.4 6.7l3-2.9H1.5v7h7V5.9l-3 2.9z'/%3E%3Cpath d='M8.5 5.9v4.9h-7v-7h4.9l1.5-1.6H0v10h10V4.4z'/%3E%3C/svg%3E");
+    transform: translateY(0.25em);
+  }
