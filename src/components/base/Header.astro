@@ -1,6 +1,7 @@
 ---
 import HeaderLink from "./HeaderLink.astro";
 import { Icon } from "astro-icon/components";
+import Search from "astro-pagefind/components/Search";
 import { SITE_TITLE } from "../../consts";
 import {
   Astronav,
@@ -34,15 +35,13 @@ import {
           <HeaderLink href="/typography-test">Typography</HeaderLink>
         </li>
         <li>
-          <a href="mailto:beautyofmathematics@susansilver.net" target="_blank"
-            ><button>Contact</button></a
-          >
+          <HeaderLink>Search</HeaderLink>
         </li>
         <li class="lg:flex lg:justify-center lg:items-center hidden">
           <a href="https://mathstodon.xyz/@suzza"
             ><Icon
               name="mdi:mastodon"
-              class="med text-primary-700 hover:text-secondary-900"
+              class="sma text-primary-700 hover:text-secondary-900"
             /></a
           >
         </li>
@@ -50,8 +49,13 @@ import {
           <a href="https://susansilver.net"
             ><Icon
               name="mdi:account-circle"
-              class="med text-primary-700 hover:text-secondary-900"
+              class="sma text-primary-700 hover:text-secondary-900"
             /></a
+          >
+        </li>
+        <li>
+          <a href="mailto:beautyofmathematics@susansilver.net" target="_blank"
+            ><button>Contact</button></a
           >
         </li>
       </ul>
