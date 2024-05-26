@@ -1,0 +1,15 @@
+---
+const today = new Date();
+---
+
+<footer id="colophon" class="text-black-900">
+  <div class="flex justify-center flex-row items-end">
+    <div class="m-5">&copy; 2018 - <span id="copy"></span> Suzza Silver</div>
+  </div>
+</footer>
+
+<script>
+  document.querySelector("#copy").textContent = new Date()
+    .getFullYear()
+    .toString();
+</script>
