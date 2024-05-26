@@ -1,4 +1,4 @@
-/* import { imageMetadata } from 'astro/assets/utils'; */
+import { imageMetadata } from 'astro/assets/utils';
 import { defineCollection, z } from 'astro:content';
 
 const blog = defineCollection({
@@ -17,7 +17,7 @@ const blog = defineCollection({
 			.optional()
 			.transform((str) => (str ? new Date(str) : undefined)),
 		heroImage: z.object({
-				src: image().refine((img) => img.height = 360).refine((img) => img.width = 640),
+				src: image(),
 				alt: z.string(),
 			  }),
 		thumbnail:image().refine((img) => img.height = 150).refine((img) => img.width = 150),
