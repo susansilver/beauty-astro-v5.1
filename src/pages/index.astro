@@ -1,7 +1,12 @@
 ---
+import { getCollection } from "astro:content";
 import BaseHead from "../components/base/BaseHead.astro";
 import Header from "../components/base/Header.astro";
 import Footer from "../components/base/Footer.astro";
+
+const allPosts = (await getCollection("blog"))
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
+  .slice(0, 1);
 ---
 
 <html lang="en">
@@ -9,8 +14,82 @@ import Footer from "../components/base/Footer.astro";
     <BaseHead title="Home" description="From Math Anxiety to Math Confidence" />
   </head>
   <body class="bg-white-50">
-    <Header />
-    <h1>Astro</h1>
+    <div class="grid grid-cols-12 my-52">
+      <div
+        class="lg:col-span-6 lg:col-start-2 col-span-9 col-start-3 col-end-10"
+      >
+        {
+          allPosts.map((post) => (
+            <>
+              <div>
+                <a href={`/${post.slug}`}>{post.data.title}</a>
+              </div>
+            </>
+          ))
+        }
+      </div>
+      <div
+        class="lg:col-span-3 lg:col-end-11 col-span-9 col-start-3 col-end-10 bg-primary-400 lg:text-4xl text-2xl squares"
+      >
+        <a
+          href="/math-love-songs"
+          class="hover:text-secondary-900 visited:text-black-900 text-black-900 no-underline"
+          >Songs About Math Playlist</a
+        >
+      </div>
+      <div
+        class="lg:col-start-2 lg:col-span-3 lg:row-span-2 col-span-9 col-start-3 col-end-10 dominos lg:text-7xl text-2xl flex justify-center items-start"
+      >
+        <a
+          href="/blog"
+          class="hover:text-secondary-900 visited:text-black-900 text-black-900 no-underline"
+          >Blog
+          <div class="lg:pb-96"></div>
+        </a>
+      </div>
+      <div
+        class="lg:col-end-11 lg:col-span-6 lg:row-span-1 col-span-9 col-start-3 col-end-10"
+      >
+        <span
+          class="flex justify-center items-center lg:text-7xl text-2xl logo bg-primary-600 text-white-50 py-5"
+        >
+          Beauty of Mathematics
+        </span>
+      </div>
+      <div
+        class="lg:col-sart-4 lg:col-span-3 lg:row-span-1 col-span-9 col-start-3 col-end-10 bg-primary-500 lg:text-7xl text-2xl"
+      >
+        <a
+          href="/about"
+          class="flex justify-center items-center hover:text-secondary-900 visited:text-black-900 text-black-900 no-underline"
+        >
+          About
+          <div class="lg:pb-96"></div>
+        </a>
+      </div>
+      <div
+        class="lg:col-end-11 lg:col-span-3 lg:row-span-1 col-span-9 col-start-3 col-end-10 bg-primary-200 lg:text-7xl text-2xl"
+      >
+        <a
+          href="/press"
+          class="flex justify-center items-center hover:text-secondary-900 visited:text-black-900 text-black-900 no-underline"
+        >
+          Press
+          <div class="lg:pb-96"></div>
+        </a>
+      </div>
+    </div>
     <Footer />
+    <style>
+      .dominos {
+        background-color: #e3f2fd;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='126' height='84' viewBox='0 0 126 84'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%2390caf9' fill-opacity='1'%3E%3Cpath d='M126 83v1H0v-2h40V42H0v-2h40V0h2v40h40V0h2v40h40V0h2v83zm-2-1V42H84v40h40zM82 42H42v40h40V42zm-50-6a4 4 0 1 1 0-8 4 4 0 0 1 0 8zM8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm96 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm-42 0a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm30-12a4 4 0 1 1 0-8 4 4 0 0 1 0 8zM20 54a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm12 24a4 4 0 1 1 0-8 4 4 0 0 1 0 8zM8 54a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm24 0a4 4 0 1 1 0-8 4 4 0 0 1 0 8zM8 78a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm12 0a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm54 0a4 4 0 1 1 0-8 4 4 0 0 1 0 8zM50 54a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm24 0a4 4 0 1 1 0-8 4 4 0 0 1 0 8zM50 78a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm54-12a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm12 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8zM92 54a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm24 0a4 4 0 1 1 0-8 4 4 0 0 1 0 8zM92 78a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm24-42a4 4 0 1 1 0-8 4 4 0 0 1 0 8z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+      }
+
+      .squares {
+        background-color: #e3f2fd;
+        background-image: url("data:image/svg+xml,%3Csvg width='36' height='36' viewBox='0 0 36 36' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M36 0H0v36h36V0zM15.126 2H2v13.126c.367.094.714.24 1.032.428L15.554 3.032c-.188-.318-.334-.665-.428-1.032zM18 4.874V18H4.874c-.094-.367-.24-.714-.428-1.032L16.968 4.446c.318.188.665.334 1.032.428zM22.874 2h11.712L20 16.586V4.874c1.406-.362 2.512-1.468 2.874-2.874zm10.252 18H20v13.126c.367.094.714.24 1.032.428l12.522-12.522c-.188-.318-.334-.665-.428-1.032zM36 22.874V36H22.874c-.094-.367-.24-.714-.428-1.032l12.522-12.522c.318.188.665.334 1.032.428zm0-7.748V3.414L21.414 18h11.712c.362-1.406 1.468-2.512 2.874-2.874zm-18 18V21.414L3.414 36h11.712c.362-1.406 1.468-2.512 2.874-2.874zM4.874 20h11.712L2 34.586V22.874c1.406-.362 2.512-1.468 2.874-2.874z' fill='%2342a5f5' fill-opacity='0.51' fill-rule='evenodd'/%3E%3C/svg%3E");
+      }
+    </style>
   </body>
 </html>
