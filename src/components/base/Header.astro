@@ -16,7 +16,11 @@ import {
   <Astronav>
     <div class="flex w-full justify-between">
       <div class="flex lg:flex-row lg:w-full flex-col">
-        <img src="/android-chrome-512x512.png" alt="logo" class="h-11 w-11" />
+        <img
+          src="/android-chrome-512x512.png"
+          alt="logo"
+          class="lg:flex lg:h-11 lg:w-11 hidden"
+        />
         <span class="logo med">{SITE_TITLE}</span>
       </div>
       <div class="block lg:hidden">
@@ -34,10 +38,22 @@ import {
             ><button>Contact</button></a
           >
         </li>
-        <li>
-          <Icon name="mdi:mastodon" class="med text-primary-700" />
+        <li class="lg:flex lg:justify-center lg:items-center hidden">
+          <a href="https://mathstodon.xyz/@suzza"
+            ><Icon
+              name="mdi:mastodon"
+              class="med text-primary-700 hover:text-secondary-900"
+            /></a
+          >
         </li>
-        <li><Icon name="mdi:account-circle" class="med text-primary-700" /></li>
+        <li class="lg:flex lg:justify-center lg:items-center hidden">
+          <a href="https://susansilver.net"
+            ><Icon
+              name="mdi:account-circle"
+              class="med text-primary-700 hover:text-secondary-900"
+            /></a
+          >
+        </li>
       </ul>
     </MenuItems>
   </Astronav>

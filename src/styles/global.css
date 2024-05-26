@@ -181,11 +181,11 @@
         color:#EC407A;
     }
 
-    a[class^='https'] {
+     article a[class^='https'] {
         padding-right: 1.25em;
       }
       
-      a[href^='https']::after {
+      article a[href^='https']::after {
         position: absolute;
         content: '';
         display: inline-block;
