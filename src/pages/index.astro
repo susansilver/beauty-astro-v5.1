@@ -32,7 +32,7 @@ const allPosts = (await getCollection("blog"))
                 <div class="absolute positioning">
                   <a
                     href={`/${post.slug}`}
-                    class="no-underline text-black-900 visited:text-black-900 hover:text-secondary-900"
+                    class="no-underline text-black-900 visited:text-black-900 hover:text-secondary-900 text-pretty"
                   >
                     {post.data.title}
                   </a>
@@ -43,7 +43,7 @@ const allPosts = (await getCollection("blog"))
         }
       </div>
       <div
-        class="lg:col-span-3 lg:col-end-11 col-span-9 col-start-3 col-end-10 bg-primary-400 lg:text-7xl text-2xl squares flex jusify-center items-start"
+        class="lg:col-span-3 lg:col-end-11 col-span-9 col-start-3 col-end-10 bg-primary-400 squares flex jusify-center items-start lg:text-7xl text-2xl"
       >
         <a
           href="/math-love-songs"
@@ -53,20 +53,20 @@ const allPosts = (await getCollection("blog"))
         >
       </div>
       <div
-        class="lg:col-start-2 lg:col-span-3 lg:row-span-2 col-span-9 col-start-3 col-end-10 dominos lg:text-7xl text-2xl flex justify-center items-start"
+        class="lg:col-start-2 lg:col-span-3 lg:row-span-2 col-span-9 col-start-3 col-end-10 dominos flex justify-center items-start lg:text-7xl text-2xl"
       >
         <a
           href="/blog"
           class="hover:text-secondary-900 visited:text-black-900 text-black-900 no-underline"
           >Blog
-          <div class="lg:pb-96"></div>
+          <div class="lg:pb-72"></div>
         </a>
       </div>
       <div
-        class="lg:col-end-11 lg:col-span-6 lg:row-span-1 col-span-9 col-start-3 col-end-10"
+        class="lg:col-end-11 lg:col-span-6 lg:row-span-1 col-span-9 col-start-3 col-end-10 bg-primary-600 text-white-50"
       >
         <span
-          class="flex justify-center items-center lg:text-7xl text-2xl logo bg-primary-600 text-white-50 py-5"
+          class="flex justify-center items-center py-5 lg:text-7xl text-2xl logo"
         >
           Beauty of Mathematics
         </span>
@@ -79,7 +79,7 @@ const allPosts = (await getCollection("blog"))
           class="flex justify-center items-center hover:text-secondary-900 visited:text-black-900 text-black-900 no-underline"
         >
           About
-          <div class="lg:pb-96"></div>
+          <div class="lg:pb-72"></div>
         </a>
       </div>
       <div
@@ -90,7 +90,7 @@ const allPosts = (await getCollection("blog"))
           class="flex justify-center items-center hover:text-secondary-900 visited:text-black-900 text-black-900 no-underline"
         >
           Press
-          <div class="lg:pb-96"></div>
+          <div class="lg:pb-72"></div>
         </a>
       </div>
     </div>
@@ -115,6 +115,24 @@ const allPosts = (await getCollection("blog"))
           -50%
         ); /* This is a shorthand of
                                          translateX(-50%) and translateY(-50%) */
+      }
+
+      .wrap {
+        position: relative;
+      }
+
+      .wrap:after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(66, 165, 245, 0.75);
+      }
+      .wrap img {
+        -webkit-filter: grayscale(100%);
+        filter: grayscale(100%);
       }
     </style>
   </body>
