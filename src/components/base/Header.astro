@@ -1,5 +1,6 @@
 ---
 import HeaderLink from "./HeaderLink.astro";
+import { Icon } from "astro-icon/components";
 import { SITE_TITLE } from "../../consts";
 import {
   Astronav,
@@ -33,6 +34,10 @@ import {
             ><button>Contact</button></a
           >
         </li>
+        <li>
+          <Icon name="mdi:mastodon" class="med text-primary-700" />
+        </li>
+        <li><Icon name="mdi:account-circle" class="med text-primary-700" /></li>
       </ul>
     </MenuItems>
   </Astronav>
