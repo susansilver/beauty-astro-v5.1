@@ -22,13 +22,12 @@ const allPosts = (await getCollection("blog"))
           {
             allPosts.map((post) => (
               <>
-                <li class="p-3">
-                  <div class="relative lg:text-[1.953rem] xs">
+                <li class="py-3">
+                  <div class="relative lg:text-[1.563rem] text-[0.64rem]">
                     <div class="wrap">
                       <Image
                         src={post.data.thumbnail}
                         alt={post.data.heroImage.alt}
-                        class="bw"
                       />
                     </div>
                     <div class="absolute positioning text-balance">
