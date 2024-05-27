@@ -17,13 +17,13 @@ const allPosts = (await getCollection("blog"))
   <body class="bg-primary-300">
     <Header />
     <div class="grid grid-cols-12">
-      <div class="col-span-8 col-start-4 col-end-8">
+      <div class="col-span-8 col-start-2 col-end-8 lg:col-start-4 lg:col-end-8">
         <ul class="list-none">
           {
             allPosts.map((post) => (
               <>
                 <li class="py-3">
-                  <div class="relative lg:text-[1.563rem] text-[0.64rem]">
+                  <div class="relative lg:text-[1.563rem] xs">
                     <div class="wrap">
                       <Image
                         src={post.data.thumbnail}
