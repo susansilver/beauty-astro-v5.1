@@ -7,7 +7,7 @@ import Footer from "../components/base/Footer.astro";
 
 const allPosts = (await getCollection("blog"))
   .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
-  .slice(0, 3);
+  .slice(0, 4);
 ---
 
 <html lang="en">
@@ -18,34 +18,34 @@ const allPosts = (await getCollection("blog"))
     <Header />
     <div class="grid grid-cols-12">
       <div
-        class="lg:col-span-8 col-span-10 col-start-2 col-end-10 lg:col-start-4 lg:col-end-8"
+        class="lg:col-span-8 col-start-2 col-span-10 lg:col-start-2 col-end-10 lg:col-end-8"
       >
-        <ul class="list-none">
-          {
-            allPosts.map((post) => (
-              <>
-                <li class="py-3">
-                  <div class="relative lg:text-[1.563rem] xs">
-                    <div class="wrap">
-                      <Image
-                        src={post.data.thumbnail}
-                        alt={post.data.heroImage.alt}
-                      />
-                    </div>
-                    <div class="absolute positioning text-balance">
-                      <a
-                        href={`/${post.slug}`}
-                        class="no-underline text-black-900 visited:text-black-900 hover:text-secondary-900"
-                      >
-                        {post.data.title}
-                      </a>
-                    </div>
+        <!-- <ul class="list-none"> -->
+        {
+          allPosts.map((post) => (
+            <>
+              <div class="py-3">
+                <div class="relative lg:text-[1.563rem] xs">
+                  <div class="wrap">
+                    <Image
+                      src={post.data.thumbnail}
+                      alt={post.data.heroImage.alt}
+                    />
                   </div>
-                </li>
-              </>
-            ))
-          }
-        </ul>
+                  <div class="absolute positioning text-balance">
+                    <a
+                      href={`/${post.slug}`}
+                      class="no-underline text-black-900 visited:text-black-900 hover:text-secondary-900"
+                    >
+                      {post.data.title}
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </>
+          ))
+        }
+        <!--  </ul> -->
       </div>
       <div
         class="lg:col-span-2 col-span-10 col-start-2 col-end-10 lg:col-start-9"
