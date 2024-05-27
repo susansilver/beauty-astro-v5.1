@@ -21,7 +21,7 @@ const allPosts = (await getCollection("blog"))
         {
           allPosts.map((post) => (
             <>
-              <div class="relative lg:text-7xl xs">
+              <div class="relative lg:text-[2.441rem] xs">
                 <div class="wrap">
                   <Image
                     src={post.data.heroImage.src}
@@ -43,17 +43,17 @@ const allPosts = (await getCollection("blog"))
         }
       </div>
       <div
-        class="lg:col-span-3 lg:col-end-11 col-span-9 col-start-3 col-end-10 bg-primary-400 squares flex jusify-center items-start lg:text-7xl text-2xl"
+        class="lg:col-span-3 lg:col-end-11 col-span-9 col-start-3 col-end-10 bg-primary-400 squares flex jusify-center items-start lg:text-[2.441rem] sma"
       >
         <a
           href="/math-love-songs"
           class="hover:text-secondary-900 visited:text-black-900 text-black-900 no-underline"
-          >Songs About Math Playlist
+          >Songs About Math
           <div class="lg:pb-72"></div></a
         >
       </div>
       <div
-        class="lg:col-start-2 lg:col-span-3 lg:row-span-2 col-span-9 col-start-3 col-end-10 dominos flex justify-center items-start lg:text-7xl text-2xl"
+        class="lg:col-start-2 lg:col-span-3 lg:row-span-2 col-span-9 col-start-3 col-end-10 dominos flex justify-center items-start lg:text-[2.441rem] sma"
       >
         <a
           href="/blog"
@@ -65,14 +65,12 @@ const allPosts = (await getCollection("blog"))
       <div
         class="lg:col-end-11 lg:col-span-6 lg:row-span-1 col-span-9 col-start-3 col-end-10 bg-primary-600 text-white-50"
       >
-        <span
-          class="flex justify-center items-center py-5 lg:text-7xl text-2xl logo"
-        >
+        <h1 class="flex justify-center items-center py-5 lg:text-7xl lar logo">
           Beauty of Mathematics
-        </span>
+        </h1>
       </div>
       <div
-        class="lg:col-sart-4 lg:col-span-3 lg:row-span-1 col-span-9 col-start-3 col-end-10 bg-primary-500 lg:text-7xl text-2xl"
+        class="lg:col-sart-4 lg:col-span-3 lg:row-span-1 col-span-9 col-start-3 col-end-10 bg-primary-500 lg:text-[2.441rem] sma"
       >
         <a
           href="/about"
@@ -83,7 +81,7 @@ const allPosts = (await getCollection("blog"))
         </a>
       </div>
       <div
-        class="lg:col-end-11 lg:col-span-3 lg:row-span-1 col-span-9 col-start-3 col-end-10 bg-primary-200 lg:text-7xl text-2xl"
+        class="lg:col-end-11 lg:col-span-3 lg:row-span-1 col-span-9 col-start-3 col-end-10 bg-primary-200 lg:text-[2.441rem] sma"
       >
         <a
           href="/press"
