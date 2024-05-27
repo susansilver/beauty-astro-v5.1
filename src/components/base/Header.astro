@@ -12,7 +12,7 @@ import {
 } from "astro-navbar";
 ---
 
-<header class="lg:flex p-5 gap-5">
+<header class="lg:flex p-5 gap-5 bg-white-50 border-b-2 border-slate-200">
   <Astronav>
     <div class="flex w-full justify-between">
       <div class="flex lg:flex-row lg:w-full flex-col items-center">
@@ -35,6 +35,9 @@ import {
     </div>
     <MenuItems class="hidden lg:flex">
       <ul class="flex flex-col lg:flex-row list-none lg:items-center">
+        <li>
+          <HeaderLink href="/blog">Blog</HeaderLink>
+        </li>
         <li>
           <HeaderLink href="/typography-test">Typography</HeaderLink>
         </li>
