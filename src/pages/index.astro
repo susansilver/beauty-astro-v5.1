@@ -29,10 +29,10 @@ const allPosts = (await getCollection("blog"))
                     class="bw"
                   />
                 </div>
-                <div class="absolute positioning">
+                <div class="absolute positioning text-balance">
                   <a
                     href={`/${post.slug}`}
-                    class="no-underline text-black-900 visited:text-black-900 hover:text-secondary-900 text-pretty"
+                    class="no-underline text-black-900 visited:text-black-900 hover:text-secondary-900"
                   >
                     {post.data.title}
                   </a>

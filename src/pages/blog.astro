@@ -1,0 +1,85 @@
+---
+import { getCollection } from "astro:content";
+import { Image } from "astro:assets";
+import BaseHead from "../components/base/BaseHead.astro";
+import Header from "../components/base/Header.astro";
+import Footer from "../components/base/Footer.astro";
+
+const allPosts = (await getCollection("blog"))
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
+  .slice(0, 3);
+---
+
+<html lang="en">
+  <head>
+    <BaseHead title="Blog" description="The most current essays to read" />
+  </head>
+  <body class="bg-white-50">
+    <Header />
+    <h1 class="font-sans flex justify-center">Blog</h1>
+    <div class="grid grid-cols-12">
+      <div class="col-span-8 col-start-4 col-end-8">
+        <ul class="list-none">
+          {
+            allPosts.map((post) => (
+              <>
+                <li class="p-3">
+                  <div class="relative lg:text-[1.953rem] xs">
+                    <div class="wrap">
+                      <Image
+                        src={post.data.thumbnail}
+                        alt={post.data.heroImage.alt}
+                        class="bw"
+                      />
+                    </div>
+                    <div class="absolute positioning text-balance">
+                      <a
+                        href={`/${post.slug}`}
+                        class="no-underline text-black-900 visited:text-black-900 hover:text-secondary-900"
+                      >
+                        {post.data.title}
+                      </a>
+                    </div>
+                  </div>
+                </li>
+              </>
+            ))
+          }
+        </ul>
+      </div>
+      <div class="col-span-2 col-start-9">This is some text</div>
+    </div>
+    <Footer />
+    <style>
+      .positioning {
+        position: absolute;
+        top: 50%; /* position the top  edge of the element at the middle of the parent */
+        left: 50%; /* position the left edge of the element at the middle of the parent */
+
+        transform: translate(
+          -50%,
+          -50%
+        ); /* This is a shorthand of
+                                         translateX(-50%) and translateY(-50%) */
+      }
+
+      .wrap {
+        position: relative;
+      }
+
+      .wrap:after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(100, 181, 246, 0.75);
+      }
+      .wrap img {
+        -webkit-filter: grayscale(100%);
+        filter: grayscale(100%);
+      }
+    </style>
+  </body>
+</html>
