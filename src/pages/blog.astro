@@ -17,7 +17,9 @@ const allPosts = (await getCollection("blog"))
   <body class="bg-primary-300">
     <Header />
     <div class="grid grid-cols-12">
-      <div class="col-span-8 col-start-2 col-end-8 lg:col-start-4 lg:col-end-8">
+      <div
+        class="lg:col-span-8 col-span-10 col-start-2 col-end-10 lg:col-start-4 lg:col-end-8"
+      >
         <ul class="list-none">
           {
             allPosts.map((post) => (
@@ -45,7 +47,11 @@ const allPosts = (await getCollection("blog"))
           }
         </ul>
       </div>
-      <div class="col-span-2 col-start-9">This is some text</div>
+      <div
+        class="lg:col-span-2 col-span-10 col-start-2 col-end-10 lg:col-start-9"
+      >
+        This is some text
+      </div>
     </div>
     <Footer />
     <style>
