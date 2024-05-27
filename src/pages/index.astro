@@ -21,7 +21,7 @@ const allPosts = (await getCollection("blog"))
         {
           allPosts.map((post) => (
             <>
-              <div class="relative lg:text-7xl text-2xl">
+              <div class="relative lg:text-7xl">
                 <div class="wrap">
                   <Image
                     src={post.data.heroImage.src}
