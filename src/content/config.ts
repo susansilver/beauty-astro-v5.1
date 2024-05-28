@@ -20,7 +20,7 @@ const blog = defineCollection({
 				src: image().refine((img) => img.height = 2160).refine((img) => img.width = 3000),
 				alt: z.string(),
 			  }),
-		thumbnail:image().refine((img) => img.height = 300).refine((img) => img.width = 600),
+		thumbnail:image().refine((img) => img.height = 400).refine((img) => img.width = 400),
 		categories: z.string().optional(),
 		tags: z.array(z.string()).optional(),
 		author: z.string(),

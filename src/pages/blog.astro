@@ -7,7 +7,7 @@ import Footer from "../components/base/Footer.astro";
 
 const allPosts = (await getCollection("blog"))
   .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
-  .slice(0, 4);
+  .slice(0, 5);
 ---
 
 <html lang="en">
@@ -18,13 +18,14 @@ const allPosts = (await getCollection("blog"))
     <Header />
     <div class="grid grid-cols-12">
       <div
-        class="lg:col-span-8 col-start-2 col-span-10 lg:col-start-2 col-end-10 lg:col-end-8"
+        id="container"
+        class="flex flex-wrap lg:col-span-8 col-start-2 col-span-10 lg:col-start-2 col-end-10 lg:col-end-8"
       >
         <!-- <ul class="list-none"> -->
         {
           allPosts.map((post) => (
             <>
-              <div class="py-3">
+              <div class="p-3">
                 <div class="relative lg:text-[1.563rem] xs">
                   <div class="wrap">
                     <Image
@@ -83,6 +84,18 @@ const allPosts = (await getCollection("blog"))
       .wrap img {
         -webkit-filter: grayscale(100%);
         filter: grayscale(100%);
+      }
+
+      #container > div:first-child {
+        flex-basis: 7680px;
+        display: flex;
+        justify-content: center;
+      }
+
+      #container > div:first-child img {
+        border-top-left-radius: 15px;
+        border-bottom-right-radius: 15px;
+        border: 10px solid darkblue;
       }
     </style>
   </body>
