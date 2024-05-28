@@ -19,29 +19,29 @@ const allPosts = (await getCollection("blog"))
     <div class="grid grid-cols-12">
       <div
         id="container"
-        class="flex flex-wrap lg:col-span-8 col-start-2 col-span-10 lg:col-start-2 col-end-10 lg:col-end-8"
+        class="lg:flex lg:flex-wrap lg:col-span-8 col-start-2 col-span-10 lg:col-start-2 col-end-10 lg:col-end-8"
       >
         <!-- <ul class="list-none"> -->
         {
           allPosts.map((post) => (
             <>
               <div class="p-3">
-                <div class="relative lg:text-[1.563rem] xs">
-                  <div class="wrap">
-                    <Image
-                      src={post.data.thumbnail}
-                      alt={post.data.heroImage.alt}
-                    />
-                  </div>
-                  <div class="absolute positioning text-balance">
-                    <a
-                      href={`/${post.slug}`}
-                      class="no-underline text-black-900 visited:text-black-900 hover:text-secondary-900"
-                    >
+                <a
+                  href={`/${post.slug}`}
+                  class="no-underline text-black-900 visited:text-black-900 hover:text-secondary-900"
+                >
+                  <div class="relative lg:text-[1.563rem] xs">
+                    <div class="wrap">
+                      <Image
+                        src={post.data.thumbnail}
+                        alt={post.data.heroImage.alt}
+                      />
+                    </div>
+                    <div class="absolute positioning text-balance">
                       {post.data.title}
-                    </a>
+                    </div>
                   </div>
-                </div>
+                </a>
               </div>
             </>
           ))

@@ -13,7 +13,7 @@ const allPosts = (await getCollection("blog"))
   <head>
     <BaseHead title="Home" description="From Math Anxiety to Math Confidence" />
   </head>
-  <body class="bg-white-50">
+  <body class="bg-primary-600">
     <div class="grid grid-cols-12 lg:mt-0 mt-10">
       <div
         class="lg:col-span-6 lg:col-start-2 col-span-9 col-start-3 col-end-10"
@@ -22,21 +22,21 @@ const allPosts = (await getCollection("blog"))
           allPosts.map((post) => (
             <>
               <div class="relative lg:text-[2.441rem] xs">
-                <div class="wrap">
-                  <Image
-                    src={post.data.heroImage.src}
-                    alt={post.data.heroImage.alt}
-                    class="bw"
-                  />
-                </div>
-                <div class="absolute positioning text-balance">
-                  <a
-                    href={`/${post.slug}`}
-                    class="no-underline text-black-900 visited:text-black-900 hover:text-secondary-900"
-                  >
+                <a
+                  href={`/${post.slug}`}
+                  class="no-underline text-black-900 visited:text-black-900 hover:text-secondary-900"
+                >
+                  <div class="wrap">
+                    <Image
+                      src={post.data.heroImage.src}
+                      alt={post.data.heroImage.alt}
+                      class="bw"
+                    />
+                  </div>
+                  <div class="absolute positioning text-balance">
                     {post.data.title}
-                  </a>
-                </div>
+                  </div>
+                </a>
               </div>
             </>
           ))
