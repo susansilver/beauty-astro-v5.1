@@ -24,7 +24,7 @@ const allTags = [
   </head>
   <body class="bg-white-50">
     <Header />
-    <div class="grid grid-cols-12">
+    <div class="grid grid-cols-12 mt-10">
       <div
         id="container"
         class="lg:flex lg:flex-wrap lg:col-span-8 col-start-2 col-span-10 lg:col-start-2 col-end-10 lg:col-end-8"
@@ -61,23 +61,18 @@ const allTags = [
           <li class="hidden lg:flex lg:flex-col">
             Categories
             <ul class="list-none">
-              <!--  {
-                categories.map((category) => (
-                  <li>
-                    <a href={`/category/${category}`}>
-                      {category.replace(/-/g, " ").toUpperCase()}
-                    </a>
-                  </li>
-                ))
-              } -->
               {
                 categories.map((category) => {
                   // Check if category is defined
                   if (category) {
                     return (
                       <li>
-                        <a href={`/category/${category}`}>
-                          {category.replace(/-/g, " ").toUpperCase()}
+                        <a
+                          href={`/category/${category}`}
+                          title={`View posts in "${category}"`}
+                          class="category"
+                        >
+                          {category.replace(/-/g, " ")}
                         </a>
                       </li>
                     );
@@ -91,19 +86,6 @@ const allTags = [
           <li class="hidden lg:flex lg:flex-col">
             Tags
             <ul>
-              <!--  {
-                allTags.map((tag) => (
-                  <li>
-                    <a
-                      class="tag"
-                      href={`/tag/${tag}`}
-                      title={`View posts tagged under "${tag}"`}
-                    >
-                      {tag.replace(/-/g, " ").toUpperCase()}
-                    </a>
-                  </li>
-                ))
-              } -->
               {
                 allTags.map((tag) => {
                   // Check if category is defined
@@ -113,9 +95,9 @@ const allTags = [
                         <a
                           class="tag"
                           href={`/tag/${tag}`}
-                          title={`View posts tagged under "${tag}"`}
+                          title={`View posts tagged "${tag}"`}
                         >
-                          {tag.replace(/-/g, " ").toUpperCase()}
+                          {tag.replace(/-/g, " ")}
                         </a>
                       </li>
                     );
@@ -169,17 +151,6 @@ const allTags = [
         justify-content: center;
       }
 
-      @media only screen and (max-width: 480px) {
-        #container > div:first-child {
-          flex-basis: 7680px;
-        }
-      }
-
-      /* #container > div:first-child img {
-        border-top-left-radius: 15px;
-        border-bottom-right-radius: 15px;
-        border: 10px solid darkblue;
-      } */
       #container > div:first-child::after {
         position: absolute;
         content: "∯ New Essay";
@@ -191,6 +162,10 @@ const allTags = [
         bottom: 3%;
         left: 68%;
         right: 0;
+      }
+      .tag,
+      .category {
+        text-transform: capitalize;
       }
     </style>
   </body>
