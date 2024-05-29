@@ -16,7 +16,7 @@
          background-color: #0288d1;
         
          /* Create the gradient. */
-         background-image:  radial-gradient(#0D47A1,#f48fb1);
+         background-image:   linear-gradient(to top right,#0D47A1,#f48fb1);
              /* linear-gradient(180deg,#0288d1,#f48fb1); */
          
          /* Set the background size and repeat properties. */
