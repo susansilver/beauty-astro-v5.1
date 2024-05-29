@@ -7,14 +7,14 @@ import Footer from "../components/base/Footer.astro";
 
 const allPosts = (await getCollection("blog"))
   .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
-  .slice(0, 5);
+  .slice(0, 3);
 ---
 
 <html lang="en">
   <head>
     <BaseHead title="Blog" description="The most current essays to read" />
   </head>
-  <body class="bg-primary-300">
+  <body class="bg-white-50">
     <Header />
     <div class="grid grid-cols-12">
       <div
@@ -25,7 +25,7 @@ const allPosts = (await getCollection("blog"))
         {
           allPosts.map((post) => (
             <>
-              <div class="p-3">
+              <div class="p-3 relative">
                 <a
                   href={`/${post.slug}`}
                   class="no-underline text-black-900 visited:text-black-900 hover:text-secondary-900"
@@ -92,10 +92,22 @@ const allPosts = (await getCollection("blog"))
         justify-content: center;
       }
 
-      #container > div:first-child img {
+      /* #container > div:first-child img {
         border-top-left-radius: 15px;
         border-bottom-right-radius: 15px;
         border: 10px solid darkblue;
+      } */
+      #container > div:first-child::after {
+        position: absolute;
+        content: "∯ New Essay";
+        background-color: #e0f2f1;
+        filter: drop-shadow(#4db6ac 0.5em 0.5em 0);
+        max-width: 30ch;
+        /*  transform: translate(75%, -2ex);   */
+        padding: 1.5em;
+        bottom: 3%;
+        left: 68%;
+        right: 0;
       }
     </style>
   </body>
