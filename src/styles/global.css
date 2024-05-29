@@ -177,10 +177,17 @@
     a:visited{
         color:#EC407A;
     }
-    article a[class='link']{
+
+    article a[href^="http://"]:not([href*="beautyofmathematics.com"]),
+    article  a[href^="https://"]:not([href*="beautyofmathematics.com"]), 
+    article  a[href^="//"]:not([href*="beautyofmathematics.com"]){
         margin: 0 1.35em 0 0;
     }
-      article a[class='link']::after {
+
+    
+article a[href^="http://"]:not([href*="beautyofmathematics.com"])::after,
+  article  a[href^="https://"]:not([href*="beautyofmathematics.com"])::after, 
+  article  a[href^="//"]:not([href*="beautyofmathematics.com"])::after {
         position: absolute;
         content: '';
         display: inline-block;
