@@ -14,9 +14,9 @@ const allPosts = (await getCollection("blog"))
     <BaseHead title="Home" description="From Math Anxiety to Math Confidence" />
   </head>
   <body class="bg-white-50">
-    <div class="grid grid-cols-12 mt-10">
+    <div class="grid grid-cols-12 h-screen lg:gap-1 gap-3">
       <div
-        class="lg:col-span-6 lg:col-start-2 col-span-9 col-start-3 col-end-10"
+        class="lg:col-span-6 lg:col-start-2 col-span-9 col-start-3 col-end-10 mt-10 lg:mt-0"
       >
         {
           allPosts.map((post) => (
@@ -30,7 +30,7 @@ const allPosts = (await getCollection("blog"))
                     <Image
                       src={post.data.heroImage.src}
                       alt={post.data.heroImage.alt}
-                      class="bw"
+                      class="h-full"
                     />
                   </div>
                   <div class="absolute positioning text-balance">
@@ -43,11 +43,11 @@ const allPosts = (await getCollection("blog"))
         }
       </div>
       <div
-        class="lg:col-span-3 lg:col-end-11 col-span-9 col-start-3 col-end-10 bg-primary-400 squares flex jusify-center items-start lg:text-[2.441rem] sma"
+        class="lg:col-span-3 lg:col-end-11 col-span-9 col-start-3 col-end-10 bg-primary-400 squares lg:text-[2.441rem] sma"
       >
         <a
           href="/math-love-songs"
-          class="hover:text-secondary-900 visited:text-black-900 text-black-900 no-underline"
+          class="hover:text-secondary-900 visited:text-black-900 text-black-900 no-underline text-center"
           >Songs About Math
           <div class="lg:pb-40"></div></a
         >
