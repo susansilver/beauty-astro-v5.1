@@ -7,7 +7,7 @@ import Footer from "../components/base/Footer.astro";
 
 const allPosts = (await getCollection("blog"))
   .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
-  .slice(0, 3);
+  .slice(0, 5);
 
 const categories = [
   ...new Set(allPosts.flatMap((blog) => blog.data.categories)),
@@ -128,7 +128,7 @@ const allTags = [
               }
             </ul>
           </li>
-          <li>View All ➤</li>
+          <li><button class="w-full">View All ➤</button></li>
         </ul>
       </div>
     </div>
