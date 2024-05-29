@@ -14,9 +14,9 @@ const allPosts = (await getCollection("blog"))
     <BaseHead title="Home" description="From Math Anxiety to Math Confidence" />
   </head>
   <body class="bg-white-50">
-    <div class="grid grid-cols-12 h-screen gap-1">
+    <div class="grid grid-cols-12 my-10">
       <div
-        class="lg:col-span-6 lg:col-start-2 col-span-9 col-start-3 col-end-10 mt-10 lg:mt-0"
+        class="lg:col-span-6 lg:col-start-2 col-span-10 span-row-1 col-start-2"
       >
         {
           allPosts.map((post) => (
@@ -30,7 +30,6 @@ const allPosts = (await getCollection("blog"))
                     <Image
                       src={post.data.heroImage.src}
                       alt={post.data.heroImage.alt}
-                      class="h-full"
                     />
                   </div>
                   <div class="absolute positioning text-balance">
@@ -43,52 +42,42 @@ const allPosts = (await getCollection("blog"))
         }
       </div>
       <div
-        class="lg:col-span-3 lg:col-end-11 col-span-9 col-start-3 col-end-10 bg-primary-400 squares lg:text-[2.441rem] sma"
+        class="lg:col-span-4 col-span-10 col-start-2 lg:col-start-8 bg-primary-400 squares lg:text-[2.441rem] sma"
       >
         <a
           href="/math-love-songs"
           class="hover:text-secondary-900 visited:text-black-900 text-black-900 no-underline text-center"
           >Songs About Math
-          <div class="lg:pb-40"></div></a
-        >
+        </a>
       </div>
       <div
-        class="lg:col-start-2 lg:col-span-3 lg:row-span-2 col-span-9 col-start-3 col-end-10 dominos flex justify-center items-start lg:text-[2.441rem] sma"
+        class="col-start-2 col-span-4 row-span-2 dominos flex justify-center items-start lg:text-[2.441rem] sma"
       >
         <a
           href="/blog"
           class="hover:text-secondary-900 visited:text-black-900 text-black-900 no-underline"
           >Blog
-          <div class="lg:pb-72"></div>
         </a>
       </div>
-      <div
-        class="lg:col-end-11 lg:col-span-6 lg:row-span-1 col-span-9 col-start-3 col-end-10 bg-primary-600 text-white-50"
-      >
-        <h1 class="flex justify-center items-center py-5 lg:text-7xl lar logo">
+      <div class="col-span-6 bg-primary-600 text-white-50">
+        <h1 class="flex justify-center items-center lg:text-7xl lar logo py-5">
           Beauty of Mathematics
         </h1>
       </div>
-      <div
-        class="lg:col-sart-4 lg:col-span-3 lg:row-span-1 col-span-9 col-start-3 col-end-10 bg-primary-500 lg:text-[2.441rem] sma"
-      >
+      <div class="col-span-3 bg-primary-500 lg:text-[2.441rem] sma">
         <a
           href="/about"
           class="flex justify-center items-center hover:text-secondary-900 visited:text-black-900 text-black-900 no-underline"
         >
           About
-          <div class="lg:pb-72"></div>
         </a>
       </div>
-      <div
-        class="lg:col-end-11 lg:col-span-3 lg:row-span-1 col-span-9 col-start-3 col-end-10 bg-primary-200 lg:text-[2.441rem] sma"
-      >
+      <div class="col-span-3 bg-primary-200 lg:text-[2.441rem] sma">
         <a
           href="/press"
           class="flex justify-center items-center hover:text-secondary-900 visited:text-black-900 text-black-900 no-underline"
         >
           Press
-          <div class="lg:pb-72"></div>
         </a>
       </div>
     </div>
