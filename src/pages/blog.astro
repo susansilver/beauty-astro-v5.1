@@ -92,6 +92,12 @@ const allPosts = (await getCollection("blog"))
         justify-content: center;
       }
 
+      @media only screen and (max-width: 480px) {
+        #container > div:first-child {
+          flex-basis: 7680px;
+        }
+      }
+
       /* #container > div:first-child img {
         border-top-left-radius: 15px;
         border-bottom-right-radius: 15px;
