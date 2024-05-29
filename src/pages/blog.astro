@@ -31,11 +31,10 @@ const allPosts = (await getCollection("blog"))
                   class="no-underline text-black-900 visited:text-black-900 hover:text-secondary-900"
                 >
                   <div class="relative lg:text-[1.563rem] xs">
-                    <div class="wrap">
+                    <div class="wrap flex justify-center">
                       <Image
                         src={post.data.thumbnail}
                         alt={post.data.heroImage.alt}
-                        class="flex justify-center"
                       />
                     </div>
                     <div class="absolute positioning text-balance">
