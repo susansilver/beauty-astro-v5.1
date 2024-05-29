@@ -35,6 +35,7 @@ const allPosts = (await getCollection("blog"))
                       <Image
                         src={post.data.thumbnail}
                         alt={post.data.heroImage.alt}
+                        class="flex justify-center"
                       />
                     </div>
                     <div class="absolute positioning text-balance">
