@@ -25,11 +25,9 @@ const allTags = [
   <body class="bg-white-50">
     <Header />
     <div class="grid grid-cols-12 mt-10">
-      <div
-        class="col-span-10 col-start-2 col-end-11 lg:flex lg:flex-row mb-8 hidden"
-      >
+      <div class="col-span-10 col-start-2 col-end-11 lg:flex lg:flex-row mb-8">
         <div>Related tags:</div>
-        <ul class="flex flex-row list-none">
+        <ul class="flex flex-row list-none flex-wrap">
           {
             allTags.map((tag) => {
               // Check if category is defined
@@ -60,7 +58,7 @@ const allTags = [
         {
           allPosts.map((post) => (
             <>
-              <div class="p-5 relative">
+              <div class="pb-5 relative">
                 <a
                   href={`/${post.slug}`}
                   class="no-underline text-black-900 visited:text-black-900 hover:text-secondary-900"
@@ -123,14 +121,12 @@ const allTags = [
       #container > div:first-child {
         flex-basis: 7680px;
         max-width: fit-content;
-        padding: 0 10em;
       }
 
       @media screen and (max-width: 1280px) {
         #container > div:first-child {
           flex-basis: 7680px;
           max-width: fit-content;
-          padding: 0 0.75rem;
         }
       }
 
@@ -149,7 +145,7 @@ const allTags = [
         max-width: 30ch;
         /*  transform: translate(75%, -2ex);   */
         padding: 1.5em;
-        bottom: 0;
+        bottom: 8%;
         left: 68%;
         right: 0;
       }
