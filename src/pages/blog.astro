@@ -61,7 +61,7 @@ const allTags = [
           <li class="hidden lg:flex lg:flex-col">
             Categories
             <ul class="list-none">
-              {
+              <!--  {
                 categories.map((category) => (
                   <li>
                     <a href={`/category/${category}`}>
@@ -69,13 +69,29 @@ const allTags = [
                     </a>
                   </li>
                 ))
+              } -->
+              {
+                categories.map((category) => {
+                  // Check if category is defined
+                  if (category) {
+                    return (
+                      <li>
+                        <a href={`/category/${category}`}>
+                          {category.replace(/-/g, " ").toUpperCase()}
+                        </a>
+                      </li>
+                    );
+                  }
+                  // Return null if category is not defined
+                  return null;
+                })
               }
             </ul>
           </li>
           <li class="hidden lg:flex lg:flex-col">
             Tags
             <ul>
-              {
+              <!--  {
                 allTags.map((tag) => (
                   <li>
                     <a
@@ -87,6 +103,26 @@ const allTags = [
                     </a>
                   </li>
                 ))
+              } -->
+              {
+                allTags.map((tag) => {
+                  // Check if category is defined
+                  if (tag) {
+                    return (
+                      <li>
+                        <a
+                          class="tag"
+                          href={`/tag/${tag}`}
+                          title={`View posts tagged under "${tag}"`}
+                        >
+                          {tag.replace(/-/g, " ").toUpperCase()}
+                        </a>
+                      </li>
+                    );
+                  }
+                  // Return null if category is not defined
+                  return null;
+                })
               }
             </ul>
           </li>
