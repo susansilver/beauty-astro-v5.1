@@ -7,7 +7,7 @@ import Footer from "../components/base/Footer.astro";
 
 const allPosts = (await getCollection("blog"))
   .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
-  .slice(0, 5);
+  .slice(0, 3);
 
 const categories = [
   ...new Set(allPosts.flatMap((blog) => blog.data.categories)),
@@ -26,14 +26,41 @@ const allTags = [
     <Header />
     <div class="grid grid-cols-12 mt-10">
       <div
+        class="col-span-10 col-start-2 col-end-11 lg:flex lg:flex-row mb-8 hidden"
+      >
+        <div>Related tags:</div>
+        <ul class="flex flex-row list-none">
+          {
+            allTags.map((tag) => {
+              // Check if category is defined
+              if (tag) {
+                return (
+                  <li class="px-3">
+                    <a
+                      class="tag"
+                      href={`/tag/${tag}`}
+                      title={`View posts tagged "${tag}"`}
+                    >
+                      #{tag.replace(/-/g, " ")}
+                    </a>
+                  </li>
+                );
+              }
+              // Return null if category is not defined
+              return null;
+            })
+          }
+        </ul>
+      </div>
+      <div
         id="container"
-        class="lg:flex lg:flex-wrap lg:col-span-8 col-start-2 col-span-10 lg:col-start-2 col-end-10 lg:col-end-8"
+        class="lg:flex lg:flex-wrap justify-center items-center col-span-10 col-start-2 col-end-11"
       >
         <!-- <ul class="list-none"> -->
         {
           allPosts.map((post) => (
             <>
-              <div class="p-3 relative">
+              <div class="p-5 relative">
                 <a
                   href={`/${post.slug}`}
                   class="no-underline text-black-900 visited:text-black-900 hover:text-secondary-900"
@@ -56,60 +83,8 @@ const allTags = [
         }
         <!--  </ul> -->
       </div>
-      <div class="lg:col-span-3 col-span-10 col-start-2 lg:col-start-9">
-        <ul class="list-none flex flex-row lg:flex-col gap-3">
-          <li class="hidden lg:flex lg:flex-col">
-            Categories
-            <ul class="list-none">
-              {
-                categories.map((category) => {
-                  // Check if category is defined
-                  if (category) {
-                    return (
-                      <li>
-                        <a
-                          href={`/category/${category}`}
-                          title={`View posts in "${category}"`}
-                          class="category"
-                        >
-                          {category.replace(/-/g, " ")}
-                        </a>
-                      </li>
-                    );
-                  }
-                  // Return null if category is not defined
-                  return null;
-                })
-              }
-            </ul>
-          </li>
-          <li class="hidden lg:flex lg:flex-col">
-            Tags
-            <ul>
-              {
-                allTags.map((tag) => {
-                  // Check if category is defined
-                  if (tag) {
-                    return (
-                      <li>
-                        <a
-                          class="tag"
-                          href={`/tag/${tag}`}
-                          title={`View posts tagged "${tag}"`}
-                        >
-                          {tag.replace(/-/g, " ")}
-                        </a>
-                      </li>
-                    );
-                  }
-                  // Return null if category is not defined
-                  return null;
-                })
-              }
-            </ul>
-          </li>
-          <li><button class="w-full">View All ➤</button></li>
-        </ul>
+      <div class="col-span-10 col-start-2 col-end-11 flex justify-end">
+        <button>View All ➤</button>
       </div>
     </div>
     <Footer />
@@ -147,8 +122,23 @@ const allTags = [
 
       #container > div:first-child {
         flex-basis: 7680px;
-        display: flex;
-        justify-content: center;
+        max-width: fit-content;
+        padding: 0 10em;
+      }
+
+      @media screen and (max-width: 1280px) {
+        #container > div:first-child {
+          flex-basis: 7680px;
+          max-width: fit-content;
+          padding: 0 0.75rem;
+        }
+      }
+
+      @media screen and (min-width: 600px) {
+        #container {
+          max-width: fit-content;
+          padding: 0 0;
+        }
       }
 
       #container > div:first-child::after {
@@ -159,7 +149,7 @@ const allTags = [
         max-width: 30ch;
         /*  transform: translate(75%, -2ex);   */
         padding: 1.5em;
-        bottom: 3%;
+        bottom: 0;
         left: 68%;
         right: 0;
       }
