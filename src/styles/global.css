@@ -16,8 +16,8 @@
          background-color: #0288d1;
         
          /* Create the gradient. */
-         background-image: 
-             linear-gradient(180deg,#0288d1,#f48fb1);
+         background-image:  radial-gradient(#0D47A1,#f48fb1);
+             /* linear-gradient(180deg,#0288d1,#f48fb1); */
          
          /* Set the background size and repeat properties. */
          background-size: 100%;
@@ -86,7 +86,7 @@
         
         /* Create the gradient. */
         background-image: 
-            linear-gradient(180deg,#0288d1,#f48fb1);
+        radial-gradient(#0D47A1,#f48fb1);
         
         /* Set the background size and repeat properties. */
         background-size: 100%;
@@ -102,7 +102,7 @@
         border: 3px solid;
         border-image-slice: 1;
         border-width: 5px;
-        border-image-source:  linear-gradient(to right, #0288d1, #f48fb1);
+        border-image-source:  radial-gradient(#0D47A1,#f48fb1);
         border-left: 0;
         border-right: 0;
         border-top: 0;
