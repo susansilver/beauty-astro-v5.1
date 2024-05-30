@@ -109,9 +109,11 @@ const allTags = [
           max-width: fit-content;
           padding: 0 0;
         }
+      }
 
+      @media screen and (max-width: 600px) {
         #container > div:first-child::after {
-          display: hidden;
+          display: none;
         }
       }
 
@@ -122,7 +124,6 @@ const allTags = [
         background-color: #e0f2f1;
         filter: drop-shadow(#4db6ac 0.5em 0.5em 0);
         max-width: 15ch;
-        /*  transform: translate(75%, -2ex);   */
         padding: 1.5em;
         bottom: 0;
         left: 60%;
