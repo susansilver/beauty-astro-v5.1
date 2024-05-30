@@ -36,7 +36,7 @@ const allTags = [
                       alt={post.data.heroImage.alt}
                     />
                   </div>
-                  <div class="absolute positioning text-balance bg-white-50 p-1 rounded-xl title">
+                  <div class="absolute positioning text-balance bg-white-50 p-1 rounded-xl title text-primary-900">
                     <a
                       href={`/${post.slug}`}
                       class="no-underline text-primary-900 visited:text-black-900 hover:text-secondary-900"
@@ -109,9 +109,14 @@ const allTags = [
           max-width: fit-content;
           padding: 0 0;
         }
+
+        #container > div:first-child::after {
+          display: hidden;
+        }
       }
 
       #container > div:first-child::after {
+        display: block;
         position: absolute;
         content: "∯ New";
         background-color: #e0f2f1;
