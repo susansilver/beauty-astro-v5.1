@@ -33,7 +33,7 @@ const allTags = [
               // Check if category is defined
               if (tag) {
                 return (
-                  <li class="px-3">
+                  <li class="m-3">
                     <a
                       class="tag"
                       href={`/tag/${tag}`}
@@ -81,8 +81,10 @@ const allTags = [
         }
         <!--  </ul> -->
       </div>
-      <div class="col-span-10 col-start-2 col-end-11 flex justify-end">
-        <button>View All ➤</button>
+      <div
+        class="col-span-10 col-start-2 col-end-11 flex lg:justify-center justify-end"
+      >
+        <button class="lg:w-full">View All ➤</button>
       </div>
     </div>
     <Footer />
@@ -148,9 +150,11 @@ const allTags = [
         left: 60%;
         right: 0;
       }
-      .tag,
-      .category {
+      .tag {
         text-transform: capitalize;
+        background-color: #f8bbd0;
+        text-decoration: none;
+        padding: 0.5em;
       }
     </style>
   </body>
