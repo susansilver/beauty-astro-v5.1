@@ -97,7 +97,7 @@ const allTags = [
 
       .title {
         max-width: 50ch;
-        padding: 0.5em;
+        padding: 0 1.5em;
       }
 
       #container > div:first-child {
@@ -111,14 +111,7 @@ const allTags = [
         }
       }
 
-      @media screen and (max-width: 600px) {
-        #container > div:first-child::after {
-          display: none;
-        }
-      }
-
       #container > div:first-child::after {
-        display: block;
         position: absolute;
         content: "∯ New";
         background-color: #e0f2f1;
