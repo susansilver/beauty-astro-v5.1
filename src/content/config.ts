@@ -1,4 +1,4 @@
-import { imageMetadata } from 'astro/assets/utils';
+/* import { imageMetadata } from 'astro/assets/utils'; */
 import { defineCollection, z } from 'astro:content';
 
 const blog = defineCollection({
