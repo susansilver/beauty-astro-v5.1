@@ -30,22 +30,22 @@ const allTags = [
           allPosts.map((post) => (
             <>
               <div class="p-5 relative">
-                <a
-                  href={`/${post.slug}`}
-                  class="no-underline text-black-900 visited:text-black-900 hover:text-secondary-900"
-                >
-                  <div class="relative lg:text-[1.563rem] xs">
-                    <div class="wrap flex justify-center">
-                      <Image
-                        src={post.data.thumbnail}
-                        alt={post.data.heroImage.alt}
-                      />
-                    </div>
-                    <div class="absolute positioning text-balance text-primary-900 bg-white-50 p-1 rounded-xl">
-                      {post.data.title}
-                    </div>
+                <div class="relative lg:text-[1.563rem] xs">
+                  <div class="wrap flex justify-center">
+                    <Image
+                      src={post.data.thumbnail}
+                      alt={post.data.heroImage.alt}
+                    />
                   </div>
-                </a>
+                  <div class="absolute positioning text-balance bg-white-50 p-1 rounded-xl">
+                    <a
+                      href={`/${post.slug}`}
+                      class="no-underline text-primary-900 visited:text-black-900 hover:text-secondary-900"
+                    >
+                      {post.data.title}
+                    </a>
+                  </div>
+                </div>
               </div>
             </>
           ))
