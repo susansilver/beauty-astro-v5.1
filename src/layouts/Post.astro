@@ -1,6 +1,7 @@
 ---
 import type { CollectionEntry } from "astro:content";
 import BaseHead from "../components/base/BaseHead.astro";
+import TOC from "../components/TableOfContents.astro";
 
 interface Props {
   frontmatter: CollectionEntry<"blog">["data"] & {
@@ -8,8 +9,14 @@ interface Props {
       src: string;
     };
   };
+  headings: {
+    slug: string;
+    text: string;
+    depth: number;
+  }[];
 }
-const { frontmatter } = Astro.props;
+
+const { frontmatter, headings } = Astro.props;
 ---
 
 <html lang="en" class="scroll-smooth">
@@ -46,6 +53,16 @@ const { frontmatter } = Astro.props;
             <div
               class="dark:prose-invert prose prose-slate prose-xl col-span-10 col-start-2 col-end-12 md:col-span-6 md:col-start-4 md:col-end-10 mx-auto"
             >
+              <nav class="article-toc">
+                {
+                  headings && headings.length > 0 && (
+                    <>
+                      <h3>Table of Contents</h3>
+                      <TOC headings={headings} />
+                    </>
+                  )
+                }
+              </nav>
               <slot />
             </div>
           </div>
