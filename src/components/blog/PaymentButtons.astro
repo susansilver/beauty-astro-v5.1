@@ -3,60 +3,27 @@
 ---
 
 <p>
-  If you’re feeling generous, <a
-    href="https://www.patreon.com/susansilver"
-    target="_blank">consider supporting me on Patreon</a
-  > with monthly support as low as $1.
+  If you liked that, consider supporting me on Patreon with monthly support
+  starting at $1.
 </p>
 
-<p>You can also send me a one time donation via the tip button.</p>
-<p>Thank you for your support!</p>
-
-<button
-  id="tip"
-  class="w-full mt-8 mx-3 md:text-2xl p-2 text-black-900 bg-accent-400 rounded hover:rounded-xl hover:bg-accent-600"
-  ">Tip me</button
+<a href="https://www.patreon.com/susansilver" target="_blank"
+  ><button class="w-full">Patreon</button></a
 >
 
-<div id="tip-dropdown">
-  <a href="#">PayPal</a>
-  <a href="#">Ko-fi</a>
-</div>
-
-<style>
-  #tip-dropdown {
-    display: none;
-    position: absolute;
-    background-color: #f9f9f9;
-    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-    z-index: 1;
-  }
-
-  #tip-dropdown a {
-    display: block;
-    color: black;
-    text-decoration: none;
-    padding: 12px 16px;
-  }
-
-  #tip-dropdown a:hover {
-    background-color: #f1f1f1;
-  }
-</style>
-
-<script>
-  const username = "SuzzaS";
-  const tipButton = document.querySelector("#tip");
-  const tipDropdown = document.querySelector("#tip-dropdown");
-  const links = tipDropdown.querySelectorAll("a");
-
-  links[0].href = `https://paypal.me/${username}`;
-  links[0].target = "_blank";
-  links[1].href = `https://ko-fi.com/${username}`;
-  links[1].target = "_blank";
-
-  tipButton.addEventListener("click", function () {
-    tipDropdown.style.display =
-      tipDropdown.style.display === "none" ? "block" : "none";
-  });
-</script>
+<p class="pt-5">
+  You can also send me a one time donation via Ko-fi or Paypal.
+</p>
+<ul class="flex flex-col list-none justify-start gap-3">
+  <li>
+    <a href="https://ko-fi.com/SuzzaS" target="_blank"
+      ><button class="w-full">Ko-fi</button></a
+    >
+  </li>
+  <li>
+    <a href="https://paypal.me/SuzzaS" target="_blank"
+      ><button class="w-full">Paypal</button></a
+    >
+  </li>
+</ul>
+<p>Thank you for your support!</p>
