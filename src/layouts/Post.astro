@@ -2,6 +2,7 @@
 import type { CollectionEntry } from "astro:content";
 import BaseHead from "../components/base/BaseHead.astro";
 import Header from "../components/base/Header.astro";
+import Infinity from "../components/blog/Infinity.astro";
 import TOC from "../components/TableOfContents.astro";
 
 interface Props {
@@ -32,9 +33,9 @@ const { frontmatter, headings } = Astro.props;
   <body class="bg-white-50">
     <Header />
     <main>
-      <article id="single-article">
+      <article>
         <div class="grid grid-cols-12">
-          <div class="md:col-span-3 md:col-start-2 md:block hidden">
+          <div class="md:col-span-2 md:col-start-2 md:block hidden">
             <nav class="article-toc sticky top-0">
               {
                 headings && headings.length > 0 && (
@@ -46,11 +47,19 @@ const { frontmatter, headings } = Astro.props;
               }
             </nav>
           </div>
-          <div class="md:col-start-5 md:col-span-7 col-span-10 col-start-2">
+          <div
+            class="md:col-start-4 md:col-span-8 col-span-10 col-start-2"
+            id="single-article"
+          >
             <slot />
+            <Infinity />
           </div>
         </div>
       </article>
     </main>
-  </body>
+  </body><style>
+    #single-article {
+      max-width: 75ch;
+    }
+  </style>
 </html>

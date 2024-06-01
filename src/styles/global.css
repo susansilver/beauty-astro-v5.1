@@ -58,9 +58,13 @@
         font-size: 1rem;
     }
     ul, ol{
-        padding-left:1.5em;
-        margin-top: 0.25em 0;
-        list-style-type: disc;
+        padding-inline-start:0.7ch;
+        margin-inline-start:-0.7ch;
+
+    }
+
+    ul {
+        list-style-type: disc; 
     }
 
     ul > li > ul {
@@ -69,15 +73,14 @@
 
     ol {
         list-style-type: decimal;
-        padding-left:1.5em;
     }
 
     ol > li > ol {
         list-style-type: lower-alpha;
     }
 
-    p{
-        margin: 1.125em 0;
+    h1,h2,h3, p{
+        margin: 0.5em 0;
     }
     .gradient-text{
 
