@@ -50,10 +50,8 @@ const { frontmatter, headings } = Astro.props;
         <hr />
         <div>
           <div class="mt-8 mx-auto grid grid-cols-12">
-            <div
-              class="dark:prose-invert prose prose-slate prose-xl col-span-10 col-start-2 col-end-12 md:col-span-6 md:col-start-4 md:col-end-10 mx-auto"
-            >
-              <nav class="article-toc">
+            <div class="col-span-3 col-start-2">
+              <nav class="article-toc sticky top-0">
                 {
                   headings && headings.length > 0 && (
                     <>
@@ -63,6 +61,8 @@ const { frontmatter, headings } = Astro.props;
                   )
                 }
               </nav>
+            </div>
+            <div class="col-start-5 col-span-7">
               <slot />
             </div>
           </div>
