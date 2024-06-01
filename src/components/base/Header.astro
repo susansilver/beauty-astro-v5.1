@@ -67,13 +67,13 @@ const categories = [
             </button>
             <DropdownItems class="relative">
               <div class="lg:absolute lg:top-0 bg-white-50">
-                <ul>
+                <ul class="list-none">
                   {
                     categories.map((category) => {
                       // Check if category is defined
                       if (category) {
                         return (
-                          <li>
+                          <li class="p-2">
                             <a
                               href={`/category/${category}`}
                               title={`View posts in "${category}"`}
