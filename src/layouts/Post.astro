@@ -1,5 +1,6 @@
 ---
 import type { CollectionEntry } from "astro:content";
+import { Image } from "astro:assets";
 import BaseHead from "../components/base/BaseHead.astro";
 import Header from "../components/base/Header.astro";
 import Infinity from "../components/blog/Infinity.astro";
@@ -35,11 +36,22 @@ const { frontmatter, headings } = Astro.props;
     <Header />
     <main class="mt-10">
       <article>
-        <div
-          class="flex flex-col justify-center items-center py-32 px-5 bg-primary-100 text-balance"
-        >
-          <small>Updated on {frontmatter.updatedDate}</small>
-          <h1>{frontmatter.title}</h1>
+        <div class="flex lg:flex-row flex-col px-5 bg-primary-200">
+          <div class="wrap">
+            <Image
+              src={frontmatter.heroImage.src}
+              width={900}
+              height={300}
+              format="webp"
+              alt={frontmatter.heroImage.alt}
+            />
+          </div>
+          <div
+            class="flex flex-col justify-center items-center text-balance w-full bg-primary-200"
+          >
+            <small>Updated on {frontmatter.updatedDate}</small>
+            <h1>{frontmatter.title}</h1>
+          </div>
         </div>
         <div class="grid grid-cols-12">
           <div class="md:col-span-2 md:col-start-2 md:block hidden">
@@ -64,7 +76,6 @@ const { frontmatter, headings } = Astro.props;
           </div>
         </div>
       </article>
-
       <style>
         #single-article {
           max-width: 75ch;
