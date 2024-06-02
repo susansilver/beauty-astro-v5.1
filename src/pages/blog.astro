@@ -32,8 +32,10 @@ const allTags = [
                 <div class="relative lg:text-[1.563rem] xs pile">
                   <div class="wrap flex justify-center">
                     <Image
-                      src={post.data.thumbnail}
+                      src={post.data.heroImage.src}
                       alt={post.data.heroImage.alt}
+                      width={450}
+                      height={300}
                     />
                   </div>
                   <div class="absolute positioning text-balance bg-white-50 p-1 title">
