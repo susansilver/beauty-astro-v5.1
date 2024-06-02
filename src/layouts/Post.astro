@@ -33,23 +33,10 @@ const { frontmatter, headings } = Astro.props;
 
   <body class="bg-white-50">
     <Header />
-    <main>
+    <main class="mt-10">
       <article>
-        <div
-          class="flex justify-evenly"
-          style="background-color:rgba(100, 181, 246, 0.75);"
-        >
-          <div class="wrap">
-            <img
-              width={1020}
-              height={510}
-              src={frontmatter.heroImage.src}
-              alt={frontmatter.heroImage.alt}
-            />
-          </div>
-          <div class="before-title">
-            <h1>{frontmatter.title}</h1>
-          </div>
+        <div class="flex justify-center items-center py-40 bg-primary-100">
+          <h1>{frontmatter.title}</h1>
         </div>
         <div class="grid grid-cols-12">
           <div class="md:col-span-2 md:col-start-2 md:block hidden">
@@ -74,33 +61,34 @@ const { frontmatter, headings } = Astro.props;
           </div>
         </div>
       </article>
+
+      <style>
+        #single-article {
+          max-width: 75ch;
+        }
+
+        .wrap {
+          position: relative;
+        }
+
+        .wrap:after {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background: rgba(100, 181, 246, 0.75);
+        }
+        .wrap img {
+          -webkit-filter: grayscale(100%);
+          filter: grayscale(100%);
+        }
+
+        before-title::before {
+          border-left: 5px solid black;
+        }
+      </style>
     </main>
-    <style>
-      #single-article {
-        max-width: 75ch;
-      }
-
-      .wrap {
-        position: relative;
-      }
-
-      .wrap:after {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(100, 181, 246, 0.75);
-      }
-      .wrap img {
-        -webkit-filter: grayscale(100%);
-        filter: grayscale(100%);
-      }
-
-      before-title::before {
-        border-left: 5px solid black;
-      }
-    </style>
   </body>
 </html>
