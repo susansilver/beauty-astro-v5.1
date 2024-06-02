@@ -42,7 +42,7 @@ const { frontmatter, headings } = Astro.props;
     <main class="mt-10">
       <article>
         <div
-          class="flex lg:flex-row justify-center items center flex-col bg-primary-200"
+          class="flex lg:flex-row justify-stretch items-center flex-col bg-primary-200"
         >
           <div class="wrap">
             <HeaderImage
@@ -98,10 +98,10 @@ const { frontmatter, headings } = Astro.props;
           height: 100%;
           background: rgba(100, 181, 246, 0.75);
         }
-        .wrap img {
+        /*  .wrap img {
           -webkit-filter: grayscale(100%);
           filter: grayscale(100%);
-        }
+        } */
 
         .slash::before {
           content: "";
