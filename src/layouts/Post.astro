@@ -1,6 +1,7 @@
 ---
 import type { CollectionEntry } from "astro:content";
 import BaseHead from "../components/base/BaseHead.astro";
+import HeaderImage from "../components/blog/HeaderImage.astro";
 import Header from "../components/base/Header.astro";
 import Infinity from "../components/blog/Infinity.astro";
 import Support from "../components/blog/PaymentButtons.astro";
@@ -40,7 +41,10 @@ const { frontmatter, headings } = Astro.props;
           style="background-color:rgba(100, 181, 246, 0.75);"
         >
           <div class="wrap">
-            <img src={frontmatter.thumbnail} alt={frontmatter.heroImage.alt} />
+            <img
+              alt={frontmatter.heroImage.alt}
+              src={frontmatter.heroImage.src}
+            />
           </div>
           <div class="before-title">
             <h1>{frontmatter.title}</h1>
