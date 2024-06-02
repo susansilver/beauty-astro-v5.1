@@ -31,7 +31,16 @@ const {
 <link rel="canonical" href={canonicalURL} />
 
 <!-- RSS Feed Discovery -->
-<link rel="alternate" type="application/rss+xml" title="RSS" href="/rss.xml" />
+<!-- <link rel="alternate" type="application/rss+xml" title="RSS" href="/rss.xml" /> -->
+<link
+  rel="alternate"
+  type="application/rss+xml"
+  title="Beauty of Mathematics"
+  href={`${Astro.site}rss.xml`}
+/>
+
+<!-- Sitemap -->
+<link rel="sitemap" href="/sitemap-index.xml" />
 
 <!-- Primary Meta Tags -->
 <title>{title} - {SITE_TITLE}</title>
