@@ -12,6 +12,7 @@
     }
     h2 {
         font-size: 1.953rem;
+        text-wrap: balance;
          /* Fallback: Set a background color. */
          background-color: #0288d1;
         
