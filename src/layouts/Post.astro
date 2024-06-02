@@ -11,6 +11,9 @@ interface Props {
   frontmatter: CollectionEntry<"blog">["data"] & {
     heroImage: {
       src: string;
+      alt: string;
+      title: string;
+      description: string;
     };
   };
   headings: {
@@ -49,7 +52,7 @@ const { frontmatter, headings } = Astro.props;
           <div
             class="flex flex-col justify-center items-center text-balance w-full bg-primary-200"
           >
-            <small>Updated on {frontmatter.updatedDate}</small>
+            <small><time>{frontmatter.updatedDate}</time></small>
             <h1>{frontmatter.title}</h1>
           </div>
         </div>
