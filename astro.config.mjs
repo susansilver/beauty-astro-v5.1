@@ -2,8 +2,9 @@ import { defineConfig } from 'astro/config';
 import tailwind from "@astrojs/tailwind";
 import favicons from "astro-favicons";
 import mdx from "@astrojs/mdx";
-
 import icon from "astro-icon";
+
+import sitemap from "@astrojs/sitemap";
 
 // https://astro.build/config
 export default defineConfig({
@@ -38,5 +39,5 @@ export default defineConfig({
     windows: true,
     // Create Windows 8 tile icons. `boolean` or `{ offset, background }` or an array of sources
     yandex: true // Create Yandex browser icon. `boolean` or `{ offset, background }` or an array of sources
-  }), tailwind(), mdx(), icon()]
+  }), tailwind(), mdx(), icon(), sitemap()]
 });
