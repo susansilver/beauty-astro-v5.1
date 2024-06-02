@@ -35,7 +35,10 @@ const { frontmatter, headings } = Astro.props;
     <Header />
     <main class="mt-10">
       <article>
-        <div class="flex justify-center items-center py-40 bg-primary-100">
+        <div
+          class="flex flex-col justify-center items-center py-32 px-5 bg-primary-100 text-balance"
+        >
+          <small>Updated on {frontmatter.updatedDate}</small>
           <h1>{frontmatter.title}</h1>
         </div>
         <div class="grid grid-cols-12">
