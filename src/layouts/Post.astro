@@ -35,7 +35,10 @@ const { frontmatter, headings } = Astro.props;
     <Header />
     <main>
       <article>
-        <div class="bg-primary-200 flex justify-evenly">
+        <div
+          class="flex justify-evenly"
+          style="background-color:rgba(100, 181, 246, 0.75);"
+        >
           <div class="wrap">
             <img
               src={frontmatter.heroImage.src}
@@ -85,7 +88,7 @@ const { frontmatter, headings } = Astro.props;
         left: 0;
         width: 100%;
         height: 100%;
-        background: rgba(144, 202, 249, 0.75);
+        background: rgba(100, 181, 246, 0.75);
       }
       .wrap img {
         -webkit-filter: grayscale(100%);
