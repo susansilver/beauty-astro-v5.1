@@ -4,7 +4,6 @@ import BaseHead from "../components/base/BaseHead.astro";
 import Header from "../components/base/Header.astro";
 import Infinity from "../components/blog/Infinity.astro";
 import Support from "../components/blog/PaymentButtons.astro";
-import Related from "../components/blog/RelatedArticles.astro";
 import TOC from "../components/TableOfContents.astro";
 
 interface Props {
@@ -54,7 +53,6 @@ const { frontmatter, headings } = Astro.props;
             id="single-article"
           >
             <slot />
-            <Related />
             <Support />
             <Infinity />
           </div>
