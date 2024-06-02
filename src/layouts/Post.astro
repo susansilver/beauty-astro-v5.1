@@ -40,13 +40,11 @@ const { frontmatter, headings } = Astro.props;
           style="background-color:rgba(100, 181, 246, 0.75);"
         >
           <div class="wrap">
-            <img
-              src={frontmatter.heroImage.src}
-              alt={frontmatter.heroImage.alt}
-              style="height:300px; width:600px;"
-            />
+            <img src={frontmatter.thumbnail} alt={frontmatter.heroImage.alt} />
           </div>
-          <div><h1>{frontmatter.title}</h1></div>
+          <div class="before-title">
+            <h1>{frontmatter.title}</h1>
+          </div>
         </div>
         <div class="grid grid-cols-12">
           <div class="md:col-span-2 md:col-start-2 md:block hidden">
@@ -93,6 +91,10 @@ const { frontmatter, headings } = Astro.props;
       .wrap img {
         -webkit-filter: grayscale(100%);
         filter: grayscale(100%);
+      }
+
+      before-title::before {
+        border-left: 5px solid black;
       }
     </style>
   </body>
