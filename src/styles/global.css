@@ -193,9 +193,9 @@
     }
 
     
-    article a[href^="http://"]:not([href*="beautyofmathematics.com"]):not(:has(.btn))::after,
-article a[href^="https://"]:not([href*="beautyofmathematics.com"]):not(:has(.btn))::after, 
-article a[href^="//"]:not([href*="beautyofmathematics.com"]):not(:has(.btn))::after   {
+    article a[href^="http://"]:not([href*="beautyofmathematics.com"])::after,
+article a[href^="https://"]:not([href*="beautyofmathematics.com"])::after, 
+article a[href^="//"]:not([href*="beautyofmathematics.com"])::after   {
         position: absolute;
         content: '';
         display: inline-block;
