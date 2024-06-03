@@ -3,7 +3,7 @@ import type { CollectionEntry } from "astro:content";
 import BaseHead from "../components/base/BaseHead.astro";
 import Header from "../components/base/Header.astro";
 import HeaderImage from "../components/blog/HeaderImage.astro";
-import Infinity from "../components/blog/Infinity.astro";
+/* import Infinity from "../components/blog/Infinity.astro"; */
 import Support from "../components/blog/PaymentButtons.astro";
 import TOC from "../components/TableOfContents.astro";
 
@@ -69,10 +69,10 @@ const { frontmatter, headings } = Astro.props;
               }
             </nav>
             <details
-              class="md:hidden block fixed bottom-0 left-0 w-full bg-accent-50 border-accent-300 border-4 p-5 z-10 mobile-toc"
+              class="md:hidden block fixed bottom-0 left-0 w-full bg-accent-50 border-accent-300 border-4 z-10 mobile-toc"
             >
-              <summary>Table of Contents</summary>
-              <nav class="article-toc m-5">
+              <summary class="p-3">Table of Contents</summary>
+              <nav class="article-toc mx-10">
                 {
                   headings && headings.length > 0 && (
                     <>
@@ -89,7 +89,7 @@ const { frontmatter, headings } = Astro.props;
           >
             <slot />
             <Support />
-            <Infinity />
+            <!--   <Infinity /> -->
           </div>
           <div class="md:col-span-1 md:col-start-11 col-span-10 col-start-2">
             Text
