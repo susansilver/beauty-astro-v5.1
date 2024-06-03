@@ -152,7 +152,7 @@
         right: 0;
     }  
  
-    button, .btn{
+    button{
         padding:1.5em;
         border:5px solid #4DB6AC;
         padding:0.5em;
@@ -163,7 +163,7 @@
         border-bottom-right-radius:  15px;
     }
 
-     button:hover, .btn:hover{
+     button:hover{
         background-color: #4DB6AC;
     }
     time {
