@@ -13,31 +13,30 @@
     h2 {
         font-size: 1.953rem;
         text-wrap: balance;
-         /* Fallback: Set a background color. */
-         background-color: #0288d1;
+       
+        /*  background-color: #0288d1;
         
-         /* Create the gradient. */
+     
          background-image:   linear-gradient(to top right,#0D47A1,#f48fb1);
-             /* linear-gradient(180deg,#0288d1,#f48fb1); */
+            
          
-         /* Set the background size and repeat properties. */
+        
          background-size: 100%;
          background-repeat: repeat;
        
-         /* Use the text as a mask for the background. */
-         /* This will show the gradient as a text color rather than element bg. */
+       
          -webkit-background-clip: text;
          -webkit-text-fill-color: transparent; 
          -moz-background-clip: text;
          -moz-text-fill-color: transparent;
- 
+ */
          border: 3px solid;
         border-image-slice: 1;
         border-width: 5px;
         border-image-source:  linear-gradient(to right, #0D47A1, #f48fb1);
          border-left: 0;
          border-right: 0;
-         border-top: 0;
+         border-top: 0; 
     }
     .xl {
         font-size: 1.953rem;
