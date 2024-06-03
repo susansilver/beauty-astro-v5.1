@@ -57,8 +57,8 @@ const { frontmatter, headings } = Astro.props;
           </div>
         </div>
         <div class="grid grid-cols-12">
-          <div class="md:col-span-2 md:col-start-2 md:block hidden">
-            <nav class="article-toc sticky top-0">
+          <div class="md:col-span-2 md:col-start-2">
+            <nav class="article-toc sticky top-0 md:block hidden">
               {
                 headings && headings.length > 0 && (
                   <>
@@ -68,6 +68,20 @@ const { frontmatter, headings } = Astro.props;
                 )
               }
             </nav>
+            <details
+              class="md:hidden block fixed bottom-0 left-0 w-full bg-accent-50 border-accent-300 border-4 p-5 z-10 mobile-toc"
+            >
+              <summary>Table of Contents</summary>
+              <nav class="article-toc m-5">
+                {
+                  headings && headings.length > 0 && (
+                    <>
+                      <TOC headings={headings} />
+                    </>
+                  )
+                }
+              </nav>
+            </details>
           </div>
           <div
             class="md:col-start-5 md:col-span-6 col-span-10 col-start-2"
@@ -117,19 +131,33 @@ const { frontmatter, headings } = Astro.props;
           -moz-transform: skew(-20deg);
           -ms-transform: skew(-20deg);
           transform: skew(-20deg);
-          border: 3px solid;
-          border-image-slice: 1;
+          border-left: 3px solid #212121;
+          /*   border-image-slice: 1;
           border-width: 5px;
           border-image-source: linear-gradient(#0d47a1, #f48fb1);
           border-bottom: 0;
           border-right: 0;
-          border-top: 0;
+          border-top: 0; */
         }
 
         @media screen and (max-width: 1080px) {
           .slash::before {
             display: none;
           }
+        }
+
+        .mobile-toc {
+          border-top-left-radius: 15px;
+          border-bottom-right-radius: 15px;
+        }
+
+        details summary {
+          cursor: pointer;
+        }
+
+        details:not([open]):hover,
+        details:not([open]):focus {
+          background: #4db6ac;
         }
       </style>
     </main>
