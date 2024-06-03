@@ -109,7 +109,7 @@
         border: 3px solid;
         border-image-slice: 1;
         border-width: 5px;
-        border-image-source:  linear-gradient(to right, #0D47A1, #f48fb1);
+        border-image-source:  linear-gradient( #0D47A1, #f48fb1);
         border-left: 0;
         border-right: 0;
         border-top: 0;

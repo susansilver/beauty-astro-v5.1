@@ -112,11 +112,18 @@ const { frontmatter, headings } = Astro.props;
           top: 15%;
           left: 36%;
           bottom: 42%;
-          border-left: 3px solid #212121;
+          /*  border-left: 3px solid #212121; */
           -webkit-transform: skew(-20deg);
           -moz-transform: skew(-20deg);
           -ms-transform: skew(-20deg);
           transform: skew(-20deg);
+          border: 3px solid;
+          border-image-slice: 1;
+          border-width: 5px;
+          border-image-source: linear-gradient(#0d47a1, #f48fb1);
+          border-bottom: 0;
+          border-right: 0;
+          border-top: 0;
         }
 
         @media screen and (max-width: 1080px) {
