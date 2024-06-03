@@ -2,6 +2,7 @@
 import type { CollectionEntry } from "astro:content";
 import BaseHead from "../components/base/BaseHead.astro";
 import Header from "../components/base/Header.astro";
+import Footer from "../components/base/Footer.astro";
 import HeaderImage from "../components/blog/HeaderImage.astro";
 /* import Infinity from "../components/blog/Infinity.astro"; */
 import Support from "../components/blog/PaymentButtons.astro";
@@ -39,7 +40,7 @@ const { frontmatter, headings } = Astro.props;
   <body class="bg-white-50">
     <Header />
     <main class="mt-10">
-      <article>
+      <article class="pb-32">
         <div
           class="flex lg:flex-row justify-stretch items-center flex-col bg-primary-200"
         >
@@ -96,6 +97,7 @@ const { frontmatter, headings } = Astro.props;
           </div>
         </div>
       </article>
+      <Footer />
       <style>
         #single-article {
           max-width: 75ch;
