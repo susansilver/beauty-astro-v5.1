@@ -47,21 +47,29 @@ const { frontmatter, headings } = Astro.props;
         <div
           class="flex lg:flex-row justify-stretch items-center flex-col bg-primary-200"
         >
+          <!-- Article Header  -->
           <div class="wrap">
+            <!-- Article Header Image  -->
             <HeaderImage
               imagePath={frontmatter.heroImage.src}
               alt={frontmatter.heroImage.alt}
             />
           </div>
+          <!-- Article Header Image End -->
           <div
             class="flex flex-col justify-center items-center text-balance w-full bg-primary-200 px-12 text-center slash"
           >
+            <!-- Article Title  -->
             <small><time>{frontmatter.updatedDate}</time></small>
             <h1>{frontmatter.title}</h1>
           </div>
+          <!-- Article Title End -->
         </div>
+        <!-- Article Header End -->
         <div class="grid grid-cols-12 mt-5">
+          <!-- Article Body  -->
           <div class="md:col-span-2 md:col-start-2">
+            <!-- Table of Contents -->
             <nav class="article-toc sticky top-0 md:block hidden">
               {
                 headings && headings.length > 0 && (
@@ -87,53 +95,60 @@ const { frontmatter, headings } = Astro.props;
               </nav>
             </details>
           </div>
+          <!-- End Table of Contents -->
           <div
             class="md:col-start-5 md:col-span-6 col-span-10 col-start-2"
             id="single-article"
           >
+            <!-- Article Text and Meta -->
             <slot />
-
-            <ul class="list-none flex justify-start gap-x-4">
-              <li class="category">
-                Category: {
-                  frontmatter.categories ? (
-                    <a
-                      class="hover:text-black-900 underline"
-                      href={`/category/${frontmatter.categories}`}
-                      title={`View posts in "${frontmatter.categories}"`}
-                    >
-                      {frontmatter.categories.replace(/-/g, " ")}
-                    </a>
-                  ) : (
-                    "No category found"
-                  )
-                }
-              </li>
-              <li class="tags flex flex-row">
-                <span>Explore:</span>
-                <ul class="list-none flex flex-row flex-wrap">
-                  {
-                    Array.isArray(frontmatter.tags) ? (
-                      frontmatter.tags.map((tag) => (
-                        <li class="tag">
-                          <a
-                            class="hover:text-black-900 no-underline"
-                            href={`/tag/${tag}`}
-                            title={`View posts tagged "${tag}"`}
-                          >
-                            #{tag.replace(/-/g, " ")}
-                          </a>
-                        </li>
-                      ))
+            <div>
+              <!-- Tags and Categories -->
+              <ul class="list-none flex justify-start gap-x-4">
+                <li class="category">
+                  Category: {
+                    frontmatter.categories ? (
+                      <a
+                        class="hover:text-black-900 underline"
+                        href={`/category/${frontmatter.categories}`}
+                        title={`View posts in "${frontmatter.categories}"`}
+                      >
+                        {frontmatter.categories.replace(/-/g, " ")}
+                      </a>
                     ) : (
-                      <li class="tag">No tags found.</li>
+                      "No category found"
                     )
                   }
-                </ul>
-              </li>
-            </ul>
+                </li>
+                <li class="tags flex flex-row">
+                  <span>Explore:</span>
+                  <ul class="list-none flex flex-row flex-wrap">
+                    {
+                      Array.isArray(frontmatter.tags) ? (
+                        frontmatter.tags.map((tag) => (
+                          <li class="tag">
+                            <a
+                              class="hover:text-black-900 no-underline"
+                              href={`/tag/${tag}`}
+                              title={`View posts tagged "${tag}"`}
+                            >
+                              #{tag.replace(/-/g, " ")}
+                            </a>
+                          </li>
+                        ))
+                      ) : (
+                        <li class="tag">No tags found.</li>
+                      )
+                    }
+                  </ul>
+                </li>
+              </ul>
+            </div>
+            <!-- End Tags and Categories -->
             <div class="flex flex-row items-center">
+              <!-- Author Bio -->
               <div>
+                <!-- Image and Author Link -->
                 <Image
                   src={Avatar}
                   alt="Susan Silver holding a book with an orange and pink gradient background and a glitch effect"
@@ -146,7 +161,9 @@ const { frontmatter, headings } = Astro.props;
                 </p>
                 <p class="italic xs">The writer with the mathematical muse.</p>
               </div>
+              <!-- Image and Author Link End -->
               <div>
+                <!-- Social Media -->
                 <p class="font-bold">Follow</p>
                 <p>
                   <ul>
@@ -172,11 +189,15 @@ const { frontmatter, headings } = Astro.props;
                   </ul>
                 </p>
               </div>
+              <!-- Social Media End -->
             </div>
+            <!-- Author Bio End -->
             <Support />
             <!--   <Infinity /> -->
           </div>
+          <!-- Article Text and Meta End -->
         </div>
+        <!-- Article Body End -->
       </article>
       <Footer />
       <style>
