@@ -132,42 +132,49 @@ const { frontmatter, headings } = Astro.props;
                 </ul>
               </li>
             </ul>
+            <div class="flex flex-row items-center">
+              <div>
+                <Image
+                  src={Avatar}
+                  alt="Susan Silver holding a book with an orange and pink gradient background and a glitch effect"
+                  height={150}
+                  width={150}
+                  class="rounded-full"
+                />
+                <p>
+                  by <a href="/authors/susan-silver/">Suzza Silver</a>
+                </p>
+                <p class="italic xs">The writer with the mathematical muse.</p>
+              </div>
+              <div>
+                <p class="font-bold">Follow</p>
+                <p>
+                  <ul>
+                    <li class="flex justify-start items-start">
+                      <Icon name="mdi:mastodon" class="sma text-slate-500" />
+                      <a
+                        href="https://mathstodon.xyz/@suzza"
+                        class="visited:text-primary-900 hover:text-secondary-900 no-underline"
+                        >Mastodon</a
+                      >
+                    </li>
+                    <li class="flex justify-start items-start">
+                      <Icon
+                        name="mdi:account-circle"
+                        class="sma text-slate-500"
+                      />
+                      <a
+                        href="https://susansilver.net"
+                        class="visited:text-primary-900 hover:text-secondary-900 no-underline"
+                        >Suzza</a
+                      >
+                    </li>
+                  </ul>
+                </p>
+              </div>
+            </div>
             <Support />
             <!--   <Infinity /> -->
-          </div>
-          <div class="md:col-span-2 md:col-start-11 col-span-10 col-start-2">
-            <Image
-              src={Avatar}
-              alt="Susan Silver holding a book with an orange and pink gradient background and a glitch effect"
-              height={150}
-              width={150}
-              class="rounded-full"
-            />
-            <p>
-              by <a href="/authors/susan-silver/">Suzza Silver</a>
-            </p>
-            <p class="italic xs">The writer with the mathematical muse.</p>
-            <p class="bold">Follow</p>
-            <p>
-              <ul>
-                <li class="flex justify-start items-start">
-                  <Icon name="mdi:mastodon" class="sma text-slate-500" />
-                  <a
-                    href="https://mathstodon.xyz/@suzza"
-                    class="visited:text-primary-900 hover:text-secondary-900 no-underline"
-                    >Mastodon</a
-                  >
-                </li>
-                <li class="flex justify-start items-start">
-                  <Icon name="mdi:account-circle" class="sma text-slate-500" />
-                  <a
-                    href="https://susansilver.net"
-                    class="visited:text-primary-900 hover:text-secondary-900 no-underline"
-                    >Suzza</a
-                  >
-                </li>
-              </ul>
-            </p>
           </div>
         </div>
       </article>
