@@ -142,12 +142,12 @@ const { frontmatter, headings } = Astro.props;
             <Support />
 
             <RelatedArticles
-              oneTitle={frontmatter.relatedOne.title}
-              oneURL={frontmatter.relatedOne.src}
-              twoTitle={frontmatter.relatedTwo.title}
-              twoURL={frontmatter.relatedTwo.src}
-              threeTitle={frontmatter.relatedThree.title}
-              threeURL={frontmatter.relatedThree.src}
+              oneTitle={frontmatter.relatedOne?.title ?? ""}
+              oneURL={frontmatter.relatedOne?.src ?? ""}
+              twoTitle={frontmatter.relatedTwo?.title ?? ""}
+              twoURL={frontmatter.relatedTwo?.src ?? ""}
+              threeTitle={frontmatter.relatedThree?.title ?? ""}
+              threeURL={frontmatter.relatedThree?.src ?? ""}
             />
             <div>
               <!-- Tags and Categories -->
