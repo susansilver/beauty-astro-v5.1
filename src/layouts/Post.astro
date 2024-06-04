@@ -80,7 +80,19 @@ const { frontmatter, headings } = Astro.props;
                 )
               }
             </nav>
-            <details
+            <nav>
+              {
+                headings && headings.length > 0 && (
+                  <details class="md:hidden block fixed bottom-0 left-0 w-full bg-accent-50 border-accent-300 border-4 z-10 mobile-toc">
+                    <summary class="p-3">Table of Contents</summary>
+                    <nav class="article-toc mx-10">
+                      <TOC headings={headings} />
+                    </nav>
+                  </details>
+                )
+              }
+            </nav>
+            <!-- <details
               class="md:hidden block fixed bottom-0 left-0 w-full bg-accent-50 border-accent-300 border-4 z-10 mobile-toc"
             >
               <summary class="p-3">Table of Contents</summary>
@@ -93,7 +105,7 @@ const { frontmatter, headings } = Astro.props;
                   )
                 }
               </nav>
-            </details>
+            </details> -->
           </div>
           <!-- End Table of Contents -->
           <div
@@ -215,7 +227,7 @@ const { frontmatter, headings } = Astro.props;
           -webkit-filter: grayscale(100%);
           filter: grayscale(100%);
         } */
-
+        /* 
         .slash::before {
           content: "";
           position: absolute;
@@ -223,26 +235,27 @@ const { frontmatter, headings } = Astro.props;
           top: 15%;
           left: 36%;
           bottom: 42%;
-          /*  border-left: 3px solid #212121; */
+           border-left: 3px solid #212121; 
           -webkit-transform: skew(-20deg);
           -moz-transform: skew(-20deg);
           -ms-transform: skew(-20deg);
           transform: skew(-20deg);
           border-left: 3px solid #212121;
-          /*   border-image-slice: 1;
+            border-image-slice: 1;
           border-width: 5px;
           border-image-source: linear-gradient(#0d47a1, #f48fb1);
           border-bottom: 0;
           border-right: 0;
-          border-top: 0; */
+          border-top: 0; 
         }
-
+        */
+        /*  
         @media screen and (max-width: 1080px) {
           .slash::before {
             display: none;
           }
         }
-
+*/
         .mobile-toc {
           border-top-left-radius: 15px;
           border-bottom-right-radius: 15px;
