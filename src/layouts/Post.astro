@@ -42,8 +42,8 @@ const { frontmatter, headings } = Astro.props;
 
   <body class="bg-white-50">
     <Header />
-    <main class="mt-10">
-      <article class="pb-24">
+    <main class="mt-10 pb-24">
+      <article>
         <div
           class="flex lg:flex-row justify-stretch items-center flex-col bg-primary-200"
         >
@@ -169,22 +169,14 @@ const { frontmatter, headings } = Astro.props;
                   <ul>
                     <li class="flex justify-start items-start">
                       <Icon name="mdi:mastodon" class="sma text-slate-500" />
-                      <a
-                        href="https://mathstodon.xyz/@suzza"
-                        class="visited:text-primary-900 hover:text-secondary-900 no-underline"
-                        >Mastodon</a
-                      >
+                      <a href="https://mathstodon.xyz/@suzza">Mastodon</a>
                     </li>
                     <li class="flex justify-start items-start">
                       <Icon
                         name="mdi:account-circle"
                         class="sma text-slate-500"
                       />
-                      <a
-                        href="https://susansilver.net"
-                        class="visited:text-primary-900 hover:text-secondary-900 no-underline"
-                        >Suzza</a
-                      >
+                      <a href="https://susansilver.net">Suzza</a>
                     </li>
                   </ul>
                 </p>
