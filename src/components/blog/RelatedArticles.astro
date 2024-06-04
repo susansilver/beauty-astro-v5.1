@@ -1,39 +1,26 @@
 ---
 const { oneTitle, oneURL, twoTitle, twoURL, threeTitle, threeURL } =
   Astro.props;
+
+const hasAllRelatedArticles =
+  oneTitle && oneURL && twoTitle && twoURL && threeTitle && threeURL;
 ---
 
-<div class="my-5 text-balance" id="continue-reading">
-  <h3>Continue Reading</h3>
-
-  <ol>
-    <li><a href={oneURL}>{oneTitle}</a></li>
-    <li><a href={twoURL}>{twoTitle}</a></li>
-    <li><a href={threeURL}>{threeTitle}</a></li>
-  </ol>
-</div>
-<!-- 
-
-<script>
-  // Get references to the props
-  const { oneTitle, oneURL, twoTitle, twoURL, threeTitle, threeURL } =
-    Astro.props;
-
-  // Check if any of the props are empty
-  const hasContent =
-    oneTitle || oneURL || twoTitle || twoURL || threeTitle || threeURL;
-
-  // Get a reference to the div
-  const continueReadingDiv = document.getElementById("continue-reading");
-
-  // Check if continueReadingDiv is null
-  if (!continueReadingDiv) {
-    console.error("Error: continueReadingDiv is null.");
-  } else {
-    // Hide the div if no content
-    if (!hasContent) {
-      continueReadingDiv.style.display = "none";
-    }
-  }
-</script>
- -->
+{
+  hasAllRelatedArticles && (
+    <div class="my-5 text-balance" id="continue-reading">
+      <h3>Continue Reading</h3>
+      <ol>
+        <li>
+          <a href={oneURL}>{oneTitle}</a>
+        </li>
+        <li>
+          <a href={twoURL}>{twoTitle}</a>
+        </li>
+        <li>
+          <a href={threeURL}>{threeTitle}</a>
+        </li>
+      </ol>
+    </div>
+  )
+}
