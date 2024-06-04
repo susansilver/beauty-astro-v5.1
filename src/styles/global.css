@@ -177,12 +177,8 @@
         color:#0D47A1; 
     }
 
-    a:hover{
+    a:hover, a:visited{
         color:#880E4F;
-    }
-
-    a:visited{
-        color:#9b2a50;
     }
 
     article a[href^="http://"]:not([href*="beautyofmathematics.com"]),
