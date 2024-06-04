@@ -101,7 +101,47 @@ const { frontmatter, headings } = Astro.props;
             id="single-article"
           >
             <!-- Article Text and Meta -->
+            <div class="flex flex-row items-center justify-evenly">
+              <!-- Author Bio -->
+              <div>
+                <!-- Image and Author Link -->
+                <Image
+                  src={Avatar}
+                  alt="Susan Silver holding a book with an orange and pink gradient background and a glitch effect"
+                  height={150}
+                  width={150}
+                  class="rounded-full"
+                />
+                <p>
+                  by <a href="/authors/susan-silver/">Suzza Silver</a>
+                </p>
+                <p class="italic xs">The writer with the mathematical muse.</p>
+              </div>
+              <!-- Image and Author Link End -->
+              <div>
+                <!-- Social Media -->
+                <p class="font-bold">Follow</p>
+                <p>
+                  <ul>
+                    <li class="flex justify-start items-start">
+                      <Icon name="mdi:mastodon" class="sma text-slate-500" />
+                      <a href="https://mathstodon.xyz/@suzza">Mastodon</a>
+                    </li>
+                    <li class="flex justify-start items-start">
+                      <Icon
+                        name="mdi:account-circle"
+                        class="sma text-slate-500"
+                      />
+                      <a href="https://susansilver.net">Suzza</a>
+                    </li>
+                  </ul>
+                </p>
+              </div>
+              <!-- Social Media End -->
+            </div>
+            <!-- Author Bio End -->
             <slot />
+            <Support />
             <div>
               <!-- Tags and Categories -->
               <ul class="list-none flex justify-start gap-x-4">
@@ -145,46 +185,7 @@ const { frontmatter, headings } = Astro.props;
               </ul>
             </div>
             <!-- End Tags and Categories -->
-            <div class="flex flex-row items-center">
-              <!-- Author Bio -->
-              <div>
-                <!-- Image and Author Link -->
-                <Image
-                  src={Avatar}
-                  alt="Susan Silver holding a book with an orange and pink gradient background and a glitch effect"
-                  height={150}
-                  width={150}
-                  class="rounded-full"
-                />
-                <p>
-                  by <a href="/authors/susan-silver/">Suzza Silver</a>
-                </p>
-                <p class="italic xs">The writer with the mathematical muse.</p>
-              </div>
-              <!-- Image and Author Link End -->
-              <div>
-                <!-- Social Media -->
-                <p class="font-bold">Follow</p>
-                <p>
-                  <ul>
-                    <li class="flex justify-start items-start">
-                      <Icon name="mdi:mastodon" class="sma text-slate-500" />
-                      <a href="https://mathstodon.xyz/@suzza">Mastodon</a>
-                    </li>
-                    <li class="flex justify-start items-start">
-                      <Icon
-                        name="mdi:account-circle"
-                        class="sma text-slate-500"
-                      />
-                      <a href="https://susansilver.net">Suzza</a>
-                    </li>
-                  </ul>
-                </p>
-              </div>
-              <!-- Social Media End -->
-            </div>
-            <!-- Author Bio End -->
-            <Support />
+            \
             <!--   <Infinity /> -->
           </div>
           <!-- Article Text and Meta End -->

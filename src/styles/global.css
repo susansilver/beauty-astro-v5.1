@@ -60,7 +60,11 @@
     ul, ol{
         padding-inline-start:0.7ch;
         margin-inline-start:-0.7ch;
+    }
 
+    li {
+        margin-top:0.5em;
+        margin-bottom:0.5em;
     }
 
     ul {
