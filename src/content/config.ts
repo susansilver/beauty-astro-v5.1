@@ -23,6 +23,18 @@ const blog = defineCollection({
 		categories: z.string().optional(),
 		tags: z.array(z.string()).optional(),
 		author: z.string(),
+		relatedOne: z.object({
+			title: z.string(),
+			src: z.string(),
+		  }).optional(),
+		  relatedTwo: z.object({
+			title: z.string(),
+			src: z.string(),
+		  }).optional(),
+		  relatedThree: z.object({
+			title: z.string(),
+			src: z.string(),
+		  }).optional(),
 	}),
 });
 

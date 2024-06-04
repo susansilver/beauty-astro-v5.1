@@ -10,6 +10,7 @@ import Support from "../components/blog/PaymentButtons.astro";
 import TOC from "../components/TableOfContents.astro";
 import { Image } from "astro:assets";
 import Avatar from "/src/assets/avatar-math-book-glitch.png";
+import RelatedArticles from "../components/blog/RelatedArticles.astro";
 
 interface Props {
   frontmatter: CollectionEntry<"blog">["data"] & {
@@ -80,32 +81,17 @@ const { frontmatter, headings } = Astro.props;
                 )
               }
             </nav>
-            <nav>
-              {
-                headings && headings.length > 0 && (
-                  <details class="md:hidden block fixed bottom-0 left-0 w-full bg-accent-50 border-accent-300 border-4 z-10 mobile-toc">
-                    <summary class="p-3">Table of Contents</summary>
-                    <nav class="article-toc mx-10">
-                      <TOC headings={headings} />
-                    </nav>
-                  </details>
-                )
-              }
-            </nav>
-            <!-- <details
-              class="md:hidden block fixed bottom-0 left-0 w-full bg-accent-50 border-accent-300 border-4 z-10 mobile-toc"
-            >
-              <summary class="p-3">Table of Contents</summary>
-              <nav class="article-toc mx-10">
-                {
-                  headings && headings.length > 0 && (
-                    <>
-                      <TOC headings={headings} />
-                    </>
-                  )
-                }
-              </nav>
-            </details> -->
+
+            {
+              headings && headings.length > 0 && (
+                <details class="md:hidden block fixed bottom-0 left-0 w-full bg-accent-50 border-accent-300 border-4 z-10 mobile-toc">
+                  <summary class="p-3">Table of Contents</summary>
+                  <nav class="article-toc mx-10">
+                    <TOC headings={headings} />
+                  </nav>
+                </details>
+              )
+            }
           </div>
           <!-- End Table of Contents -->
           <div
@@ -154,6 +140,15 @@ const { frontmatter, headings } = Astro.props;
             <!-- Author Bio End -->
             <slot />
             <Support />
+
+            <RelatedArticles
+              oneTitle={frontmatter.relatedOne.title}
+              oneURL={frontmatter.relatedOne.src}
+              twoTitle={frontmatter.relatedTwo.title}
+              twoURL={frontmatter.relatedTwo.src}
+              threeTitle={frontmatter.relatedThree.title}
+              threeURL={frontmatter.relatedThree.src}
+            />
             <div>
               <!-- Tags and Categories -->
               <ul class="list-none flex justify-start gap-x-4">
