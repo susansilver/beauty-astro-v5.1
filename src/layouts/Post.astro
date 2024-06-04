@@ -1,5 +1,6 @@
 ---
 import type { CollectionEntry } from "astro:content";
+import { Icon } from "astro-icon/components";
 import BaseHead from "../components/base/BaseHead.astro";
 import Header from "../components/base/Header.astro";
 import Footer from "../components/base/Footer.astro";
@@ -7,6 +8,8 @@ import HeaderImage from "../components/blog/HeaderImage.astro";
 /* import Infinity from "../components/blog/Infinity.astro"; */
 import Support from "../components/blog/PaymentButtons.astro";
 import TOC from "../components/TableOfContents.astro";
+import { Image } from "astro:assets";
+import Avatar from "/src/assets/avatar-math-book-glitch.png";
 
 interface Props {
   frontmatter: CollectionEntry<"blog">["data"] & {
@@ -40,7 +43,7 @@ const { frontmatter, headings } = Astro.props;
   <body class="bg-white-50">
     <Header />
     <main class="mt-10">
-      <article class="pb-32">
+      <article class="pb-24">
         <div
           class="flex lg:flex-row justify-stretch items-center flex-col bg-primary-200"
         >
@@ -57,7 +60,7 @@ const { frontmatter, headings } = Astro.props;
             <h1>{frontmatter.title}</h1>
           </div>
         </div>
-        <div class="grid grid-cols-12">
+        <div class="grid grid-cols-12 mt-5">
           <div class="md:col-span-2 md:col-start-2">
             <nav class="article-toc sticky top-0 md:block hidden">
               {
@@ -89,18 +92,76 @@ const { frontmatter, headings } = Astro.props;
             id="single-article"
           >
             <slot />
+            <ul class="list-none flex justify-start gap-x-4">
+              <li class="category">
+                Category: <a
+                  class="hover:text-black-900 underline"
+                  href={`/category/${frontmatter.categories}`}
+                  title={`View posts in "${frontmatter.categories}"`}
+                  >{frontmatter.categories.replace(/-/g, " ")}</a
+                >
+              </li>
+              <li class="tags flex flex-row">
+                <span>Explore:</span>
+                <ul class="list-none flex flex-row flex-wrap">
+                  {
+                    frontmatter.tags.map((tag, index) => (
+                      <li class="tag">
+                        <a
+                          class="hover:text-black-900 underline"
+                          href={`/tag/${tag}`}
+                          title={`View posts tagged "${tag}"`}
+                        >
+                          #{tag.replace(/-/g, " ")}
+                        </a>
+                        {index === frontmatter.tags.length - 1 ? "" : ""}
+                      </li>
+                    ))
+                  }
+                </ul>
+              </li>
+            </ul>
             <Support />
             <!--   <Infinity /> -->
           </div>
           <div class="md:col-span-1 md:col-start-11 col-span-10 col-start-2">
-            Text
+            <Image
+              src={Avatar}
+              alt="Susan Silver holding a book with an orange and pink gradient background and a glitch effect"
+              height={150}
+              width={150}
+              class="rounded-full"
+            />
+            <p>by <a href="/authors/susan-silver/">Suzza Silver</a></p>
+            <p class="italic xs">The writer with the mathematical muse.</p>
+            <p clas="bold">Follow</p>
+            <p>
+              <ul>
+                <li class="flex justify-start items-start">
+                  <Icon name="mdi:mastodon" class="sma text-slate-500" />
+                  <a
+                    href="https://mathstodon.xyz/@suzza"
+                    class="visited:text-primary-900 hover:text-secondary-900 no-underline"
+                    >Mastodon</a
+                  >
+                </li>
+                <li class="flex justify-start items-start">
+                  <Icon name="mdi:account-circle" class="sma text-slate-500" />
+                  <a
+                    href="https://susansilver.net"
+                    class="visited:text-primary-900 hover:text-secondary-900 no-underline"
+                    >Suzza</a
+                  >
+                </li>
+              </ul>
+            </p>
           </div>
         </div>
       </article>
       <Footer />
       <style>
         #single-article {
-          max-width: 75ch;
+          max-width: 65ch;
         }
 
         .wrap {
@@ -160,6 +221,18 @@ const { frontmatter, headings } = Astro.props;
         details:not([open]):hover,
         details:not([open]):focus {
           background: #4db6ac;
+        }
+
+        .category,
+        .tags {
+          text-transform: capitalize;
+        }
+        .tag {
+          background-color: #f8bbd0;
+          text-decoration: none;
+          padding: 0.5em;
+          border-radius: 5px;
+          margin: 0.5em;
         }
       </style>
     </main>
