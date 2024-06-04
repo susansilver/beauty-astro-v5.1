@@ -108,7 +108,7 @@ const { frontmatter, headings } = Astro.props;
                     frontmatter.tags.map((tag, index) => (
                       <li class="tag">
                         <a
-                          class="hover:text-black-900 underline"
+                          class="hover:text-black-900 no-underline"
                           href={`/tag/${tag}`}
                           title={`View posts tagged "${tag}"`}
                         >
