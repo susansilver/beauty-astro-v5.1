@@ -1,0 +1,155 @@
+---
+import { Icon } from "astro-icon/components";
+import BaseHead from "../components/base/BaseHead.astro";
+import Header from "../components/base/Header.astro";
+import Footer from "../components/base/Footer.astro";
+/* import TOC from "../components/TableOfContents.astro"; */
+import { Image } from "astro:assets";
+import Avatar from "/src/assets/avatar-math-book-glitch.png";
+
+const { heroImage, alt, updatedDate, pubDate, title, description, headings } =
+  Astro.props;
+---
+
+<html lang="en" class="scroll-smooth">
+  <head>
+    <BaseHead title={title} description={description} image={heroImage} />
+  </head>
+
+  <body class="bg-white-50">
+    <Header />
+    <main class="mt-10 pb-24">
+      <article>
+        <div
+          class="flex lg:flex-row justify-stretch items-center flex-col bg-primary-200"
+        >
+          <!-- Article Header  -->
+          <div class="wrap">
+            <!-- Article Header Image  -->
+            <img src={heroImage} alt={alt} />
+          </div>
+          <!-- Article Header Image End -->
+          <div
+            class="flex flex-col justify-center items-center text-balance w-full bg-primary-200 px-12 text-center slash"
+          >
+            <!-- Article Title  -->
+            <small><time>{updatedDate}</time></small>
+            <h1>{title}</h1>
+          </div>
+          <!-- Article Title End -->
+        </div>
+        <!-- Article Header End -->
+        <div class="grid grid-cols-12 mt-5">
+          <!-- Article Body  -->
+          <div class="md:col-span-2 md:col-start-2">
+            <!-- Table of Contents -->
+            <!--  <nav class="article-toc sticky top-0 md:block hidden">
+              {
+                headings && headings.length > 0 && (
+                  <>
+                    <h3>Table of Contents</h3>
+                    <TOC headings={headings} />
+                  </>
+                )
+              }
+            </nav>
+
+            {
+              headings && headings.length > 0 && (
+                <details class="md:hidden block fixed bottom-0 left-0 w-full bg-accent-50 border-accent-300 border-4 z-10 mobile-toc">
+                  <summary class="p-3">Table of Contents</summary>
+                  <nav class="article-toc mx-10">
+                    <TOC headings={headings} />
+                  </nav>
+                </details>
+              )
+            }-->
+          </div>
+          <!-- End Table of Contents -->
+          <div
+            class="md:col-start-5 md:col-span-6 col-span-10 col-start-2"
+            id="single-article"
+          >
+            <!-- Article Text and Meta -->
+            <div class="flex flex-row items-center justify-evenly">
+              <!-- Author Bio -->
+              <div>
+                <!-- Image and Author Link -->
+                <Image
+                  src={Avatar}
+                  alt="Susan Silver holding a book with an orange and pink gradient background and a glitch effect"
+                  height={150}
+                  width={150}
+                  class="rounded-full"
+                />
+                <p>
+                  by <a href="/authors/susan-silver/">Suzza Silver</a>
+                </p>
+                <p class="italic xs">The writer with the mathematical muse.</p>
+              </div>
+              <!-- Image and Author Link End -->
+              <div>
+                <!-- Social Media -->
+                <p class="font-bold">Follow</p>
+                <p>
+                  <ul>
+                    <li class="flex justify-start items-end">
+                      <Icon name="mdi:mastodon" class="sma text-slate-500" />
+                      <a href="https://mathstodon.xyz/@suzza">Mastodon</a>
+                    </li>
+                    <li class="flex justify-start items-end">
+                      <Icon
+                        name="mdi:account-circle"
+                        class="sma text-slate-500"
+                      />
+                      <a href="https://susansilver.net">Suzza</a>
+                    </li>
+                  </ul>
+                </p>
+              </div>
+              <!-- Social Media End -->
+            </div>
+            <!-- Author Bio End -->
+            <slot />
+          </div>
+          <!-- Article Text and Meta End -->
+        </div>
+        <!-- Article Body End -->
+      </article>
+      <Footer />
+      <style>
+        #single-article {
+          max-width: 65ch;
+        }
+
+        .wrap {
+          position: relative;
+        }
+
+        .wrap:after {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background: rgba(100, 181, 246, 0.75);
+        }
+
+        .mobile-toc {
+          border-top-left-radius: 15px;
+          border-bottom-right-radius: 15px;
+        }
+
+        details summary {
+          cursor: pointer;
+        }
+
+        details:not([open]):hover,
+        details:not([open]):focus {
+          background: #4db6ac;
+        }
+      </style>
+    </main>
+  </body>
+</html>
