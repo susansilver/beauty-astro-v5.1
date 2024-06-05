@@ -1,13 +1,10 @@
 ---
 const { oneTitle, oneURL, twoTitle, twoURL, threeTitle, threeURL } =
   Astro.props;
-
-const hasAllRelatedArticles =
-  oneTitle && oneURL && twoTitle && twoURL && threeTitle && threeURL;
 ---
 
 {
-  hasAllRelatedArticles && (
+  oneTitle && oneURL && twoTitle && twoURL && threeTitle && threeURL && (
     <div class="my-5 text-balance" id="continue-reading">
       <h3>Continue Reading</h3>
       <ol>

@@ -9,6 +9,13 @@ import sitemap from "@astrojs/sitemap";
 // https://astro.build/config
 export default defineConfig({
   site: 'https://beautyofmathematics.com',
+  markdown: {
+    shikiConfig: {
+      // Choose from Shiki's built-in themes (or add your own)
+      // https://shiki.style/themes
+      theme: 'night-owl',
+    },
+  },
   integrations: [favicons({
     masterPicture: "public/favicon.png",
     emitAssets: true,

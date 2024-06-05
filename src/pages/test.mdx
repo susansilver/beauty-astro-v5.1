@@ -70,9 +70,24 @@ This is a blockquote
 > veritatis explicabo magni obcaecati reprehenderit temporibus sapiente.
 > -<cite>Victor Hugo</cite>
     
+
+```astro
+import { defineConfig } from 'astro/config';
+import tailwind from "@astrojs/tailwind";
+import favicons from "astro-favicons";
+import mdx from "@astrojs/mdx";
+import icon from "astro-icon";
+
+import sitemap from "@astrojs/sitemap";
+
+// https://astro.build/config
+
+export default defineConfig({
+  site: 'https://beautyofmathematics.com',
+  integrations: [tailwind(), mdx(), icon(), sitemap()]
+});
 ```
-This is code. <hr /> 
-```
+ 
 
 [This is an external link](https://wikipedia.com) and some text [An internal link](/)
 
