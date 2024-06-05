@@ -1,4 +1,5 @@
 ---
+import type { CollectionEntry } from "astro:content";
 import { Icon } from "astro-icon/components";
 import BaseHead from "../components/base/BaseHead.astro";
 import Header from "../components/base/Header.astro";
@@ -6,14 +7,27 @@ import Footer from "../components/base/Footer.astro";
 /* import TOC from "../components/TableOfContents.astro"; */
 import { Image } from "astro:assets";
 import Avatar from "/src/assets/avatar-math-book-glitch.png";
+import HeaderImage from "../components/blog/HeaderImage.astro";
 
-const { heroImage, alt, updatedDate, pubDate, title, description, headings } =
-  Astro.props;
+interface Props {
+  frontmatter: CollectionEntry<"blog">["data"] & {
+    heroImage: {
+      src: string;
+      alt: string;
+    };
+  };
+}
+
+const { frontmatter } = Astro.props;
 ---
 
 <html lang="en" class="scroll-smooth">
   <head>
-    <BaseHead title={title} description={description} image={heroImage} />
+    <BaseHead
+      title={frontmatter.title}
+      description={frontmatter.description}
+      image={frontmatter.heroImage.src}
+    />
   </head>
 
   <body class="bg-white-50">
@@ -26,15 +40,18 @@ const { heroImage, alt, updatedDate, pubDate, title, description, headings } =
           <!-- Article Header  -->
           <div class="wrap">
             <!-- Article Header Image  -->
-            <img src={heroImage} alt={alt} />
+            <HeaderImage
+              imagePath={frontmatter.heroImage.src}
+              alt={frontmatter.heroImage.alt}
+            />
           </div>
           <!-- Article Header Image End -->
           <div
             class="flex flex-col justify-center items-center text-balance w-full bg-primary-200 px-12 text-center slash"
           >
             <!-- Article Title  -->
-            <small><time>{updatedDate}</time></small>
-            <h1>{title}</h1>
+            <small><time>{frontmatter.updatedDate}</time></small>
+            <h1>{frontmatter.title}</h1>
           </div>
           <!-- Article Title End -->
         </div>
@@ -52,9 +69,9 @@ const { heroImage, alt, updatedDate, pubDate, title, description, headings } =
                   </>
                 )
               }
-            </nav>
+            </nav> -->
 
-            {
+            <!--  {
               headings && headings.length > 0 && (
                 <details class="md:hidden block fixed bottom-0 left-0 w-full bg-accent-50 border-accent-300 border-4 z-10 mobile-toc">
                   <summary class="p-3">Table of Contents</summary>
@@ -63,7 +80,7 @@ const { heroImage, alt, updatedDate, pubDate, title, description, headings } =
                   </nav>
                 </details>
               )
-            }-->
+            } -->
           </div>
           <!-- End Table of Contents -->
           <div

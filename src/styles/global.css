@@ -73,6 +73,7 @@
 
     ul > li > ul {
         list-style-type: circle;
+        padding-left:1.5em;
     }
 
     ol {
@@ -81,6 +82,7 @@
 
     ol > li > ol {
         list-style-type: lower-alpha;
+        padding-left:1.5em;
     }
 
     h1,h2,h3{
