@@ -6,6 +6,7 @@ import Header from "../components/base/Header.astro";
 import Footer from "../components/base/Footer.astro";
 
 const allPosts = (await getCollection("blog"))
+  .filter((post) => !post.data.draft)
   .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
   .slice(0, 3);
 
