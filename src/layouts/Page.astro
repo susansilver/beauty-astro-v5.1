@@ -1,5 +1,4 @@
 ---
-import type { CollectionEntry } from "astro:content";
 import { Icon } from "astro-icon/components";
 import BaseHead from "../components/base/BaseHead.astro";
 import Header from "../components/base/Header.astro";
@@ -10,11 +9,15 @@ import Avatar from "/src/assets/avatar-math-book-glitch.png";
 import HeaderImage from "../components/blog/HeaderImage.astro";
 
 interface Props {
-  frontmatter: CollectionEntry<"blog">["data"] & {
+  frontmatter: {
     heroImage: {
       src: string;
       alt: string;
     };
+    title: string;
+    updatedDate: string;
+    description: string;
+    pubDate: string;
   };
 }
 
