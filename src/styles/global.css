@@ -142,7 +142,7 @@
     }
     .img-position{
         position:relative;
-        margin: 2.5em 0;
+        /* margin: 2.5em 0; */
         padding-right: 1.5em;
         padding-left: 1.5em;
     }
