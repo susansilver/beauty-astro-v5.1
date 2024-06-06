@@ -62,7 +62,7 @@
         margin-inline-start:-0.7ch;
     }
 
-    li {
+   li {
         margin-top:0.5em;
         margin-bottom:0.5em;
     }
@@ -73,7 +73,7 @@
 
     ul > li > ul {
         list-style-type: circle;
-        padding-left:1.5em;
+        padding-left:2em;
     }
 
     ol {
@@ -82,7 +82,7 @@
 
     ol > li > ol {
         list-style-type: lower-alpha;
-        padding-left:1.5em;
+        padding-left:2em;
     }
 
     h1,h2,h3{
@@ -90,7 +90,7 @@
     }
 
     p{
-        margin:0.5em 0;
+        margin:1em 0;
         
     }
     .gradient-text{
@@ -184,14 +184,6 @@
         bottom: 1em;
         left: 10em;
         right: 0;
-    }
-
-    .float-left {
-        float: left;
-    }
- 
-    .float-right {
-        float: right;
     }
 
     .center-img {
