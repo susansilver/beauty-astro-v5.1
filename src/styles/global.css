@@ -133,20 +133,32 @@
         margin:0.5em 0;
     }
 
-    cite {
+    .attribution {
         background-color: #E0F2F1;
         padding: 0.25em;
         filter:drop-shadow(#4DB6AC 0.5em 0.5em 0);
        
     }
-    figure{
+    .img-position{
         position:relative;
         margin: 2.5em 0;
     }
-    figure img {
+    .img-position > img {
         display: block;
     }
-    figcaption {
+    .caption-right {
+        position: absolute;
+        background-color: #E0F2F1;
+        filter:drop-shadow(#4DB6AC 1em 1em 0);
+        max-width:30ch;
+       /*  transform: translate(75%, -2ex);   */
+        padding:2.5em;
+        bottom: 0;
+        left: 10em;
+        right: 0;
+    }  
+
+    .caption-left {
         position: absolute;
         background-color: #E0F2F1;
         filter:drop-shadow(#4DB6AC 1em 1em 0);
