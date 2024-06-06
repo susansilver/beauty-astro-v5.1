@@ -17,10 +17,31 @@ if (!images[imagePath])
   );
 ---
 
-<Image
-  src={images[imagePath]()}
-  width={950}
-  height={300}
-  format="webp"
-  alt={alt}
-/>
+<div class="wrap">
+  <Image
+    src={images[imagePath]()}
+    width={950}
+    height={300}
+    format="webp"
+    alt={alt}
+  />
+</div>
+<style>
+  .wrap {
+    position: relative;
+  }
+
+  .wrap:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(100, 181, 246, 0.75);
+  }
+  .wrap img {
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%);
+  }
+</style>

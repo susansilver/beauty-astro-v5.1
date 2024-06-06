@@ -46,13 +46,13 @@ const { frontmatter, headings } = Astro.props;
           class="flex lg:flex-row justify-stretch items-center flex-col bg-primary-200"
         >
           <!-- Article Header  -->
-          <div class="wrap">
-            <!-- Article Header Image  -->
-            <HeaderImage
-              imagePath={frontmatter.heroImage.src}
-              alt={frontmatter.heroImage.alt}
-            />
-          </div>
+
+          <!-- Article Header Image  -->
+          <HeaderImage
+            imagePath={frontmatter.heroImage.src}
+            alt={frontmatter.heroImage.alt}
+          />
+
           <!-- Article Header Image End -->
           <div
             class="flex flex-col justify-center items-center text-balance w-full bg-primary-200 px-12 text-center slash"
@@ -208,7 +208,7 @@ const { frontmatter, headings } = Astro.props;
         #single-article {
           max-width: 65ch;
         }
-
+        /* 
         .wrap {
           position: relative;
         }
@@ -221,7 +221,7 @@ const { frontmatter, headings } = Astro.props;
           width: 100%;
           height: 100%;
           background: rgba(100, 181, 246, 0.75);
-        }
+        } */
         /*  .wrap img {
           -webkit-filter: grayscale(100%);
           filter: grayscale(100%);

@@ -41,13 +41,13 @@ const { frontmatter } = Astro.props;
           class="flex lg:flex-row justify-stretch items-center flex-col bg-primary-200"
         >
           <!-- Article Header  -->
-          <div class="wrap">
-            <!-- Article Header Image  -->
-            <HeaderImage
-              imagePath={frontmatter.heroImage.src}
-              alt={frontmatter.heroImage.alt}
-            />
-          </div>
+
+          <!-- Article Header Image  -->
+          <HeaderImage
+            imagePath={frontmatter.heroImage.src}
+            alt={frontmatter.heroImage.alt}
+          />
+
           <!-- Article Header Image End -->
           <div
             class="flex flex-col justify-center items-center text-balance w-full bg-primary-200 px-12 text-center slash"
