@@ -91,6 +91,7 @@
 
     p{
         margin:0.5em 0;
+        
     }
     .gradient-text{
 
@@ -142,6 +143,8 @@
     .img-position{
         position:relative;
         margin: 2.5em 0;
+        padding-right: 1.5em;
+        padding-left: 1.5em;
     }
     .img-position > img {
         display: block;
@@ -152,9 +155,9 @@
         filter:drop-shadow(#4DB6AC 1em 1em 0);
         max-width:30ch;
        /*  transform: translate(75%, -2ex);   */
-        padding:2.5em;
+        padding:1em;
         bottom: 0;
-        left: 10em;
+        left: 2em;
         right: 0;
     }  
 
@@ -164,12 +167,45 @@
         filter:drop-shadow(#4DB6AC 1em 1em 0);
         max-width:30ch;
        /*  transform: translate(75%, -2ex);   */
-        padding:2.5em;
+        padding:1em;
         bottom: 0;
-        left: 10em;
+        left: -2em;
         right: 0;
     }  
+
+    .caption-center {
+        position: absolute;
+        background-color: #E0F2F1;
+        filter:drop-shadow(#4DB6AC 1em 1em 0);
+        max-width:30ch;
+       /*  transform: translate(75%, -2ex);   */
+        padding:1em;
+        margin: auto;
+        bottom: 1em;
+        left: 10em;
+        right: 0;
+    }
+
+    .float-left {
+        float: left;
+    }
  
+    .float-right {
+        float: right;
+    }
+
+    .center-img {
+        display: block;
+  width: 60%;
+  margin: auto;
+    }
+
+    .clearfix::after {
+        content: "";
+        clear: both;
+        display: table;
+      }
+
     button{
         padding:1.5em;
         border:5px solid #4DB6AC;

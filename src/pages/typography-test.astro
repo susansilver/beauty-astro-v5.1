@@ -103,23 +103,18 @@ import { Image } from "astro:assets";
 
         <p>This is an image</p>
 
-        <figure class="img-position">
+        <figure class="img-position float-left clearfix">
           <Image
             src="https://picsum.photos/id/30/300"
             alt="Mug on a table"
             width={300}
             height={300}
           />
-          <figcaption class="caption-right">
+          <figcaption class="caption-left">
             this is a mug on a table.
           </figcaption>
         </figure>
 
-        <p>
-          <pre>
-This is some text written in a pre tag.
-  </pre>
-        </p>
         <p>
           <code> This is code. &lt;hr /&gt; </code>
         </p>
