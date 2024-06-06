@@ -1,5 +1,6 @@
 ---
 import { getCollection } from "astro:content";
+import { Image } from "astro:assets";
 import HeaderLink from "./HeaderLink.astro";
 /* import { Icon } from "astro-icon/components"; */
 import { SITE_TITLE } from "../../consts";
@@ -23,10 +24,12 @@ const categories = [
   <Astronav>
     <div class="flex w-full justify-between">
       <div class="flex lg:flex-row lg:w-full flex-col items-center">
-        <img
+        <Image
           src="/android-chrome-512x512.png"
           alt="logo"
-          class="lg:flex lg:h-11 lg:w-11 hidden"
+          height={50}
+          width={50}
+          class="lg:flex hidden"
         />
         <span class="logo lg:text-[2.441rem] lar"
           ><a
