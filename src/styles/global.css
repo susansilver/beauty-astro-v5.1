@@ -85,12 +85,12 @@
         padding-left:2em;
     }
 
-     h1,h2,h3{
+    /*  h1,h2,h3{
         margin-bottom: 0.5em;
     } 
-
+ */
     p{
-        margin-bottom:1em;
+        margin:1.5em 0;
         
     }
 
