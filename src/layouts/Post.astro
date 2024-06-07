@@ -11,6 +11,7 @@ import TOC from "../components/TableOfContents.astro";
 import { Image } from "astro:assets";
 import Avatar from "/src/assets/avatar-math-book-glitch.png";
 import RelatedArticles from "../components/blog/RelatedArticles.astro";
+import FormattedDate from "../components/base/FormattedDate.astro";
 
 interface Props {
   frontmatter: CollectionEntry<"blog">["data"] & {
@@ -58,7 +59,13 @@ const { frontmatter, headings } = Astro.props;
             class="flex flex-col justify-center items-center text-balance w-full bg-primary-200 px-12 text-center slash"
           >
             <!-- Article Title  -->
-            <small><time>{frontmatter.updatedDate}</time></small>
+            <small
+              ><time
+                ><FormattedDate date={frontmatter.updatedDatetime} />{
+                  frontmatter.updatedDate
+                }</time
+              ></small
+            >
             <h1>{frontmatter.title}</h1>
           </div>
           <!-- Article Title End -->
