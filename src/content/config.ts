@@ -8,11 +8,14 @@ const blog = defineCollection({
 		description: z.string(),
 		draft: z.boolean(),
 		// Transform string to Date object
-		pubDate: z.coerce.date(),
+		pubDate: z
+			.string()
+			.or(z.date())
+			.transform((val) => new Date(val)),
 		updatedDate: z
 			.string()
-			.optional(),
-		updatedDatetime:z.coerce.date().optional(),
+			.optional()
+			.transform((str) => (str ? new Date(str) : undefined)),
 		heroImage: z.object({
 				src: image().refine((img) => img.height = 2160).refine((img) => img.width = 3000),
 				alt: z.string(),
