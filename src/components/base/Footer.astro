@@ -1,10 +1,18 @@
 ---
-
+import { Icon } from "astro-icon/components";
 ---
 
 <footer id="colophon" class="text-black-900">
-  <div class="flex justify-center flex-row items-end">
-    <div class="m-5">&copy; 2018 - <span id="copy"></span> Suzza Silver</div>
+  <div class="flex justify-center flex-row items-end m-5 gap-3">
+    <div>
+      &copy; 2018 - <span id="copy"></span>
+    </div>
+    <div>
+      <span class="flex flex-row">
+        <a href="https://susansilver.net">Suzza Silver</a>
+        <Icon name="mdi:account-circle" class="sma text-slate-500" /></span
+      >
+    </div>
   </div>
 </footer>
 
