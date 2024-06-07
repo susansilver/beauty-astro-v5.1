@@ -14,8 +14,7 @@ const blog = defineCollection({
 			.transform((val) => new Date(val)),
 		updatedDate: z
 			.string()
-			.optional()
-			.transform((str) => (str ? new Date(str) : undefined)),
+			.optional(),
 		updatedTime: z.string().datetime().optional(),
 		heroImage: z.object({
 				src: image().refine((img) => img.height = 2160).refine((img) => img.width = 3000),
