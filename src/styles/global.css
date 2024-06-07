@@ -85,9 +85,9 @@
         padding-left:2em;
     }
 
-    /* h1,h2,h3{
+     h1,h2,h3{
         margin-bottom: 0.5em;
-    } */
+    } 
 
     p{
         margin:1em 0;
@@ -226,3 +226,21 @@ article a[href^="//"]:not([href*="beautyofmathematics.com"])::after   {
         transform: translateY(0.25em);
       }
 
+      .wrap {
+        position: relative;
+      }
+
+      .wrap:after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(100, 181, 246, 0.75);
+      }
+
+      .wrap img {
+        -webkit-filter: grayscale(100%);
+        filter: grayscale(100%);
+      }

@@ -35,12 +35,14 @@ const allTags = [
                     <Image
                       src={post.data.heroImage.src}
                       alt={post.data.heroImage.alt}
-                      width={450}
+                      width={500}
                       height={300}
                     />
                   </div>
-                  <div class="absolute positioning text-balance bg-white-50 p-1 title">
-                    <a href={`/${post.slug}`}>{post.data.title}</a>
+                  <div class="absolute positioning text-balance p-1 title">
+                    <a href={`/${post.slug}`} class="no-underline">
+                      {post.data.title}
+                    </a>
                   </div>
                 </div>
               </div>
@@ -102,10 +104,19 @@ const allTags = [
         width: 100%;
       }
 
-      @media screen and (min-width: 600px) {
+      #container > div:first-child img {
+        width: 900px;
+        height: 450px;
+      }
+
+      @media screen and (max-width: 600px) {
         #container {
           max-width: fit-content;
           padding: 0 0;
+        }
+        #container > div:first-child img {
+          width: 450px;
+          height: 300px;
         }
       }
 
@@ -114,12 +125,12 @@ const allTags = [
         content: "∯ New";
         background-color: #e0f2f1;
         filter: drop-shadow(#4db6ac 0.5em 0.5em 0);
-        max-width: 15ch;
-        padding: 0.5em;
+        max-width: 30ch;
+        padding: 1em;
         top: 0;
-        left: 60%;
-        right: 0;
+        right: 15%;
       }
+
       .tag {
         text-transform: capitalize;
         background-color: #f8bbd0;
