@@ -1,12 +1,9 @@
 ---
-import { Icon } from "astro-icon/components";
 import BaseHead from "../components/base/BaseHead.astro";
 import Header from "../components/base/Header.astro";
 import Footer from "../components/base/Footer.astro";
-/* import TOC from "../components/TableOfContents.astro"; */
-import { Image } from "astro:assets";
-import Avatar from "/src/assets/avatar-math-book-glitch.png";
 import HeaderImage from "../components/blog/HeaderImage.astro";
+import AuthorBio from "../components/blog/AuthorBio.astro";
 
 interface Props {
   frontmatter: {
@@ -66,75 +63,12 @@ const { frontmatter } = Astro.props;
         <!-- Article Header End -->
         <div class="grid grid-cols-12 mt-5">
           <!-- Article Body  -->
-          <div class="md:col-span-2 md:col-start-2">
-            <!-- Table of Contents -->
-            <!--  <nav class="article-toc sticky top-0 md:block hidden">
-              {
-                headings && headings.length > 0 && (
-                  <>
-                    <h3>Table of Contents</h3>
-                    <TOC headings={headings} />
-                  </>
-                )
-              }
-            </nav> -->
-
-            <!--  {
-              headings && headings.length > 0 && (
-                <details class="md:hidden block fixed bottom-0 left-0 w-full bg-accent-50 border-accent-300 border-4 z-10 mobile-toc">
-                  <summary class="p-3">Table of Contents</summary>
-                  <nav class="article-toc mx-10">
-                    <TOC headings={headings} />
-                  </nav>
-                </details>
-              )
-            } -->
-          </div>
-          <!-- End Table of Contents -->
           <div
             class="md:col-start-5 md:col-span-6 col-span-10 col-start-2"
             id="single-article"
           >
             <!-- Article Text and Meta -->
-            <div class="flex flex-row items-center justify-evenly">
-              <!-- Author Bio -->
-              <div>
-                <!-- Image and Author Link -->
-                <Image
-                  src={Avatar}
-                  alt="Susan Silver holding a book with an orange and pink gradient background and a glitch effect"
-                  height={150}
-                  width={150}
-                  class="rounded-full"
-                />
-                <p>
-                  by <a href="/authors/susan-silver/">Suzza Silver</a>
-                </p>
-                <p class="italic xs">The writer with the mathematical muse.</p>
-              </div>
-              <!-- Image and Author Link End -->
-              <div>
-                <!-- Social Media -->
-                <p class="font-bold">Follow</p>
-                <p>
-                  <ul>
-                    <li class="flex justify-start items-end">
-                      <Icon name="mdi:patreon" class="text-slate-500 sma" />
-                      <a
-                        href="https://www.patreon.com/susansilver"
-                        target="_blank">Patreon</a
-                      >
-                    </li>
-                    <li class="flex justify-start items-end">
-                      <Icon name="mdi:mastodon" class="sma text-slate-500" />
-                      <a href="https://mathstodon.xyz/@suzza">Mastodon</a>
-                    </li>
-                  </ul>
-                </p>
-              </div>
-              <!-- Social Media End -->
-            </div>
-            <!-- Author Bio End -->
+            <AuthorBio />
             <slot />
           </div>
           <!-- Article Text and Meta End -->
@@ -145,20 +79,6 @@ const { frontmatter } = Astro.props;
       <style>
         #single-article {
           max-width: 65ch;
-        }
-
-        .wrap {
-          position: relative;
-        }
-
-        .wrap:after {
-          content: "";
-          position: absolute;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
-          background: rgba(100, 181, 246, 0.75);
         }
 
         .mobile-toc {

@@ -1,6 +1,5 @@
 ---
 import type { CollectionEntry } from "astro:content";
-import { Icon } from "astro-icon/components";
 import BaseHead from "../components/base/BaseHead.astro";
 import Header from "../components/base/Header.astro";
 import Footer from "../components/base/Footer.astro";
@@ -8,9 +7,8 @@ import HeaderImage from "../components/blog/HeaderImage.astro";
 /* import Infinity from "../components/blog/Infinity.astro"; */
 import Support from "../components/blog/PaymentButtons.astro";
 import TOC from "../components/TableOfContents.astro";
-import { Image } from "astro:assets";
-import Avatar from "/src/assets/avatar-math-book-glitch.png";
 import RelatedArticles from "../components/blog/RelatedArticles.astro";
+import AuthorBio from "../components/blog/AuthorBio.astro";
 
 interface Props {
   frontmatter: CollectionEntry<"blog">["data"] & {
@@ -18,6 +16,11 @@ interface Props {
       src: string;
       alt: string;
     };
+    title: string;
+    updatedDate: string;
+    description: string;
+    pubDate: string;
+    updatedTime: string;
   };
   headings: {
     slug: string;
@@ -100,45 +103,7 @@ const { frontmatter, headings } = Astro.props;
             id="single-article"
           >
             <!-- Article Text and Meta -->
-            <div class="flex flex-row items-center justify-evenly">
-              <!-- Author Bio -->
-              <div>
-                <!-- Image and Author Link -->
-                <Image
-                  src={Avatar}
-                  alt="Susan Silver holding a book with an orange and pink gradient background and a glitch effect"
-                  height={150}
-                  width={150}
-                  class="rounded-full"
-                />
-                <p>
-                  by <a href="/authors/susan-silver/">Suzza Silver</a>
-                </p>
-                <p class="italic xs">The writer with the mathematical muse.</p>
-              </div>
-              <!-- Image and Author Link End -->
-              <div>
-                <!-- Social Media -->
-                <p class="font-bold">Follow</p>
-                <p>
-                  <ul>
-                    <li class="flex justify-start items-end">
-                      <Icon name="mdi:patreon" class="text-slate-500 sma" />
-                      <a
-                        href="https://www.patreon.com/susansilver"
-                        target="_blank">Patreon</a
-                      >
-                    </li>
-                    <li class="flex justify-start items-end">
-                      <Icon name="mdi:mastodon" class="sma text-slate-500" />
-                      <a href="https://mathstodon.xyz/@suzza">Mastodon</a>
-                    </li>
-                  </ul>
-                </p>
-              </div>
-              <!-- Social Media End -->
-            </div>
-            <!-- Author Bio End -->
+            <AuthorBio />
             <slot />
             <Support />
 
@@ -205,53 +170,7 @@ const { frontmatter, headings } = Astro.props;
         #single-article {
           max-width: 65ch;
         }
-        /* 
-        .wrap {
-          position: relative;
-        }
 
-        .wrap:after {
-          content: "";
-          position: absolute;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
-          background: rgba(100, 181, 246, 0.75);
-        } */
-        /*  .wrap img {
-          -webkit-filter: grayscale(100%);
-          filter: grayscale(100%);
-        } */
-        /* 
-        .slash::before {
-          content: "";
-          position: absolute;
-          background: black;
-          top: 15%;
-          left: 36%;
-          bottom: 42%;
-           border-left: 3px solid #212121; 
-          -webkit-transform: skew(-20deg);
-          -moz-transform: skew(-20deg);
-          -ms-transform: skew(-20deg);
-          transform: skew(-20deg);
-          border-left: 3px solid #212121;
-            border-image-slice: 1;
-          border-width: 5px;
-          border-image-source: linear-gradient(#0d47a1, #f48fb1);
-          border-bottom: 0;
-          border-right: 0;
-          border-top: 0; 
-        }
-        */
-        /*  
-        @media screen and (max-width: 1080px) {
-          .slash::before {
-            display: none;
-          }
-        }
-*/
         .mobile-toc {
           border-top-left-radius: 15px;
           border-bottom-right-radius: 15px;

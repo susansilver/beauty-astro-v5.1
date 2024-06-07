@@ -1,0 +1,44 @@
+---
+import { Image } from "astro:assets";
+import Avatar from "/src/assets/avatar-math-book-glitch.png";
+import { Icon } from "astro-icon/components";
+---
+
+<div class="flex flex-row items-center justify-evenly">
+  <!-- Author Bio -->
+  <div>
+    <!-- Image and Author Link -->
+    <Image
+      src={Avatar}
+      alt="Susan Silver holding a book with an orange and pink gradient background and a glitch effect"
+      height={150}
+      width={150}
+      class="rounded-full"
+    />
+    <p class="flex flex-col">
+      <span> by <a href="/authors/susan-silver/">Suzza Silver</a></span>
+      <span class="italic xs">The writer with the mathematical muse.</span>
+    </p>
+  </div>
+  <!-- Image and Author Link End -->
+  <div>
+    <!-- Social Media -->
+    <p class="font-bold">Follow</p>
+    <p>
+      <ul>
+        <li class="flex justify-start items-end">
+          <Icon name="mdi:patreon" class="text-slate-500 sma" />
+          <a href="https://www.patreon.com/susansilver" target="_blank"
+            >Patreon</a
+          >
+        </li>
+        <li class="flex justify-start items-end">
+          <Icon name="mdi:mastodon" class="sma text-slate-500" />
+          <a href="https://mathstodon.xyz/@suzza">Mastodon</a>
+        </li>
+      </ul>
+    </p>
+  </div>
+  <!-- Social Media End -->
+</div>
+<!-- Author Bio End -->
