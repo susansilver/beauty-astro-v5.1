@@ -53,7 +53,11 @@ const { frontmatter } = Astro.props;
             class="flex flex-col justify-center items-center text-balance w-full bg-primary-200 px-12 text-center slash"
           >
             <!-- Article Title  -->
-            <small><time>{frontmatter.updatedDate}</time></small>
+            <small>
+              <time datetime={frontmatter.updatedTime}>
+                {frontmatter.updatedDate}
+              </time>
+            </small>
             <h1>{frontmatter.title}</h1>
           </div>
           <!-- Article Title End -->
