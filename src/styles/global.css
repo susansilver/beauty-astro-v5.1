@@ -286,7 +286,7 @@ article a[href^="//"]:not([href*="beautyofmathematics.com"])::after   {
       }
 
       .margin-ydir-sma{
-        margin-inline:1.25em;
+        margin-block:1.25em;
       }
 
       .padding-top-sma {
