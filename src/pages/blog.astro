@@ -21,123 +21,129 @@ const allTags = [
   </head>
   <body class="bg-white-50">
     <Header />
-    <div class="grid grid-cols-12 mt-10">
-      <div
-        class="col-span-10 col-start-2 col-end-11 flex lg:justify-center justify-end lar p-3 bg-slate-200 rounded-xl"
-      >
-        View All ➤
-      </div>
-      <div
-        id="container"
-        class="lg:flex lg:flex-wrap justify-center items-center col-span-10 col-start-2 col-end-11 mt-5"
-      >
-        {
-          allPosts.map((post) => (
-            <>
-              <div class="p-5 relative">
-                <div class="relative lg:text-[1.563rem] med pile">
-                  <div class="wrap flex justify-stretch">
-                    <Image
-                      src={post.data.heroImage.src}
-                      alt={post.data.heroImage.alt}
-                      width={500}
-                      height={300}
-                    />
-                  </div>
-                  <div class="absolute positioning text-balance p-1 title">
-                    <a href={`/${post.slug}`} class="no-underline">
-                      {post.data.title}
-                    </a>
+    <main>
+      <div class="grid grid-cols-12 mt-10" id="blog-archive">
+        <div
+          class="col-span-10 col-start-2 col-end-11 flex lg:justify-center justify-end lar p-3 bg-slate-200 rounded-xl"
+        >
+          View All ➤
+        </div>
+        <div
+          id="container"
+          class="lg:flex lg:flex-wrap justify-center items-center col-span-10 col-start-2 col-end-11 mt-5"
+        >
+          {
+            allPosts.map((post) => (
+              <>
+                <div class="p-5 relative">
+                  <div class="relative lg:text-[1.563rem] med pile">
+                    <div class="wrap flex justify-stretch">
+                      <Image
+                        src={post.data.heroImage.src}
+                        alt={post.data.heroImage.alt}
+                        width={500}
+                        height={300}
+                      />
+                    </div>
+                    <div class="absolute text-balance p-1 title">
+                      <a href={`/${post.slug}`} class="no-underline">
+                        {post.data.title}
+                      </a>
+                    </div>
                   </div>
                 </div>
-              </div>
-            </>
-          ))
-        }
-      </div>
-      <div class="col-span-10 col-start-2 col-end-11 lg:flex lg:flex-row mb-8">
-        <div>Explore:</div>
-        <ul class="flex flex-row list-none flex-wrap">
-          {
-            allTags.map((tag) => {
-              // Check if category is defined
-              if (tag) {
-                return (
-                  <li class="m-3">
-                    <a
-                      class="tag"
-                      href={`/tag/${tag}`}
-                      title={`View posts tagged "${tag}"`}
-                    >
-                      #{tag.replace(/-/g, " ")}
-                    </a>
-                  </li>
-                );
-              }
-              // Return null if category is not defined
-              return null;
-            })
+              </>
+            ))
           }
-        </ul>
+        </div>
+
+        <div class="col-span-10 col-start-2 col-end-11 mb-8" id="footer-tags">
+          <aside class="lg:flex lg:flex-row">
+            <div>Explore:</div>
+            <ul class="flex flex-row list-none flex-wrap">
+              {
+                allTags.map((tag) => {
+                  // Check if category is defined
+                  if (tag) {
+                    return (
+                      <li class="m-3">
+                        <a
+                          class="tag"
+                          href={`/tag/${tag}`}
+                          title={`View posts tagged "${tag}"`}
+                        >
+                          #{tag.replace(/-/g, " ")}
+                        </a>
+                      </li>
+                    );
+                  }
+                  // Return null if category is not defined
+                  return null;
+                })
+              }
+            </ul>
+          </aside>
+        </div>
       </div>
-    </div>
-    <Footer />
 
-    <style>
-      .pile {
-        display: grid;
-        grid-template-areas: "pile";
-        place-items: center;
-        text-align: center;
-      }
+      <Footer />
 
-      .pile > * {
-        grid-area: pile;
-      }
-
-      .title {
-        max-width: 55ch;
-        padding: 0 1.5em;
-      }
-
-      #container > div:first-child {
-        width: 100%;
-      }
-
-      #container > div:first-child img {
-        width: 900px;
-        height: 450px;
-      }
-
-      @media screen and (max-width: 600px) {
-        #container {
-          max-width: fit-content;
-          padding: 0 0;
+      <style>
+        .pile {
+          display: grid;
+          grid-template-areas: "pile";
+          place-items: center;
+          text-align: center;
         }
+
+        .pile > * {
+          grid-area: pile;
+        }
+
+        .title {
+          max-width: 55ch;
+          padding: 0 1.5em;
+        }
+
+        #container > div:first-child {
+          width: 100%;
+        }
+
         #container > div:first-child img {
-          width: 450px;
-          height: 300px;
+          width: 900px;
+          height: 450px;
         }
-      }
 
-      #container > div:first-child::after {
-        position: absolute;
-        content: "∯ New";
-        background-color: #e0f2f1;
-        filter: drop-shadow(#4db6ac 0.5em 0.5em 0);
-        max-width: 30ch;
-        padding: 1em;
-        top: 0;
-        right: 15%;
-      }
+        @media screen and (max-width: 600px) {
+          #container {
+            max-width: fit-content;
+            padding: 0 0;
+          }
+          #container > div:first-child img {
+            width: 450px;
+            height: 300px;
+          }
+        }
 
-      .tag {
-        text-transform: capitalize;
-        background-color: #f8bbd0;
-        text-decoration: none;
-        padding: 0.5em;
-        border-radius: 5px;
-      }
-    </style>
+        #container > div:first-child::after {
+          position: absolute;
+          content: "∯ New";
+          background-color: #e0f2f1;
+          filter: drop-shadow(#4db6ac 0.5em 0.5em 0);
+          max-width: 30ch;
+          padding: 1em;
+          top: 0;
+          right: 15%;
+        }
+
+        .tag {
+          text-transform: capitalize;
+          background-color: #f8bbd0;
+          text-decoration: none;
+          padding: 0.5em;
+          border-radius: 5px;
+        }
+      </style>
+    </main>
   </body>
 </html>

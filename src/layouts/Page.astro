@@ -35,32 +35,34 @@ const { frontmatter } = Astro.props;
     <Header />
     <main class="mt-10 pb-24">
       <article>
-        <div
-          class="flex lg:flex-row justify-stretch items-center flex-col bg-primary-200"
-        >
-          <!-- Article Header  -->
-
-          <!-- Article Header Image  -->
-          <HeaderImage
-            imagePath={frontmatter.heroImage.src}
-            alt={frontmatter.heroImage.alt}
-          />
-
-          <!-- Article Header Image End -->
+        <header>
           <div
-            class="flex flex-col justify-center items-center text-balance w-full bg-primary-200 px-12 text-center slash"
+            class="flex lg:flex-row justify-stretch items-center flex-col bg-primary-200"
           >
-            <!-- Article Title  -->
-            <small>
-              <time datetime={frontmatter.updatedTime}>
-                {frontmatter.updatedDate}
-              </time>
-            </small>
-            <h1>{frontmatter.title}</h1>
+            <!-- Article Header  -->
+
+            <!-- Article Header Image  -->
+            <HeaderImage
+              imagePath={frontmatter.heroImage.src}
+              alt={frontmatter.heroImage.alt}
+            />
+
+            <!-- Article Header Image End -->
+            <div
+              class="flex flex-col justify-center items-center text-balance w-full bg-primary-200 px-12 text-center slash"
+            >
+              <!-- Article Title  -->
+              <small>
+                <time datetime={frontmatter.updatedTime}>
+                  {frontmatter.updatedDate}
+                </time>
+              </small>
+              <h1>{frontmatter.title}</h1>
+            </div>
+            <!-- Article Title End -->
           </div>
-          <!-- Article Title End -->
-        </div>
-        <!-- Article Header End -->
+          <!-- Article Header End -->
+        </header>
         <div class="grid grid-cols-12 mt-5">
           <!-- Article Body  -->
           <div
@@ -68,7 +70,9 @@ const { frontmatter } = Astro.props;
             id="single-article"
           >
             <!-- Article Text and Meta -->
-            <AuthorBio />
+            <aside>
+              <AuthorBio />
+            </aside>
             <slot />
           </div>
           <!-- Article Text and Meta End -->
