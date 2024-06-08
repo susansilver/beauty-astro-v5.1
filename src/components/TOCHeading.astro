@@ -2,7 +2,7 @@
 const { heading } = Astro.props;
 ---
 
-<li class="my-3">
+<li aria-label={heading.text}>
   <a href={"#" + heading.slug}>
     {heading.text}
   </a>
