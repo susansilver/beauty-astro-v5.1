@@ -62,6 +62,7 @@ const { frontmatter, headings } = Astro.props;
             <!-- Article Header Image End -->
             <div
               class="flex flex-col justify-center items-center text-balance w-full bg-primary-200 px-12 text-center slash"
+              id="article-title"
             >
               <!-- Article Title  -->
               <small>
@@ -131,7 +132,7 @@ const { frontmatter, headings } = Astro.props;
               />
             </aside>
             <aside>
-              <div>
+              <div id="article-footer">
                 <!-- Tags and Categories -->
                 <ul class="list-none flex justify-start gap-x-4">
                   <li class="category">

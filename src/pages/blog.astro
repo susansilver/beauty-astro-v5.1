@@ -35,9 +35,9 @@ const allTags = [
           {
             allPosts.map((post) => (
               <>
-                <div class="p-5 relative">
+                <div class="p-5 relative" id="header">
                   <div class="relative lg:text-[1.563rem] med pile">
-                    <div class="wrap flex justify-stretch">
+                    <div class="wrap flex justify-stretch" id="header-image">
                       <Image
                         src={post.data.heroImage.src}
                         alt={post.data.heroImage.alt}
@@ -45,7 +45,10 @@ const allTags = [
                         height={300}
                       />
                     </div>
-                    <div class="absolute text-balance p-1 title">
+                    <div
+                      class="absolute text-balance p-1 title"
+                      id="article-title"
+                    >
                       <a href={`/${post.slug}`} class="no-underline">
                         {post.data.title}
                       </a>
@@ -57,7 +60,7 @@ const allTags = [
           }
         </div>
 
-        <div class="col-span-10 col-start-2 col-end-11 mb-8" id="footer-tags">
+        <div class="col-span-10 col-start-2 col-end-11 mb-8" id="tag-list">
           <aside class="lg:flex lg:flex-row">
             <div>Explore:</div>
             <ul class="flex flex-row list-none flex-wrap">
