@@ -63,8 +63,8 @@
     }
 
    li {
-        margin-top:0.5em;
-        margin-bottom:0.5em;
+        margin-block:0.5em;
+       
     }
 
     ul {
@@ -73,7 +73,7 @@
 
     ul > li > ul {
         list-style-type: circle;
-        padding-left:2em;
+        padding-inline-start:2em;
     }
 
     ol {
@@ -82,7 +82,7 @@
 
     ol > li > ol {
         list-style-type: lower-alpha;
-        padding-left:2em;
+        padding-inline-start:2em;
     }
 
     /*  h1,h2,h3{
@@ -90,9 +90,9 @@
     } 
  */
     p{
-        margin-top:0.5em;
-        margin-bottom:1em;
-        
+        margin-block-start:0.5em;
+        margin-block-end:1em;
+       
     }
 
     blockquote {
@@ -104,7 +104,7 @@
         border-bottom: 0;
         border-top: 0;
         padding: 0.5em;
-        margin:0.5em 0;
+        margin-block:0.5em;
     }
 
     .attribution {
@@ -116,8 +116,8 @@
     .img-position{
         position:relative;
         /* margin: 2.5em 0; */
-        padding-right: 1.5em;
-        padding-left: 1.5em;
+        padding-inline: 1.5em;
+        margin:1.5em;
     }
     .img-position > img {
         display: block;
@@ -246,14 +246,65 @@ article a[href^="//"]:not([href*="beautyofmathematics.com"])::after   {
         filter: grayscale(100%);
       }
 
-      .positioning {
+    /*   .positioning {
         position: absolute;
-        top: 50%; /* position the top  edge of the element at the middle of the parent */
-        left: 50%; /* position the left edge of the element at the middle of the parent */
+        top: 50%; /* position the top  edge of the element at the middle of the parent 
+        left: 50%;  position the left edge of the element at the middle of the parent 
 
         transform: translate(
           -50%,
           -50%
         ); /* This is a shorthand of
-                                         translateX(-50%) and translateY(-50%) */
+                                         translateX(-50%) and translateY(-50%) 
+      } */
+
+      .pile {
+        display: grid;
+        grid-template-areas: "pile";
+        place-items: center;
+        text-align: center;
+      }
+
+      .pile > * {
+        grid-area: pile;
+      }
+
+      .margin-top {
+        margin-block: 2.5em
+      }
+
+      .margin-xdir {
+        margin-inline:2.5em;
+      }
+
+      .margin-xdir-sma {
+        margin-inline:1em;
+      }
+
+      .margin-top-sma {
+        margin-block: 1.25em
+      }
+
+      .margin-ydir-sma{
+        margin-inline:1.25em;
+      }
+
+      .padding-top-sma {
+        padding-block:1.25em;
+      }
+
+      .padding-top-lar {
+        padding-block:2.5em;
+      }
+
+      .margin-bottom {
+        margin-block-end:2em;
+      }
+
+      .padding-bottom-xxl {
+        padding-block-end: 6em;
+      }
+
+      .padding-xdir {
+        padding-inline: 3em;
       }

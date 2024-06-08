@@ -15,7 +15,7 @@ const allPosts = (await getCollection("blog"))
     <BaseHead title="Home" description="From Math Anxiety to Math Confidence" />
   </head>
   <body class="bg-white-50">
-    <div class="grid grid-cols-12 my-10" id="index-menu">
+    <div class="grid grid-cols-12 margin-top" id="index-menu">
       <div
         class="lg:col-span-6 lg:col-start-2 col-span-10 span-row-1 col-start-2"
         id="first-box"
@@ -28,19 +28,21 @@ const allPosts = (await getCollection("blog"))
                   href={`/${post.slug}`}
                   class="no-underline  text-black-900 visited:text-black-900 hover:text-secondary-900"
                 >
-                  <div class="wrap" id="featured-image">
-                    <Image
-                      src={post.data.heroImage.src}
-                      alt={post.data.heroImage.alt}
-                      width={900}
-                      height={300}
-                    />
-                  </div>
-                  <div
-                    class="absolute positioning text-balance"
-                    id="featured-title"
-                  >
-                    {post.data.title}
+                  <div class="pile">
+                    <div class="wrap" id="featured-image">
+                      <Image
+                        src={post.data.heroImage.src}
+                        alt={post.data.heroImage.alt}
+                        width={900}
+                        height={300}
+                      />
+                    </div>
+                    <div
+                      class="absolute positioning text-balance"
+                      id="featured-title"
+                    >
+                      {post.data.title}
+                    </div>
                   </div>
                 </a>
               </div>
@@ -69,12 +71,14 @@ const allPosts = (await getCollection("blog"))
         </a>
       </div>
       <div class="col-span-6 bg-primary-600 text-white-50" id="fourth-box">
-        <h1 class="flex justify-center items-center lg:text-7xl lar logo py-5">
+        <h1
+          class="flex justify-center items-center lg:text-7xl lar logo padding-top-sma"
+        >
           Beauty of Mathematics
         </h1>
       </div>
       <div
-        class="col-span-3 bg-primary-500 lg:text-[2.441rem] sma py-10"
+        class="col-span-3 bg-primary-500 lg:text-[2.441rem] sma"
         id="fifth-box"
       >
         <a
@@ -85,7 +89,7 @@ const allPosts = (await getCollection("blog"))
         </a>
       </div>
       <div
-        class="col-span-3 bg-primary-200 lg:text-[2.441rem] sma py-10"
+        class="col-span-3 bg-primary-200 lg:text-[2.441rem] sma"
         id="sixth-box"
       >
         <a
