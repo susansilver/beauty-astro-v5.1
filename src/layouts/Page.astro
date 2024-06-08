@@ -38,6 +38,7 @@ const { frontmatter } = Astro.props;
         <header>
           <div
             class="flex lg:flex-row justify-stretch items-center flex-col bg-primary-200"
+            id="article-header"
           >
             <!-- Article Header  -->
 
@@ -63,7 +64,7 @@ const { frontmatter } = Astro.props;
           </div>
           <!-- Article Header End -->
         </header>
-        <div class="grid grid-cols-12 mt-5">
+        <div class="grid grid-cols-12 mt-5" id="article-body">
           <!-- Article Body  -->
           <div
             class="md:col-start-5 md:col-span-6 col-span-10 col-start-2"
@@ -85,7 +86,7 @@ const { frontmatter } = Astro.props;
           max-width: 65ch;
         }
 
-        .mobile-toc {
+        /*  .mobile-toc {
           border-top-left-radius: 15px;
           border-bottom-right-radius: 15px;
         }
@@ -97,7 +98,7 @@ const { frontmatter } = Astro.props;
         details:not([open]):hover,
         details:not([open]):focus {
           background: #4db6ac;
-        }
+        } */
       </style>
     </main>
   </body>

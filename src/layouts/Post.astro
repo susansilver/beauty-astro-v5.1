@@ -48,6 +48,7 @@ const { frontmatter, headings } = Astro.props;
         <header>
           <div
             class="flex lg:flex-row justify-stretch items-center flex-col bg-primary-200"
+            id="article-header"
           >
             <!-- Article Header  -->
 
@@ -74,31 +75,37 @@ const { frontmatter, headings } = Astro.props;
           </div>
           <!-- Article Header End -->
         </header>
-        <div class="grid grid-cols-12 mt-5">
+        <div class="grid grid-cols-12 mt-5" id="article-body">
           <!-- Article Body  -->
-          <div class="md:col-span-2 md:col-start-2">
+          <div class="md:col-span-2 md:col-start-2" id="article-nav">
             <!-- Table of Contents -->
-            <nav class="article-toc sticky top-0 md:block hidden">
+            <nav
+              class="article-toc sticky top-0 md:block hidden"
+              aria-labelledby="toc-title"
+            >
               {
                 headings && headings.length > 0 && (
                   <>
-                    <h3>Table of Contents</h3>
+                    <h3 id="toc-title">Table of Contents</h3>
                     <TOC headings={headings} />
                   </>
                 )
               }
             </nav>
-
-            {
-              headings && headings.length > 0 && (
-                <details class="md:hidden block fixed bottom-0 left-0 w-full bg-accent-50 border-accent-300 border-4 z-10 mobile-toc">
-                  <summary class="p-3">Table of Contents</summary>
-                  <nav class="article-toc mx-10">
-                    <TOC headings={headings} />
-                  </nav>
-                </details>
-              )
-            }
+            <nav aria-labelledby="toc-mobile">
+              {
+                headings && headings.length > 0 && (
+                  <details class="md:hidden block fixed bottom-0 left-0 w-full bg-accent-50 border-accent-300 border-4 z-10 mobile-toc">
+                    <summary class="p-3" id="toc-mobile">
+                      Table of Contents
+                    </summary>
+                    <span class="mx-10">
+                      <TOC headings={headings} />
+                    </span>
+                  </details>
+                )
+              }
+            </nav>
           </div>
           <!-- End Table of Contents -->
           <div
