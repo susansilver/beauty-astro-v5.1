@@ -21,6 +21,7 @@ interface Props {
     description: string;
     pubDate: string;
     updatedTime: string;
+    show: boolean;
   };
   headings: {
     slug: string;
@@ -29,7 +30,7 @@ interface Props {
   }[];
 }
 
-const { frontmatter, headings } = Astro.props;
+const { frontmatter, headings, show } = Astro.props;
 ---
 
 <html lang="en" class="scroll-smooth">
@@ -85,7 +86,7 @@ const { frontmatter, headings } = Astro.props;
               aria-labelledby="toc-title"
             >
               {
-                headings && headings.length > 0 && (
+                show && headings && headings.length > 0 && (
                   <>
                     <h3 id="toc-title">Table of Contents</h3>
                     <TOC headings={headings} />
@@ -95,7 +96,7 @@ const { frontmatter, headings } = Astro.props;
             </nav>
             <nav aria-label="Table of Contents">
               {
-                headings && headings.length > 0 && (
+                show && headings && headings.length > 0 && (
                   <details class="md:hidden block fixed bottom-0 left-0 w-full bg-accent-50 border-accent-300 border-4 z-10 mobile-toc">
                     <summary class="p-3">Table of Contents</summary>
                     <span class="margin-top">

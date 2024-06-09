@@ -36,6 +36,7 @@ const blog = defineCollection({
 			title: z.string(),
 			src: z.string(),
 		  }).optional(),
+		  show: z.boolean(),
 	}),
 });
 

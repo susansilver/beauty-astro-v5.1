@@ -1,7 +1,7 @@
 ---
-layout: ../../layouts/BlogPostSingle.astro
+layout: ../../layouts/Post.astro
 title: 10 Question Interview With Bernhard Werner
-description: "An interview with mathematcian Bernhard Werner who publishes videos about math."
+description: An interview with mathematcian Bernhard Werner who publishes videos about math.
 draft: false
 pubDate: 2024-03-05T20:09:53.331Z
 updatedDate: March 5th, 2024
@@ -13,16 +13,18 @@ tags:
 categories: interviews
 author: susan-silver
 thumbnail: /src/assets/header-image-beauty-of-mathematics-angle-symbol.jpg
+relatedOne:
+  title: Join Me on the Finite Group Math Comm Discord
+  src: /join-me-on-the-finite-group-math-comm-discord
+relatedTwo:
+  title: What Is Math Communications? an Existential Question
+  src: /what-is-math-communication
+relatedThree:
+  title: "Carnival of Mathematics #221"
+  src: /carnival-of-mathematics-221
 ---
 import { YouTube } from '@astro-community/astro-embed-youtube';
-import BlockQuoteBook from '../../components/blog/BlockQuoteBook.astro';
-import BlockQuoteQuote from '../../components/blog/BlockQuoteQuote.astro';
-import AlignRight from '../../components/blog/AlignRight.astro';
-import AlignCenter from '../../components/blog/AlignCenter.astro';
-import BreakoutImage from '../../components/blog/BreakoutImage.astro';
-import Toc from '../../components/blog/Toc.astro';
-import { Image } from "astro:assets";
-import RelatedArticles from '../../components/blog/RelatedArticles.astro';
+
 
 Hello, this is the next installment of the 10 Question Interview. I ask people in the math community the same 10 questions in the style of the Actors Studio. Those who would like a feature should email: [BeautyOfMathematics@SusanSilver.net](mailto:BeautyOfMathematics@SusanSilver.net).
 
@@ -74,4 +76,3 @@ Oh, definitely! Since I was little, I liked to draw and always had an interest i
 
 To be interviewed next, please email me at [BeautyOfMathematics@SusanSilver.net](mailto:BeautyOfMathematics@SusanSilver.net).
 
-<RelatedArticles oneTitle="Join Me on the Finite Group Math Comm Discord" oneURL="/join-me-on-the-finite-group-math-comm-discord" twoTitle="What Is Math Communications? an Existential Question" twoURL="/what-is-math-communication" threeTitle="Carnival of Mathematics #221" threeURL="/carnival-of-mathematics-221"  />

@@ -1,12 +1,12 @@
 ---
-layout: ../../layouts/BlogPostSingle.astro
+layout: ../../layouts/Post.astro
 title: 15 Creative Mathematical Cross Stitch Patterns for Math & Science Enthusiasts
-pubDate: 2020/01/04
+pubDate: 2020-01-04T21:24:39.000Z
 description: Discover 15 math-inspired cross stitch patterns in this post. Enjoy expressing your passion for science or exploring a new hobby with these fun designs. With simple tutorials and beautiful patterns, this is a great way to unwind and stay occupied during uncertain times.
 updatedDate: June 13th, 2023
 heroImage:
-  alt: The notation for an angle in colors of blue on a white background
-  src: ../../assets/header-image-beauty-of-mathematics-sigma.jpg
+  alt: The notation for sigma e in colors of pink and green on a white background
+  src: /src/assets/header-image-beauty-of-mathematics-sigma.jpg
 categories: cross-stitch
 tags:
   - alice-in-wonderland
@@ -25,46 +25,27 @@ tags:
 author: susan-silver
 draft: false
 thumbnail: ../../assets/header-image-beauty-of-mathematics-sigma.jpg
+updateTime: 2023-06-13T20:23:47.000Z
+relatedOne:
+  title: The Annotated Numberphile a Retrospective by Year
+  src: /the-annotated-numberphile-a-retrospective-by-year
+relatedTwo:
+  title: A Valentine for Mathematics
+  src: /a-valentine-for-mathematics
+relatedThree:
+  title: Turn Math Anxiety Into Awe Improving Your Health for Pi Day
+  src: /turn-math-anxiety-into-awe-and-improve-your-health-for-pi-day
+  show: false
 ---
 import { YouTube } from '@astro-community/astro-embed-youtube';
-import BlockQuoteBook from '../../components/blog/BlockQuoteBook.astro';
-import AlignRight from '../../components/blog/AlignRight.astro';
-import AlignCenter from '../../components/blog/AlignCenter.astro';
-import Porgy from '../../assets/alan-turing-teddybear-porgy-cross-stitch-pattern.png';
-import Hardy from '../../assets/mathematician-Godfrey_Harold_Hardy-150x150.jpg';
+import Porgy from '/src/assets/alan-turing-teddybear-porgy-cross-stitch-pattern.png';
+import Hardy from '/src/assets/mathematician-Godfrey_Harold_Hardy-150x150.jpg';
 import { Image } from 'astro:assets';
-import dozenal  from '../../assets/Dozenal-Base12-bookmark.jpg';
-import e from '../../assets/100-digits-e.png';
-import Toc from '../../components/blog/Toc.astro';
-import RelatedArticles from '../../components/blog/RelatedArticles.astro';
+import dozenal  from '/src/assets/Dozenal-Base12-bookmark.jpg';
+import e from '/src/assets/100-digits-e.png';
 
-<Toc>
 
-- [Introduction to Science Communication for Mathematics](#IntroductiontoScienceCommunicationforMathematics)
-- [Expressing the Creativity of Mathematics](#ExpressingtheCreativityofMathematics)
-- [Cross Stitch Tutorial](#CrossStitchTutorial)
-  - [Finding the Starting Place to Stitch](#FindingtheStartingPlacetoStitch)
-  - [The Backstitch](#TheBackstitch)
-  - [The French Knot](#TheFrenchKnot)
-- [15 Mathematical Cross Stitch Patterns](#15MathematicalCrossStitchPatterns)
-  - [100 Digits of e](#100Digitsofe)
-  - [100 Digits of pi(π)](#100Digitsofpi)
-  - [Enigma (Alan Turing)](#EnigmaAlanTuring)
-  - [Porgy (Alan Turing)](#PorgyAlanTuring)
-  - [Porgy](#Porgy)
-  - [Amicable Numbers - 220](#AmicableNumbers-220)
-  - [Amicable Numbers - 284](#AmicableNumbers-284)
-  - [Dozenal or Base 12](#DozenalorBase12)
-  - [e](#e)
-  - [pi(π)](#pi)
-  - [Curiouser and Curiouser](#CuriouserandCuriouser)
-  - [999 Happy Haunts](#999HappyHaunts)
-  - [Math Goddess](#MathGoddess)
-  - [My Brain is Open](#MyBrainisOpen)
-  - [Golden Ratio](#GoldenRatio)
-  - [Zork (Bonus)](#ZorkBonus)
-- [Summary](#Summary)
-</Toc>
+
 
 
 One of the ways that I self-care is to design mathematical cross stitch patterns. 
@@ -111,15 +92,23 @@ They are useful everyday items that you keep around the house. You also take the
 travel on public transit. You can leave your bookmark out in the open while you read and wait for people to start a conversation.
 
 
-##  <a name='ExpressingtheCreativityofMathematics'></a>Expressing the Creativity of Mathematics <AlignRight src={Hardy} alt="Photograph of G.H Hardy" caption="Photograph of G.H Hardy" />
+##  <a name='ExpressingtheCreativityofMathematics'></a>Expressing the Creativity of Mathematics 
+
+import ImageAlign from "/src/components/typography/ImageAlign.astro"
+
+
+<ImageAlign src="/src/assets/Godfrey_Harold_Hardy_1.jpg" alt="Photograph of G.H Hardy" caption="G.H Hardy" float="float-right" align="caption-right" style="width:50%;" />
 
 What makes making these bookmarks meaningful to me is that they express the creativity of mathematics. 
 These patterns show maths in a visually appealing way. It takes it from an abstract concept to something you can hold in your hands. 
 I think it reveals the beauty of mathematics.
 
-<BlockQuoteBook cite="- G.H. Hardy">
+import FancyBlockquote from "/src/components/typography/FancyBlockquote.astro"
+
+<FancyBlockquote cite="G.H Hardy" name="mdi:book-open-variant">
+
  "Beauty is the first test: there is no permanent place in the world for ugly mathematics." 
- </BlockQuoteBook>
+ </FancyBlockquote>
 
 
 I think that is the hardest thing for a layperson to see, the beauty of it all. Yet, if you are a pure mathematics person 
@@ -203,7 +192,7 @@ It is the same data visualization technique as the 100 digits of e. These are me
 
 [Download 100 Digits of pi Pattern](/patterns/100-digits-pi.pdf)
 
-import pi from '../../assets/100-digits-pi.png';
+import pi from '/src/assets/100-digits-pi.png';
 
 <Image src={pi} alt="The first hundred digits of pi with each digit represented as different colored blue square" format="avif" quality="mid" />
 
@@ -217,7 +206,7 @@ I have the letters stitched in black but for this pattern when you see black rep
 
 [Download Enigma Pattern](/patterns/Alan-Turing-Enigma-2.pdf)
 
-import enigma from '../../assets/Enigma-Alan-Turing-mathematical-cross-stitch-pattern.png';
+import enigma from '/src/assets/Enigma-Alan-Turing-mathematical-cross-stitch-pattern.png';
 
 <Image src={enigma} alt="Enigma spelled out in typewriter keys on a black background" format="avif" quality="mid" />
 
@@ -229,7 +218,7 @@ and would use Porgy to practice his lectures! It made me feel connected to Turin
 
 [Download Porgy Bookmark](/patterns/Alan-Turing-Porgy-white-Aida.pdf)
 
-import porgy from '../../assets/Alan-Turing-Porgy-cross-stitch-bookmark-pattern.png';
+import porgy from '/src/assets/Alan-Turing-Porgy-cross-stitch-bookmark-pattern.png';
 
 <Image src={porgy} alt="Teddy bear wearing blue overalls with red buttons on white background with Alan Turing's name in black" format="avif" quality="mid" />
 
@@ -241,7 +230,8 @@ I also wanted to make Porgy by himself. This is the perfect size to frame using 
 
 [Download Porgy Pattern](/patterns/Porgy-Pattern.pdf)
 
-<AlignCenter src={Porgy} alt="Alan Turing's Teddy Bear Porgy" caption="Alan Turing's Teddy Bear Porgy" />
+<ImageAlign src="/src/assets/alan-turing-teddybear-porgy-cross-stitch-pattern.png" alt="Alan Turing's Teddy Bear Porgy" caption="Alan Turing's Teddy Bear Porgy" align="caption-center" flex="justify-center" />
+
 
 
 ###   <a name='AmicableNumbers-220'></a>6\. Amicable Numbers - 220
@@ -252,7 +242,7 @@ All the factors of 284 add up to 220.
 
 [Download Amicable Numbers 220 Pattern](/patterns/Amicable-Numbers-220.pdf)
 
-import twenty from '../../assets/Amicable-Numbers-220-mathematical-cross-stitch-pattern.png';
+import twenty from '/src/assets/Amicable-Numbers-220-mathematical-cross-stitch-pattern.png';
 
 <Image src={twenty} alt="The number 220 in blue with a red heart with 284 on it with the factors of 284 around them in black" format="avif" quality="mid"/>
 
@@ -266,7 +256,7 @@ This means that all the factors of 220 add up to 284. All the factors of 284 add
 
 [Download Amicable Numbers 284 Pattern](/patterns/Amicable-Numbers-284.pdf)
 
-import two from '../../assets/Amicable-Numbers-284-mathematical-cross-stitch-pattern.png';
+import two from '/src/assets/Amicable-Numbers-284-mathematical-cross-stitch-pattern.png';
 
 <Image src={two} alt="The number 284 in blue with a red heart with 220 on it with the factors of 284 around them in black" format="avif" quality="mid" />
 
@@ -279,7 +269,7 @@ is the one posted on 12-12-12.
 
 [Download Dozenal Bookmark with Dek, El, and Do digits](/patterns/Base-12-Royal-Blue.pdf)
 
-import BaseTweleve from '../../assets/Base-12-dozenal-duodecimal-digits.png';
+import BaseTweleve from '/src/assets/Base-12-dozenal-duodecimal-digits.png';
 
 <Image src={BaseTweleve} alt="This pattern for cross stitch features the digits of dozenal, also called Base 12 or duodecimal, in the color of royal blue with the digits dek, el, and do." format="avif" quality="mid" />
 
@@ -292,7 +282,7 @@ I made this bookmark to celebrate my love of e.
 
 [Download Digits of e Bookmark](/patterns/e-Royal-Blue.pdf)
 
-import edigits from '../../assets/e-500x108.png';
+import edigits from '/src/assets/e-500x108.png';
 
 <Image src={edigits} alt="a large e in blue with its first few digits in black on a white background" format="avif" quality="mid" />
 
@@ -304,7 +294,7 @@ I released this pattern on pi(π) day of 2020. I'm republishing it for this list
 
 [Download Digits of pi Bookmark](/patterns/pi-Royal-Blue-1.pdf)
 
-import pidigits from '../../assets/pi-500x113.png';
+import pidigits from '/src/assets/pi-500x113.png';
 
 <Image src={pidigits} alt="Pi in Blue with the first few digits in black on a white background" format="avif" quality="mid" />
 
@@ -316,7 +306,7 @@ It was written by Lewis Carroll, his pen name,  who was a mathematician at Oxfor
 [Download Alice in Wonderland Quote Pattern](/patterns/curiouser.pdf)
 
 
-import alice from '../../assets/Alice-in-Wonderland-curiouser-and-curiouser-bookmark-cross-stitch-pattern.png';
+import alice from '/src/assets/Alice-in-Wonderland-curiouser-and-curiouser-bookmark-cross-stitch-pattern.png';
 
 <Image src={alice} alt="the words curiouser and curiouser in cursive with black thread on a white background" format="avif" quality="mid" />
 
@@ -327,7 +317,7 @@ that love of numbers and the love of that ride.
 
 [Download Haunted Mansion Pattern](/patterns/999-Happy-Haunts.pdf)
 
-import haunts from '../../assets/999-happy-haunts-Disney-Haunter-Mansion-cross-stitch-pattern.png';
+import haunts from '/src/assets/999-happy-haunts-Disney-Haunter-Mansion-cross-stitch-pattern.png';
 
 <Image src={haunts} alt="The phrase 999 Happy Haunts in green on a white background" format="avif" quality="mid" />
 
@@ -338,7 +328,7 @@ She said to think of myself as a math goddess. So, I made this bookmark to remin
 
 [Download Math Goddess Pattern](/patterns/math-goddess.pdf)
 
-import goddess from '../../assets/math-goddess-cross-stitch-pattern.png';
+import goddess from '/src/assets/math-goddess-cross-stitch-pattern.png';
 
 <Image src={ goddess} alt="The word Math Goddess in black on a white background" format="avif" quaity="mid" />
 
@@ -348,7 +338,7 @@ That same math professor, her favorite mathematician is Paul Erdős. I made this
 
 [Download Paul Erdos Quote Pattern](/patterns/Paul-Erdos.pdf)
 
-import erdos from '../../assets/Paul-erdos-my-brain-is-open-cross-stitch-bookmark-pattern.png';
+import erdos from '/src/assets/Paul-erdos-my-brain-is-open-cross-stitch-bookmark-pattern.png';
 
 <Image src={erdos} alt="Erdos quote in black on a white background" format="avif" quality="mid" />
 
@@ -358,7 +348,7 @@ This goes along with the previous patterns for e and pi.
 
 [Download Golden Ratio Digits](/patterns/golden-ratio-digits.png)
 
-import golden from '../../assets/golden-ratio-digits.png';
+import golden from '/src/assets/golden-ratio-digits.png';
 
 <Image src={golden} alt="Phi in blue with the first few digits in black on a white background" format="avif" quality="mid" />
 
@@ -370,7 +360,7 @@ old school Zork quote for those who remember the game. This is also one of my fa
 
 [Download Zork Quote Pattern](/patterns/Eaten-by-a-Grue.pdf)
 
-import zork from '../../assets/you-are-likely-to-be-eaten-by-a-grue-cross-stitch-pattern.png';
+import zork from '/src/assets/you-are-likely-to-be-eaten-by-a-grue-cross-stitch-pattern.png';
 
 <Image src={zork} alt="You are likely to be eaten by a grue in black on a white background" format="avif" quality="mid" />
 
@@ -381,4 +371,3 @@ hen I stitch time seems to stand still. It requires focus, concentration, and at
  I love that I'm able to express my love of mathematics so creatively by designing new patterns. 
  I hope you have downloaded some of them today. 
 
-<RelatedArticles oneTitle="The Annotated Numberphile a Retrospective by Year" oneURL="/the-annotated-numberphile-a-retrospective-by-year" twoTitle="A Valentine for Mathematics" twoURL="/a-valentine-for-mathematics" threeTitle="Turn Math Anxiety Into Awe Improving Your Health for Pi Day" threeURL="/turn-math-anxiety-into-awe-and-improve-your-health-for-pi-day"  />

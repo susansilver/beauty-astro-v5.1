@@ -1,18 +1,27 @@
 ---
-layout: /src/layouts/BlogPostSingle.astro
+layout: /src/layouts/Post.astro
 title: 10 Question Interview With Colin Beveridge
-pubDate: 2024/02/06
+pubDate: 2024-02-06T17:35:29.000Z
 categories: interviews
 tags:
   - math-communications
-description: New series of 10 question interviews with members of the math community. 
+description: New series of 10 question interviews with members of the math community.
 updatedDate: February 6th, 2024
 heroImage:
-  alt: The math symbol theta in colors of blue on white background
-  src: ../../assets/header-image-beauty-of-mathematics-e.jpg
+  alt: The constant e n colors of blue on white background
+  src: /src/assets/header-image-beauty-of-mathematics-e.jpg
 author: susan-silver
 draft: false
 thumbnail: ../../assets/header-image-beauty-of-mathematics-e.jpg
+relatedOne:
+  title: Explore Over 100 Links and Meet the Storytellers Who Bring Mathematics to Life
+  src: /math-communication
+relatedTwo:
+  title: Join Me on the Finite Group Math Comm Discord
+  src: /join-me-on-the-finite-group-math-comm-discord
+relatedThree:
+  title: A Valentine for Mathematics
+  src: /a-valentine-for-mathematics
 ---
 This is the start of a new series on Beauty of Mathematics. I wanted to connect with more people in the math community. This feels like a good way to introduce people to each other by answering some questions. It is in the style of Inside the Actor’s Studio. The questions are the same for everyone. I’ve made some slight alterations to the questions in future interviews to make the questions more open-ended. 
 
@@ -34,8 +43,10 @@ I think the first time I remember saying "I'm a mathematician" rather than "I st
 
 These days, I tend to enjoy geometry puzzles -- how do you prove this? How do you construct that? I often get sucked into a good puzzle and find I can't focus very well on anything else until I'm happy with my solution. Right now I'm looking at this picture that looks a bit like Shaun the Sheep:
 
+import ImageAlign from "/src/components/typography/ImageAlign.astro";
 
-![geometry puzzle that looks like Shaun the Sheep](../../assets/Shaun-the-Sheep.png "Shaun the Sheep?")
+<ImageAlign src="/src/assets/Shaun-the-Sheep.png" alt="geometry puzzle that looks like Shaun the Sheep" caption="Is this Shaun the Sheep?" flex="justify-center" align="caption-left" />
+
 
 
 I can construct it just fine, but only by cheating and figuring out the algebra first. I want to understand why it works geometrically!
@@ -92,6 +103,5 @@ My main hobbies outside of maths are the Rubik's cube -- which is FULL of maths 
 
 I want to applaud Colin for bravely answering my call for interviewees. My hope is that a few more people will heed the call and share their insights. Again, [you can email me directly](mailto:beautyofmathematics@susansilver.net) if you would like a feature. 
 
-import RelatedArticles from '../../components/blog/RelatedArticles.astro';
 
-<RelatedArticles oneTitle="Explore Over 100 Links and Meet the Storytellers Who Bring Mathematics to Life" oneURL="/math-communication" twoTitle="Join Me on the Finite Group Math Comm Discord" twoURL="/join-me-on-the-finite-group-math-comm-discord" threeTitle="A Valentine for Mathematics" threeURL="/a-valentine-for-mathematics" />
+
