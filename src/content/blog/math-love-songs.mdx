@@ -1,7 +1,7 @@
 ---
-layout: /src/layouts/Post.astro
+layout: /src/layouts/BlogPostSingle.astro
 title: 25 Math Love Songs and Other Mathematically Themed Videos
-pubDate: 2021-11-30
+pubDate: 2021/11/30
 categories: music
 tags:
   - bob-odenkirk
@@ -17,26 +17,48 @@ tags:
   - youtube
 description: Discover a compilation of math love songs and those about mathematical terms with this music playlist. This mixtape is perfect for anyone who loves both numbers and music.
 updatedDate: Feburary 14th, 2023
-updateTime: 2023-02-14
 heroImage:
   alt: The math symbol Sigma in colors of blue on white background
-  src: /src/assets/header-image-beauty-of-mathematics-sigma.jpg
+  src: ../../assets/header-image-beauty-of-mathematics-angle-symbol.jpg
 author: susan-silver
 draft: false
-feature: true
-relatedOne:
-  title: "Join Me in Watching the 24 Hour Maths Stream About Math Games"
-  src: "/watching-24-hour-maths-stream-about-math-games"
-relatedTwo:
-  title: "10 Videos That Show the Secrets of Dice"
-  src: "/10-videos-secrets-of-dice"
-relatedThree:
-  title: "The Annotated Numberphile a Retrospective by Year"
-  src: "/the-annotated-numberphile-a-retrospective-by-year"
+thumbnail: ../../assets/header-image-beauty-of-mathematics-angle-symbol.jpg
 ---
 
 import { YouTube } from '@astro-community/astro-embed-youtube';
+import BlockQuoteBook from '../../components/blog/BlockQuoteBook.astro';
+import AlignRight from '../../components/blog/AlignRight.astro';
+import AlignCenter from '../../components/blog/AlignCenter.astro';
+import Toc from '../../components/blog/Toc.astro';
 import RelatedArticles from '../../components/blog/RelatedArticles.astro';
+
+<Toc>
+- [Kiss Off - Violent Femmes](#KissOff)
+- [One - Harry Nilsson](#One)
+- [Chicago x 12 - Rogue Wave](#Chicagox12)
+- [Love and Mathematics - Broken Social Scene](#LoveandMathematics)
+- [Three is a Magic Number - Blind Melon](#ThreeisaMagicNumber)
+- [Forecast Fascist Future - Of Montreal](#ForecastFascistFuture)
+- [Insurance Fraud #2 - Mountain Goats](#InsuranceFraud)
+- [Pinball Number Count - The Postmarks](#PinballNumberCount)
+- [Mandelbrot Set - Johnathan Coulton](#MandelbrotSet)
+- [Random Number Generation - Hedwig and the Angry Inch](#RandomNumberGeneration)
+- [Back when I was 4 - Jeffrey Lewis](#BackwhenIwas4)
+- [P.O Box 9847 - The Monkees](#POBox9847)
+- [Psalms 40:2 - Mountain Goats](#Psalms)
+- [Zilch- The Monkees](#Zilch)
+- [(What a) Wonderful World- Sam Cooke](#WonderfulWorld)
+- [40 Day Dream - Edward Sharpe & the Magnetic Zeroes](#40DayDream)
+- [Section 12 (Hold Me Now)- The Polyphonic Spree](#Section12)
+- [Made-up Love Song #43 - The Guillemots](#Made-upLoveSong)
+- [1234 - Feist](#1234)
+- [Down at the So and So on Somewhere - The Fiery Furnaces](#DownattheSoandSoonSomewhere)
+- [My Mathematical Mind - Spoon](#MyMathematicalMind)
+- [Another Hundred People - Company](#AnotherHundredPeople)
+- [A Fortnight’s Time - Maximo Park](#AFortnightsTime)
+- [ Infinity - BETTY](#Infinity)
+- [X Amount of Words - Blue October](#XAmountofWords)
+</Toc>
 
 Are you looking for some math love songs? I once made a mix tape for a mathematician. It only included mathematically related songs. 
 I didn't keep a copy of that mix, unfortunately. This list includes more than the original. I've added some new 
@@ -44,123 +66,123 @@ math love songs and some about numbers. As well as other mathematical terms. I h
 
 In no particular order...
 
-**1. Kiss Off - Violent Femmes**
+### <a name="KissOff "></a> 1. Kiss Off - Violent Femmes
 
-<YouTube id="hTUAaW3oGGo" />
+<YouTube id="https://www.youtube.com/watch?v=hTUAaW3oGGo" />
 
 There is a section in this song that has them counting off to ten. A great song. One of my favorites.
 
-**2. One - Harry Nilsson**
+### <a name="One"></a> 2. One - Harry Nilsson
 
-<YouTube id="DYzY7-V5vxY" />
+<YouTube id="https://www.youtube.com/watch?v=DYzY7-V5vxY" />
 
 Does anyone know what a busy signal is anymore? The origin of [one is the loneliest number](https://beautyofmathematics.com/one-harry-nilsson/).
 
-**3. Chicago x 12 - Rogue Wave**
+### <a name="Chicagox12"></a> 3. Chicago x 12 - Rogue Wave
 
-<YouTube id="e8wulSNIo6A" />
+<YouTube id="https://www.youtube.com/watch?v=e8wulSNIo6A" />
 
 A band that I love. Chosen for the multiplication in the title. The video has Bob Odenkirk. What more do you want?
 
-**4. Love and Mathematics - Broken Social Scene**
+### <a name="LoveandMathematics"></a> 4. Love and Mathematics - Broken Social Scene
 
-<YouTube id="L2fsKgxr-Zo" />
+<YouTube id="https://www.youtube.com/watch?v=L2fsKgxr-Zo" />
 
 Another one of my favorite bands is the Canadian supergroup Broken Social Scene. This is also my favorite record by them. It seems kismet that they would include an instrumental track with this title. It is my love song for mathematics. It is also my most-played song of 2022.
 
-**5. Three is a Magic Number - Blind Melon**
+### <a name="ThreeisaMagicNumber"></a> 5. Three is a Magic Number - Blind Melon
 
-<YouTube id="k6to8QyaA1Y" />
+<YouTube id="https://www.youtube.com/watch?v=k6to8QyaA1Y" />
 
 This was on an album that I owned of School House Rocks covers. It is one of my favorites as well.
 
-**6. Forecast Fascist Future - Of Montreal**
+### <a name="ForecastFascistFuture "></a> 6. Forecast Fascist Future - Of Montreal
 
-<YouTube id="PGhSjGsfJM0" />
+<YouTube id="https://www.youtube.com/watch?v=PGhSjGsfJM0" />
 
 This is an excuse to include a song that I love. But there is a bit at the end where he talks about numbers. It fits, I swear. ;)
 
-**7. Insurance Fraud #2 - Mountain Goats**
+### <a name="InsuranceFraud"></a> 7. Insurance Fraud #2 - Mountain Goats
 
-<YouTube id="Nnjb0eZPxM4" />
+<YouTube id="https://www.youtube.com/watch?v=Nnjb0eZPxM4" />
 
 I included this song because its title contains a number. Also, great band and a great song.
 
-**8. Pinball Number Count - The Postmarks**
+### <a name="PinballNumberCount"></a> 8. Pinball Number Count - The Postmarks
 
-<YouTube id="Md5SxTz4yZ4" />
+<YouTube id="https://www.youtube.com/watch?v=Md5SxTz4yZ4" />
 
 A cover of the Pointer Sisters Pinball Number Count from Sesame Street. It's slowed down and I find it rather relaxing.
 
-**9. Mandelbrot Set - Johnathan Coulton**
+### <a name="MandelbrotSet"></a> 9. Mandelbrot Set - Johnathan Coulton
 
-<YouTube id="6tsutU92rrE" />
+<YouTube id="https://www.youtube.com/watch?v=6tsutU92rrE" />
 
 My first math dream was about the Mandelbrot Set.
 
-**10. Random Number Generation - Hedwig and the Angry Inch**
+### <a name="RandomNumberGeneration"></a> 10. Random Number Generation - Hedwig and the Angry Inch
 
-<YouTube id="cD7Hk7ytJ5w" />
+<YouTube id="https://www.youtube.com/watch?v=cD7Hk7ytJ5w" />
 
 This is the live version with Lena Hall and Miriam Shor. I love this video. The two Yitzhaks together with their powerful voices.
 
-**11. Back when I was 4 - Jeffrey Lewis**
+### <a name="BackwhenIwas4 "></a> 11. Back when I was 4 - Jeffrey Lewis
 
 <YouTube id="https://www.youtube.com/watch?v=aXsjuAv05XY" />
 
 Lots of number name checks in this one.ne of my favorite lyrics.
 
-"And back when I was 12 or so I swear to god I never felt so low / Everyone but me was making out and eating cookies"
+" And back when I was 12 or so I swear to god I never felt so low / Everyone but me was making out and eating cookies"
 
-**12. P.O Box 9847 - The Monkees**
+### <a name="POBox9847"></a> 12. P.O Box 9847 - The Monkees
 
 <YouTube id="https://www.youtube.com/watch?v=HxnMLPtXIzw" />
 
 Another out-of-date reference to when people would leave personal ads with P.O. box numbers. But, yeah, another song that focuses on a number.
 
-**13. Psalms 40:2 - Mountain Goats**
+### <a name="Psalms"></a> 13. Psalms 40:2 - Mountain Goats
 
 <YouTube id="https://www.youtube.com/watch?v=O7YQR27lykA" />
 
 A second Mountain Goats song! Its got a number in the title and it rocks.
 
-**14. Zilch- The Monkees**
+### <a name="Zilch"></a> 14. Zilch- The Monkees
 
 <YouTube id="https://www.youtube.com/watch?v=OedfVXal_Y8" />
 
 Zilch is another word for zero.
 
-**15. (What a) Wonderful World- Sam Cooke**
+### <a name="WonderfulWorld"></a> 15. (What a) Wonderful World- Sam Cooke
 
 <YouTube id="https://www.youtube.com/watch?v=VzlLi5jX_C4" />
 
 One of the great math love songs featuring a whole verse dedicated to mathematics.
 
-**16. 40 Day Dream - Edward Sharpe & the Magnetic Zeroes**
+### <a name="40DayDream"></a>16. 40 Day Dream - Edward Sharpe & the Magnetic Zeroes
 
 <YouTube id="https://www.youtube.com/watch?v=_7nD1T7mjp8" />
 
 That is some good psychedelic modern rock
 
-**17. Section 12 (Hold Me Now)- The Polyphonic Spree**
+### <a name="Section12"></a> 17. Section 12 (Hold Me Now)- The Polyphonic Spree
 
 <YouTube id="https://www.youtube.com/watch?v=1KrAPnHDfko"/>
 
 I heard this song in a commercial ad. It freaked me out because I thought this was rather obscure. Great song. I only learned about this band a few years ago from a friend. Good music.
 
-**18. Made-up Love Song #43 - The Guillemots**
+### <a name="Made-upLoveSong"></a> 18. Made-up Love Song #43 - The Guillemots
 
 <YouTube id="https://www.youtube.com/watch?v=0EaAYi64Rpo" />
 
 My favorite love song of all time. All time!
 
-**19. 1234 - Feist**
+### <a name="1234"></a> 19. 1234 - Feist
 
 <YouTube id="https://www.youtube.com/watch?v=ABYnqp-bxvg" />
 
 A bit cliche because of its use in an iPod ad (remember ipods?) but this would be a mathematics mix without this song. Also, Feist is a member of Broken Social Scene.
 
-**20. Down at the So and So on Somewhere - The Fiery Furnaces**
+### <a name="DownattheSoandSoonSomewhere"></a> 20. Down at the So and So on Somewhere - The Fiery Furnaces
 
 <YouTube id="https://www.youtube.com/watch?v=N6ZCx0zEz8E"/>
 
@@ -172,25 +194,25 @@ Connecting dots, tangent to your cheek
 You check your time warp watch in the car  
 The angle ain't all oblique"
 
-**21. My Mathematical Mind - Spoon**
+### <a name="MyMathematicalMind"></a> 21. My Mathematical Mind - Spoon
 
 <YouTube id="https://www.youtube.com/watch?v=eta9DRyxlbM" />
 
 Used to perfection in Stranger than Fiction. A [great film for Numberphiles](https://beautyofmathematics.com/favorite-video-every-year-numberphile/). Starring Will Ferrell, Tony Hale, Emma Thompson, Dustin Hoffman, Maggie Gyllenhaal, and Queen Latifahah.
 
-**22. Another Hundred People - Company**
+### <a name="AnotherHundredPeople"></a> 22. Another Hundred People - Company
 
 <YouTube id="https://www.youtube.com/watch?v=5he9I0CrXts" />
 
 Pour one out for Stephen Sondheim. A classic song from a classic musical. You can just feel the pulse of New York in this one.
 
-**23.A Fortnight's Time - Maximo Park**
+### <a name="AFortnightsTime"></a> 23.A Fortnight's Time - Maximo Park
 
 <YouTube id="https://www.youtube.com/watch?v=MzX7bgNioOE" />
 
 A mention of multiplication. Still added it to the list.
 
-**24. Infinity - BETTY**
+### <a name="Infinity"></a> 24. Infinity - BETTY
 
 <YouTube id="https://www.youtube.com/watch?v=IAZjhy1bthY" />
 
@@ -198,7 +220,7 @@ A mention of multiplication. Still added it to the list.
 
 The harmonies in this song are amazing. BETTY is a band that wrote and performed music for a [children's show on HBO called Encyclopedia](https://en.wikipedia.org/wiki/Encyclopedia_(TV_series)). They are still around and making music.
 
-**25. X Amount of Words - Blue October**
+### <a name="XAmountofWords"></a> 25. X Amount of Words - Blue October
 
 <YouTube id="https://www.youtube.com/watch?v=eFrWZfIndnA" />
 
@@ -206,4 +228,4 @@ This is a song that I listen to sometimes when I'm depressed. It knows my pain a
 
 This is a pretty good selection of math love songs and other mathematical favorites. I would love to hear if you have anything else to add to this list.
 
-{/* <RelatedArticles oneTitle="Join Me in Watching the 24 Hour Maths Stream About Math Games" oneURL="/watching-24-hour-maths-stream-about-math-games" twoTitle="10 Videos That Show the Secrets of Dice" twoURL="/10-videos-secrets-of-dice" threeTitle="The Annotated Numberphile a Retrospective by Year" threeURL="/the-annotated-numberphile-a-retrospective-by-year"  /> */}
+<RelatedArticles oneTitle="Join Me in Watching the 24 Hour Maths Stream About Math Games" oneURL="/watching-24-hour-maths-stream-about-math-games" twoTitle="10 Videos That Show the Secrets of Dice" twoURL="/10-videos-secrets-of-dice" threeTitle="The Annotated Numberphile a Retrospective by Year" threeURL="/the-annotated-numberphile-a-retrospective-by-year"  />

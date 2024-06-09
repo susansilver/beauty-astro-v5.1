@@ -1,27 +1,18 @@
 ---
-layout: /src/layouts/Post.astro
+layout: /src/layouts/BlogPostSingle.astro
 title: 10 Question Interview With Colin Beveridge
-pubDate: 2024-02-06
+pubDate: 2024/02/06
 categories: interviews
 tags:
   - math-communications
 description: New series of 10 question interviews with members of the math community. 
 updatedDate: February 6th, 2024
-updateTime: 2024-02-06
 heroImage:
   alt: The math symbol theta in colors of blue on white background
-  src: /src/assets/header-image-beauty-of-mathematics-theta.jpg
+  src: ../../assets/header-image-beauty-of-mathematics-e.jpg
 author: susan-silver
 draft: false
-relatedOne:
-  title: ""
-  src: ""
-relatedTwo:
-  title: ""
-  src: ""
-relatedThree:
-  title: ""
-  src: ""
+thumbnail: ../../assets/header-image-beauty-of-mathematics-e.jpg
 ---
 This is the start of a new series on Beauty of Mathematics. I wanted to connect with more people in the math community. This feels like a good way to introduce people to each other by answering some questions. It is in the style of Inside the Actor’s Studio. The questions are the same for everyone. I’ve made some slight alterations to the questions in future interviews to make the questions more open-ended. 
 
@@ -101,3 +92,6 @@ My main hobbies outside of maths are the Rubik's cube -- which is FULL of maths 
 
 I want to applaud Colin for bravely answering my call for interviewees. My hope is that a few more people will heed the call and share their insights. Again, [you can email me directly](mailto:beautyofmathematics@susansilver.net) if you would like a feature. 
 
+import RelatedArticles from '../../components/blog/RelatedArticles.astro';
+
+<RelatedArticles oneTitle="Explore Over 100 Links and Meet the Storytellers Who Bring Mathematics to Life" oneURL="/math-communication" twoTitle="Join Me on the Finite Group Math Comm Discord" twoURL="/join-me-on-the-finite-group-math-comm-discord" threeTitle="A Valentine for Mathematics" threeURL="/a-valentine-for-mathematics" />

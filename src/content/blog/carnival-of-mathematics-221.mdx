@@ -1,11 +1,10 @@
 ---
-layout: ../../layouts/Post.astro
+layout: ../../layouts/BlogPostSingle.astro
 title: "Carnival of Mathematics #221"
 description: "Carnival of Mathematics #221 from the Aperiodical. These are articles from the month of October in math communications."
 draft: false
 pubDate: 2023-11-03T02:41:01.523Z
 updatedDate: November 2nd, 2023
-updateTime: 2023-11-02
 heroImage:
   alt: The symbol theta in the colors of blue, pink, and green on a white background.
   src: /src/assets/header-image-beauty-of-mathematics-theta.jpg
@@ -15,19 +14,18 @@ tags:
   - math-communications
 categories: science-communication
 author: susan-silver
-feature: true
 type: articles
-relatedOne:
-  title: ""
-  src: ""
-relatedTwo:
-  title: ""
-  src: ""
-relatedThree:
-  title: ""
-  src: ""
+thumbnail: /src/assets/header-image-beauty-of-mathematics-theta.jpg
 ---
-
+import { YouTube } from '@astro-community/astro-embed-youtube';
+import BlockQuoteBook from '../../components/blog/BlockQuoteBook.astro';
+import BlockQuoteQuote from '../../components/blog/BlockQuoteQuote.astro';
+import AlignRight from '../../components/blog/AlignRight.astro';
+import AlignCenter from '../../components/blog/AlignCenter.astro';
+import BreakoutImage from '../../components/blog/BreakoutImage.astro';
+import Toc from '../../components/blog/Toc.astro';
+import { Image } from "astro:assets";
+import RelatedArticles from '../../components/blog/RelatedArticles.astro';
 
 I am so honored to get the chance to host the [Carnival of Mathematics](https://aperiodical.com/carnival-of-mathematics/). This year, I’ve endeavored to connect more with the math community online and elsewhere. My big epiphany was finally understanding that I [need to connect over my math feelings](https://beautyofmathematics.com/math-communication-as-rebellion/) to be happy. 
 
@@ -101,3 +99,5 @@ As a writer, I am always intrigued by the ways that math and language crossover.
 This is one of the more interesting news articles that I’ve read about dyscalculia. If you don’t know, this is a learning disability related to mathematics. It is still not well known. It is important to make people more aware, especially math teachers and parents. This [Numberpile video has more information](https://www.youtube.com/watch?v=p_Hqdqe84Uc). 
 
 One of my goals is to [aid mathematicians and scientists in writing more for the public by starting blogs](https://fancycomma.com/2022/03/05/why-you-should-start-a-science-blog-this-year/). In this regard, I’m planning on doing a blog challenge in January 2024. It is a basic blogging course that will be free. If this interests you drop me an email at [mathcomm@susansilver.net](mailto:mathcomm@susansilver.net) and I’ll let you know when it is live.
+
+<RelatedArticles oneTitle="The Role of Creative Play in Mathematics" oneURL="/creative-play-mathematics" twoTitle="Join Me on the Finite Group Math Comm Discord" twoURL="/join-me-on-the-finite-group-math-comm-discord" threeTitle="Explore Over 100 Links and Meet the Storytellers Who Bring Mathematics to Life" threeURL="/math-communication"  />
