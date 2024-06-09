@@ -1,5 +1,5 @@
 ---
-layout: /src/layouts/BlogPostSingle.astro
+layout: /src/layouts/Post.astro
 title: The Surprising Truth About G.H. Hardy
 pubDate: 2018/10/04
 categories: science-communication
@@ -12,28 +12,24 @@ description: Discover the truth about G.H. Hardy. This is a challenge to the not
 updatedDate: January 1st, 2023
 heroImage:
   alt: The math symbol sigma in blue colors on a white background
-  src: ../../assets/header-image-beauty-of-mathematics-theta.jpg
+  src: /src/assets/header-image-beauty-of-mathematics-theta.jpg
 author: susan-silver
 draft: false
 thumbnail: ../../assets/header-image-beauty-of-mathematics-theta.jpg
+updateTime: 2023-01-01T16:20:52.000Z
+relatedOne:
+  title: It's National Mathematics Day in India
+  src: /national-day-of-mathematics-india
+relatedTwo:
+  title: Fostering Math Confidence and Diversity in Technology
+  src: /fostering-math-confidence-and-diversity-in-technology
+relatedThree:
+  title: "Carnival of Mathematics #221"
+  src: /carnival-of-mathematics-221
 ---
 import { YouTube } from '@astro-community/astro-embed-youtube';
-import BlockQuoteBook from '../../components/blog/BlockQuoteBook.astro';
-import BlockQuoteQuote from '../../components/blog/BlockQuoteQuote.astro';
-import AlignRight from '../../components/blog/AlignRight.astro';
-import AlignCenter from '../../components/blog/AlignCenter.astro';
 
-import Scandals from '../../assets/mathematical-scandals-book-cover-324x500.jpg';
-import Toc from '../../components/blog/Toc.astro';
-import RelatedArticles from '../../components/blog/RelatedArticles.astro';
 
-<Toc>
-- [Mathematicians and Their Scandals](#MathematiciansandTheirScandals)
-- [Was Hardy Socially Awkward?](#WasHardySociallyAwkward)
-- [What is an Introvert?](#WhatisanIntrovert)
-- [What Does Socially Awkward Mean Anyway?](#WhatDoesSociallyAwkwardMeanAnyway)
-- [Final Thoughts](#FinalThoughts)
-</Toc>
 
 Update: I wanted to post a message here to let people know this isn't a biography of Hardy. This is just my silly idea that 
 he might be misunderstood. If you are interested in Hardy's life & work 
@@ -61,13 +57,21 @@ Well, I got into a fight with Du Sautoy.
 
 He describes John E. Littlewood and G.H. Hardy:
 
-> The other thing which separated them was sexuality. It was recognized that Hardy was very likely homosexual. Nevertheless, he was discreet about it even though in Cambridge homosexuality was almost more acceptable than marriage. This was at a time when Oxford and Cambridge dons would have to leave their fellowships if they ever married. Littlewood declared Hardy to be a "non-practicing homosexual". By all accounts, Littlewood was something of a ladies' man. Although not up to Hilbert's standards, he did become very friendly with a local doctor's wife, with whom he spent summer holidays in Cornwall. Many years later, one of her children was looking into a mirror and commented on the striking resemblance to Uncle John. "That's not surprising," she replied, "he's your father."
+import FancyBlockquote from "/src/components/typography/FancyBlockquote.astro";
+
+<FancyBlockquote name="mdi:book-open-variant" cite="Marcus du Sautoy, Music of the Primes">
+The other thing which separated them was sexuality. It was recognized that Hardy was very likely homosexual. Nevertheless, he was discreet about it even though in Cambridge homosexuality was almost more acceptable than marriage. This was at a time when Oxford and Cambridge dons would have to leave their fellowships if they ever married. Littlewood declared Hardy to be a "non-practicing homosexual". By all accounts, Littlewood was something of a ladies' man. Although not up to Hilbert's standards, he did become very friendly with a local doctor's wife, with whom he spent summer holidays in Cornwall. Many years later, one of her children was looking into a mirror and commented on the striking resemblance to Uncle John. "That's not surprising," she replied, "he's your father."
+</FancyBlockquote>
 
 I feel that we often reduce mathematicians to a caricature to get the public to care for them. It's like mathematics isn't enough so we have to share these stories, like Littlewood's infidelity, to make them more human or relatable. Or we reduce Hardy down to his "eccentric" behaviors or say he was socially awkward. That annoys me.
 
 Case in point, my friend loaned me this book.
 
-<AlignCenter src={Scandals} alt="The cover of a book on mathematical scandals" caption="Shocking Mathematical Facts"/>
+import ImageAlign from "/src/components/typography/ImageAlign.astro";
+
+<ImageAlign src="/src/assets/mathematical-scandals-book-cover-324x500.jpg" alt="The cover of a book on mathematical scandals" caption="Shocking Mathematical Facts" align="caption-center" flex="justify-center" />
+
+
 
 
 I do have to cede something here. I did end up wanting to learn more about Hardy after reading _Music of the Primes_.
@@ -150,6 +154,6 @@ Hardy wasn't a perfect person by any means. I still think we can learn a lot fro
 
 <YouTube id="https://www.youtube.com/watch?v=VhinPd5RRJw"/>
 
-<RelatedArticles oneTitle="It&#39;s National Mathematics Day in India" oneURL="/national-day-of-mathematics-india" twoTitle="Fostering Math Confidence and Diversity in Technology" twoURL="/fostering-math-confidence-and-diversity-in-technology" threeTitle="Carnival of Mathematics #221" threeURL="/carnival-of-mathematics-221"  />
+
 
 
