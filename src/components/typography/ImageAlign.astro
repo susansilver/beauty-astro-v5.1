@@ -1,0 +1,23 @@
+---
+interface Props {
+  caption: string;
+  float?: "float-right" | "float-left" | "float-none";
+  align?: "caption-right" | "caption-left" | "caption-center";
+  src: string;
+  alt: string;
+}
+
+const {
+  src,
+  alt,
+  caption,
+  float = "float-none",
+  align = "caption-right",
+  ...rest
+} = Astro.props;
+---
+
+<figure class:list={float} class="img-position" {...rest}>
+  <img src={src} alt={alt} />
+  <figcaption class:list={align}>{caption}</figcaption>
+</figure>

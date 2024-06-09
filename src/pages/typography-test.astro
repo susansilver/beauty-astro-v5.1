@@ -3,6 +3,9 @@ import BaseHead from "../components/base/BaseHead.astro";
 import Header from "../components/base/Header.astro";
 import Footer from "../components/base/Footer.astro";
 import { Image } from "astro:assets";
+import FancyBlockquote from "../components/typography/FancyBlockquote.astro";
+import RegBlockquote from "../components/typography/RegBlockquote.astro";
+import ImageAlign from "../components/typography/ImageAlign.astro";
 ---
 
 <html lang="en">
@@ -103,21 +106,25 @@ import { Image } from "astro:assets";
 
         <p>This is an image</p>
 
-        <figure class="img-position">
-          <Image
-            src="https://picsum.photos/id/30/300"
-            alt="Mug on a table"
-            width={300}
-            height={300}
-          />
-          <figcaption class="caption-right">
-            this is a mug on a table.
-          </figcaption>
-        </figure>
+        <ImageAlign
+          src="https://picsum.photos/id/30/300"
+          alt="mug on a table"
+          caption=" This is a mug on a table"
+          align="caption-left"
+        />
         <p>
           <a href="https://beautyofmathematics.com">This is an external link</a>
           and some text <a href="/">An internal link</a>
         </p>
+        <FancyBlockquote name="mdi:book-open-variant" cite="Victor Hugo">
+          Nothing can stop an idea whose time has come.
+        </FancyBlockquote>
+
+        <RegBlockquote cite="Susan Silver"
+          >We must pursue the things that make us the most uncomfortable. They
+          have the potential to bring us our greatest loves.</RegBlockquote
+        >
+
         <p>
           <code> This is code. &lt;hr /&gt; </code>
         </p>
@@ -136,6 +143,7 @@ import { Image } from "astro:assets";
               <time>May 23 2024</time>
             </p>
           </p>
+
           <!-- Article Text and Meta End -->
         </p>
         <Footer />

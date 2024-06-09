@@ -1,0 +1,15 @@
+---
+import { Icon } from "astro-icon/components";
+const { cite, name } = Astro.props;
+---
+
+<blockquote
+  class="fancy-text m-1 dark:bg-gray-100 dark:text-slate-900 bg-gray-900 text-slate-100 p-5 text-3xl"
+>
+  <Icon name={name} class="text-slate-500 sma" />
+  <div class="p-2">
+    <p><slot /></p>
+    <hr />
+    <span>- {cite}</span>
+  </div>
+</blockquote>
