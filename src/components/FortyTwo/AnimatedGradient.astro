@@ -1,0 +1,40 @@
+<div id="LTUAE" class="flex justify-center"><slot /></div>
+
+<style>
+  :root {
+    --gradient: linear-gradient(90deg, #0288d1, #0d47a1, #e91e63, #f48fb1);
+  }
+
+  #LTUAE {
+    font-size: 20rem;
+    font-family: "Ouroboros", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    margin: 0 0 0.5em;
+    line-height: 0.8;
+    background: #ddd;
+    background-image: var(--gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    background-size: 300%;
+    animation: bg-animation 15s infinite;
+    transition: background-position 1s;
+  }
+
+  @keyframes bg-animation {
+    0% {
+      background-position: left;
+    }
+    50% {
+      background-position: right;
+    }
+    100% {
+      background-position: left;
+    }
+  }
+
+  @media only screen and (max-width: 50em) {
+    #LTUAE {
+      font-size: 10rem;
+    }
+  }
+</style>
