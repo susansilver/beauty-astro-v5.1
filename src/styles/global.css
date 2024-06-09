@@ -159,6 +159,15 @@
         right: 0;
     }
 
+    .caption-default{
+      background-color: #E0F2F1;
+      filter:drop-shadow(#4DB6AC 1em 1em 0);
+      max-width:fit-content;
+     /*  transform: translate(75%, -2ex);   */
+      padding:1em;
+      /* margin-block-end:3em; */
+    }
+
     .center-img {
         display: block;
   width: 60%;
