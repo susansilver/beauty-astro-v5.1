@@ -5,6 +5,7 @@ interface Props {
   align?: "caption-right" | "caption-left" | "caption-center";
   src: string;
   alt: string;
+  flex?: "justify-center";
 }
 
 const {
@@ -13,11 +14,12 @@ const {
   caption,
   float = "float-none",
   align = "caption-right",
+  flex,
   ...rest
 } = Astro.props;
 ---
 
-<figure class:list={float} class="img-position" {...rest}>
+<figure class:list={[float, flex]} class="img-position flex" {...rest}>
   <img src={src} alt={alt} />
-  <figcaption class:list={align}>{caption}</figcaption>
+  <figcaption class:list={[align, flex]} class="flex">{caption}</figcaption>
 </figure>
