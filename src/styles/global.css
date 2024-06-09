@@ -73,7 +73,7 @@
 
     ul > li > ul {
         list-style-type: circle;
-        padding-inline-start:2em;
+        padding-inline-start:1em;
     }
 
     ol {
@@ -82,7 +82,7 @@
 
     ol > li > ol {
         list-style-type: lower-alpha;
-        padding-inline-start:2em;
+        padding-inline-start:1em;
     }
 
     /*  h1,h2,h3{
