@@ -1,7 +1,12 @@
 ---
-const { cite } = Astro.props;
+interface Props {
+  cite?: string;
+  show: boolean;
+}
+
+const { cite, show } = Astro.props;
 ---
 
 <blockquote>
-  <p><slot /> - <span class="attribution">{cite}</span></p>
+  <p><slot /> {show === true && <span class="attribution">- {cite}</span>}</p>
 </blockquote>

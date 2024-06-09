@@ -1,5 +1,5 @@
 ---
-layout: /src/layouts/BlogPostSingle.astro
+layout: /src/layouts/Post.astro
 title: Join Me in Watching the 24 Hour Maths Stream About Math Games
 pubDate: 2022/10/27
 categories: science-communication
@@ -14,30 +14,21 @@ description: Discover how math games spark a love for mathematics in this recap 
 updatedDate: Feburary 14th, 2023
 heroImage:
   alt: The mathematical  symbol for a named angle in pink and green on a white bacground.
-  src: ../../assets/header-image-beauty-of-mathematics-angle-symbol.jpg
+  src: /src/assets/header-image-beauty-of-mathematics-angle-symbol.jpg
 author: susan-silver
 draft: false
 thumbnail: ../../assets/header-image-beauty-of-mathematics-angle-symbol.jpg
+relatedOne:
+  title: Turn Math Anxiety Into Awe Improving Your Health for Pi Day
+  src: /turn-math-anxiety-into-awe-and-improve-your-health-for-pi-day
+relatedTwo:
+  title: 10 Videos That Show the Secrets of Dic
+  src: /10-videos-secrets-of-dice
+relatedThree:
+  title: 25 Math Love Songs and Other Mathematically Themed Videos
+  src: /math-love-songs
 ---
 import { YouTube } from '@astro-community/astro-embed-youtube';
-import BlockQuoteBook from '../../components/blog/BlockQuoteBook.astro';
-import BlockQuoteQuote from '../../components/blog/BlockQuoteQuote.astro';
-import AlignRight from '../../components/blog/AlignRight.astro';
-import AlignCenter from '../../components/blog/AlignCenter.astro';
-import Toc from '../../components/blog/Toc.astro';
-import RelatedArticles from '../../components/blog/RelatedArticles.astro';
-
-<Toc>
-- [Information about the Stream](#InformationabouttheStream)
-- [Why Does this Matter?](#WhyDoesthisMatter)
-- [Stream Segments that I’m Looking Forward To](#StreamSegmentsthatImLookingForwardTo)
-  - [James Grime](#JamesGrime)
-  - [Math Games with Bad Drawings](#MathGameswithBadDrawings)
-  - [The Game of Nim](#TheGameofNim)
-  - [Numberwang](#Numberwang)
-  - [Dungeons & Dragons](#DungeonsDragons)
-- [Summary](#Summary)
-</Toc>
 
 
 **Update**: Links to each segment are [now live](https://24hourmaths.com/gameshow)
@@ -67,11 +58,11 @@ Well, [I figured out how to do multiplication by turning numbers into letters](h
 I didn't stop there. As a lonely child, I would often [make up games](https://beautyofmathematics.com/creative-play-mathematics/) that I could play by myself in my room. I played a game where I turned words into addition problems. Comparing the values of different words.
 
 
-import { Image } from 'astro:assets'
+import ImageAlign from "/src/components/typography/ImageAlign.astro";
 
-import compare from '../../assets/math-games.jpg';
+<ImageAlign src="/src/assets/math-games.jpg" alt="A drawing of a cat and dog where letters have been turned into digits and added comparing the value of each word" caption="One of my favorite games as a child." flex="justify-center" align="caption-center"/>
 
-<Image src={compare} alt="A drawing of a cat and dog where letters have been turned into digits and added comparing the value of each word" format="avif" quality="mid"/>
+
 
 
 In this way, I worked my number sense like an atrophied muscle and was able to catch up to my peers.
@@ -82,7 +73,7 @@ Math games are a great way to spark a kid's love of mathematics. These are some 
 
 ### <a name="JamesGrime"></a> James Grime
 
-I\['m intrigued by the premise of playing a math game against a book. I don't know what I'm expecting. I had a great book of logical puzzles when I was a kid though. It had three types in it. The first was variations on the [water jug puzzles](https://www.youtube.com/watch?v=2vdF6NASMiE). The second was [liar puzzles](https://www.youtube.com/watch?v=2dgmgub8mHw) with increasing difficulties. The third was the ones where you had to have an [animal cross a stream](https://www.youtube.com/watch?v=P6Y-RwbxjFU) but it could only be done in a certain order. I loved that book and I'm so sad that I lost it.
+I'm intrigued by the premise of playing a math game against a book. I don't know what I'm expecting. I had a great book of logical puzzles when I was a kid though. It had three types in it. The first was variations on the [water jug puzzles](https://www.youtube.com/watch?v=2vdF6NASMiE). The second was [liar puzzles](https://www.youtube.com/watch?v=2dgmgub8mHw) with increasing difficulties. The third was the ones where you had to have an [animal cross a stream](https://www.youtube.com/watch?v=P6Y-RwbxjFU) but it could only be done in a certain order. I loved that book and I'm so sad that I lost it.
 
 ### <a name="MathGameswithBadDrawings"></a> Math Games with Bad Drawings
 
@@ -115,5 +106,3 @@ Well, I would love this one as a former TTRPG community manager. I look forward 
 That is all I wanted to say on the subject of math games. It will be so much fun. So I have decided to 
 live Tweet/live blog. And by live blog, I'm going to embed my Tweets into a blog post over the weekend.
  If you want to follow along, you can [connect with me on Twitter](https://twitter.com/susan_silver).
-
- <RelatedArticles oneTitle="Turn Math Anxiety Into Awe Improving Your Health for Pi Day" oneURL="/turn-math-anxiety-into-awe-and-improve-your-health-for-pi-day" twoTitle="10 Videos That Show the Secrets of Dice" twoURL="/10-videos-secrets-of-dice" threeTitle="25 Math Love Songs and Other Mathematically Themed Videos" threeURL="/math-love-songs"  />

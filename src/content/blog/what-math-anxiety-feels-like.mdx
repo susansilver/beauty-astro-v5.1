@@ -1,5 +1,5 @@
 ---
-layout: /src/layouts/BlogPostSingle.astro
+layout: /src/layouts/Post.astro
 title: What Math Anxiety Feels Like
 pubDate: 2018/09/06
 categories: math-anxiety
@@ -9,25 +9,21 @@ description: Discover what it feels like to experience math anxiety and the soci
 updatedDate: Feburary 1st, 2023
 heroImage:
   alt: The number e in blue colors on a white background
-  src: ../../assets/header-image-beauty-of-mathematics-sigma.jpg
+  src: /src/assets/header-image-beauty-of-mathematics-sigma.jpg
 author: susan-silver
 draft: false
-thumbnail: ../../assets/header-image-beauty-of-mathematics-sigma.jpg
+relatedOne:
+  title: Turn Math Anxiety Into Awe Improving Your Health for Pi Day
+  src: /turn-math-anxiety-into-awe-and-improve-your-health-for-pi-day
+relatedTwo:
+  title: Math Communications as Rebellion
+  src: /math-communication-as-rebellion
+relatedThree:
+  title: Explore Over 100 Links and Meet the Storytellers Who Bring Mathematics to Life
+  src: /math-communication
+updateTime: 2023-02-01
 ---
 import { YouTube } from '@astro-community/astro-embed-youtube';
-import BlockQuoteBook from '../../components/blog/BlockQuoteBook.astro';
-import BlockQuoteQuote from '../../components/blog/BlockQuoteQuote.astro';
-import AlignRight from '../../components/blog/AlignRight.astro';
-import AlignCenter from '../../components/blog/AlignCenter.astro';
-import Toc from '../../components/blog/Toc.astro';
-import RelatedArticles from '../../components/blog/RelatedArticles.astro';
-
-<Toc>
-- [What it Feels Like to Have Math Anxiety](#WhatitFeelsLiketoHaveMathAnxiety)
-- [What it Feels Like to Love Mathematics](#WhatitFeelsLiketoLoveMathematics)
-- [Adults Forget What it’s Like to be Children](#AdultsForgetWhatitsLiketobeChildren)
-- [Ending the Cycle of Math Anxiety](#EndingtheCycleofMathAnxiety)
-</Toc>
 
 
 Recently, I've read some [excellent articles that cover math anxiety](https://blogs.ams.org/blogonmathblogs/2018/08/14/on-math-anxiety/).
@@ -126,4 +122,3 @@ I’ve had lots of different experiences with people. In all my interactions, I�
  open their eyes, and maybe reach an understanding even if we disagree. Mostly, I want them to accept me as I am, where I accept
   them as they are; where we begin to change these legacies of pain.
 
-<RelatedArticles oneTitle="Turn Math Anxiety Into Awe Improving Your Health for Pi Day" oneURL="/turn-math-anxiety-into-awe-and-improve-your-health-for-pi-day" twoTitle="Math Communications as Rebellion" twoURL="/math-communication-as-rebellion" threeTitle="Explore Over 100 Links and Meet the Storytellers Who Bring Mathematics to Life" threeURL="/math-communication" />

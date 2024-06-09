@@ -1,5 +1,5 @@
 ---
-layout: /src/layouts/BlogPostSingle.astro
+layout: /src/layouts/Post.astro
 title: What Is Math Communications? an Existential Question
 pubDate: 08/05/2023
 categories: science-communication
@@ -11,24 +11,21 @@ description: Reflections on the math communication community and the upcoming Ta
 updatedDate: August 5th, 2023
 heroImage:
   alt: A man is speaking through a tin can phone
-  src: ../../assets/tin-can.jpg
+  src: /src/assets/tin-can.jpg
 author: susan-silver
 draft: false
-thumbnail: ../../assets/tin-can.jpg
+relatedOne:
+  title: My Favorite Video from Every Year of Numberphile
+  src: /favorite-video-every-year-numberphile
+relatedTwo:
+  title: Math and Science Tattoo Inspiration with Dr. Tom Crawford
+  src: /math-science-tattoo-inspiration-tom-crawford
+relatedThree:
+  title: Join Me in Watching the 24 Hour Maths Stream About Math Games
+  src: /watching-24-hour-maths-stream-about-math-games
 ---
 import { YouTube } from '@astro-community/astro-embed-youtube';
 
-import BlockQuoteQuote from '../../components/blog/BlockQuoteQuote.astro';
-import Toc from '../../components/blog/Toc.astro';
-import RelatedArticles from '../../components/blog/RelatedArticles.astro';
-
-<Toc>
-- [Talking Maths in Public](#TalkingMathsinPublic)
-- [Starting a US Based Math Communications Conference](#StartingaUSBasedMathCommunicationsConference)
-- [Interview with Fancy Comma on Math Communications](#InterviewwithFancyCommaonMathCommunications)
-  - [Time Stamps](#TimeStamps)
-- [Summary](#Summary)
-</Toc>
 
 I was recently interviewed by Fancy Comma on their YouTube channel. We covered many topics in mathematics including marginalization in STEM. 
 The one that I struggled with was the question, What is math communications?
@@ -42,9 +39,11 @@ The [math communicators](https://www.notion.so/suzza-silver/Epic-List-of-Math-Co
 In this way, I did return to school to get an undergraduate degree in math. I completed one quarter at Portland State. 
 I struggled with my proofs course. Getting stuck on mathematical logic and the basics of set theory. After the final, my professor said:
 
-<BlockQuoteQuote>
+import RegBlockquote from "/src/components/typography/RegBlockquote.astro";
+
+<RegBlockquote show="false" >
 "Susan, you don’t need to get a degree." 
-</BlockQuoteQuote>
+</RegBlockquote>
 
 This was devastating to hear from someone that was like a mentor to me. What people misunderstand about my interest in math is that I find it 
 compelling. This love endured [under the worst circumstances of my childhood](https://beautyofmathematics.com/a-writers-illicit-love-affair-with-mathematics). 
@@ -64,9 +63,9 @@ organizers met at Matrix. They wanted a conference that would meet more often.  
 The community all works with each other. They have a wealth of knowledge to draw on for talks and workshops. What I like most is the following 
 exchange from email. 
 
-<BlockQuoteQuote>
+<RegBlockquote show="false">
 "Mainly, we think about things we'd like to see and try to make them happen" 
-</BlockQuoteQuote>
+</RegBlockquote>
 
 This is a philosophy that I understand. It is one of the guiding principles of my life. If there is something you want to see in this world, you
  should put forth every effort to make it happen. You are bound to do something interesting even if you don’t meet your goal.
@@ -126,4 +125,3 @@ These links will take you to YouTube
 I will find an answer to what math communication is at Talking Maths in Public. It is an opportunity to meet with the international 
 math community. Interact with a few folks that I know from Numberphile. See you there!
 
-<RelatedArticles oneTitle="My Favorite Video from Every Year of Numberphile" oneURL="/favorite-video-every-year-numberphile" twoTitle="Math and Science Tattoo Inspiration with Dr. Tom Crawford" twoURL="/math-science-tattoo-inspiration-tom-crawford" threeTitle="Join Me in Watching the 24 Hour Maths Stream About Math Games" threeURL="/watching-24-hour-maths-stream-about-math-games"  />
