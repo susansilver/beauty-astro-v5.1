@@ -1,7 +1,7 @@
 ---
-layout: /src/layouts/BlogPostSingle.astro
+layout: /src/layouts/Post.astro
 title: 25 Math Love Songs and Other Mathematically Themed Videos
-pubDate: 2021/11/30
+pubDate: 2021-11-30T14:26:22.000Z
 categories: music
 tags:
   - bob-odenkirk
@@ -18,21 +18,28 @@ tags:
 description: Discover a compilation of math love songs and those about mathematical terms with this music playlist. This mixtape is perfect for anyone who loves both numbers and music.
 updatedDate: Feburary 14th, 2023
 heroImage:
-  alt: The math symbol Sigma in colors of blue on white background
-  src: ../../assets/header-image-beauty-of-mathematics-angle-symbol.jpg
+  alt: The math symbol for the angle  in colors of pink and green on a white background
+  src: /src/assets/header-image-beauty-of-mathematics-angle-symbol.jpg
 author: susan-silver
 draft: false
 thumbnail: ../../assets/header-image-beauty-of-mathematics-angle-symbol.jpg
+show: false
+updateTime: 2023-02-14T14:26:45.000Z
+relatedOne:
+  title: oin Me in Watching the 24 Hour Maths Stream About Math Games
+  src: /watching-24-hour-maths-stream-about-math-games
+relatedTwo:
+  title: 10 Videos That Show the Secrets of Dice
+  src: /10-videos-secrets-of-dice
+relatedThree:
+  title: The Annotated Numberphile a Retrospective by Year
+  src: /the-annotated-numberphile-a-retrospective-by-year
 ---
 
 import { YouTube } from '@astro-community/astro-embed-youtube';
-import BlockQuoteBook from '../../components/blog/BlockQuoteBook.astro';
-import AlignRight from '../../components/blog/AlignRight.astro';
-import AlignCenter from '../../components/blog/AlignCenter.astro';
-import Toc from '../../components/blog/Toc.astro';
 import RelatedArticles from '../../components/blog/RelatedArticles.astro';
 
-<Toc>
+### Table of Contents
 - [Kiss Off - Violent Femmes](#KissOff)
 - [One - Harry Nilsson](#One)
 - [Chicago x 12 - Rogue Wave](#Chicagox12)
@@ -58,7 +65,7 @@ import RelatedArticles from '../../components/blog/RelatedArticles.astro';
 - [A Fortnight’s Time - Maximo Park](#AFortnightsTime)
 - [ Infinity - BETTY](#Infinity)
 - [X Amount of Words - Blue October](#XAmountofWords)
-</Toc>
+
 
 Are you looking for some math love songs? I once made a mix tape for a mathematician. It only included mathematically related songs. 
 I didn't keep a copy of that mix, unfortunately. This list includes more than the original. I've added some new 
@@ -228,4 +235,3 @@ This is a song that I listen to sometimes when I'm depressed. It knows my pain a
 
 This is a pretty good selection of math love songs and other mathematical favorites. I would love to hear if you have anything else to add to this list.
 
-<RelatedArticles oneTitle="Join Me in Watching the 24 Hour Maths Stream About Math Games" oneURL="/watching-24-hour-maths-stream-about-math-games" twoTitle="10 Videos That Show the Secrets of Dice" twoURL="/10-videos-secrets-of-dice" threeTitle="The Annotated Numberphile a Retrospective by Year" threeURL="/the-annotated-numberphile-a-retrospective-by-year"  />

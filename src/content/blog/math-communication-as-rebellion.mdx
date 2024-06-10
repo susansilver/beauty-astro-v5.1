@@ -1,7 +1,7 @@
 ---
-layout: /src/layouts/BlogPostSingle.astro
+layout: /src/layouts/Post.astro
 title: Math Communications as Rebellion
-pubDate: 06/03/2023
+pubDate: 2023-06-03T13:11:42.000Z
 categories: math-anxiety
 tags:
   - numberphile
@@ -9,35 +9,42 @@ description: Explore the power of math communication as a form of rebellion, ove
 updatedDate: June 3rd, 2023
 heroImage:
   alt: The notation sigma in multiple shades of blue on a white background
-  src: ../../assets/header-image-beauty-of-mathematics-sigma.jpg
+  src: /src/assets/header-image-beauty-of-mathematics-sigma.jpg
 author: susan-silver
 draft: false
 thumbnail: ../../assets/header-image-beauty-of-mathematics-sigma.jpg
+updateTime: 2023-06-03T13:12:02.000Z
+relatedOne:
+  title: Math and Science Tattoo Inspiration with Dr. Tom Crawford
+  src: /math-science-tattoo-inspiration-tom-crawford
+relatedTwo:
+  title: The Annotated Numberphile a Retrospective by Year
+  src: /the-annotated-numberphile-a-retrospective-by-year
+relatedThree:
+  title: What Is Math Communications? an Existential Question
+  src: /what-is-math-communication
+show: true
 ---
 import { YouTube } from '@astro-community/astro-embed-youtube';
-import BlockQuoteQuote from '../../components/blog/BlockQuoteQuote.astro';
-import Twitter from '../../assets/math-anxiety-and-the-healing-power-of-mathem.png';
-import BreakoutImage from '../../components/blog/BreakoutImage.astro';
-import Toc from '../../components/blog/Toc.astro';
-import RelatedArticles from '../../components/blog/RelatedArticles.astro';
 
-<Toc>
-- [Making Friends With Fear](#MakingFriendsWithFear)
-- [Obstacles and Trauma](#ObstaclesAndTrauma)
-- [Why Math Communications Matter](#WhyMathCommunicationsMatter)
-</Toc>
+
+
 
 I’m not sure yet what my place is in the math community. Do I call myself a math communicator? I don’t know what my credentials are other than loving mathematics.
 
 When I started this blog, I had one idea in mind as I [explained in this Tweet.](https://twitter.com/Susan_Silver/status/1664731450040791040)
 
-<BreakoutImage src={Twitter} alt="Tweet explaining blogging strategy" caption="From Twitter" />
+import ImageDefault from "/src/components/typography/ImageDefault.astro"
 
-<BlockQuoteQuote>
+<ImageDefault src="/src/assets/math-anxiety-and-the-healing-power-of-mathem.png" alt="Tweet explaining blogging strategy" caption="From Twitter" />
+
+import FancyBlockquote from "/src/components/typography/FancyBlockquote.astro";
+
+<FancyBlockquote name="mdi:twitter" cite="Suzza Silver">
 "I share my trauma & recovery. I also try to keep it real. I'm not a mathematician. I don't focus on serious mathematics.
  I talk about my emotions about math which is more relatable. It's important to show people's feelings change. 
  That you don't have to be great at math to like it."
-</ BlockQuoteQuote >
+</FancyBlockquote>
 
 This is a scary subject for [those who have math anxiety](https://beautyofmathematics.com/what-math-anxiety-feels-like/). I wanted instead to spend my time on things less frightening. For me, that is the emotional world where I can talk about fear and recovery. Hopeing to show people another and more positive idea of mathematics.
 
@@ -92,4 +99,3 @@ This is my current anthem. (NSFW)
 
 <YouTube id="https://www.youtube.com/watch?v=Zm8xIo_2Aok" />
 
-<RelatedArticles oneTitle="Math and Science Tattoo Inspiration with Dr. Tom Crawford" oneURL="/math-science-tattoo-inspiration-tom-crawford" twoTitle="The Annotated Numberphile a Retrospective by Year" twoURL="/the-annotated-numberphile-a-retrospective-by-year" threeTitle="What Is Math Communications? an Existential Question" threeURL="/what-is-math-communication"  />

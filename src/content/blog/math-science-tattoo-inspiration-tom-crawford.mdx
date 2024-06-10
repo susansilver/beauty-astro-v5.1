@@ -1,7 +1,7 @@
 ---
-layout: ../../layouts/BlogPostSingle.astro
+layout: ../../layouts/Post.astro
 title: Math and Science Tattoo Inspiration with Dr. Tom Crawford
-pubDate: 08/10/2023
+pubDate: 2023-08-10T13:30:40.000Z
 description: Explore Dr. Tom Crawford's math and science tattoos, along with insights into his unique approach to tattoo design and its impact on math communication.
 categories: interviews
 tags:
@@ -13,23 +13,28 @@ tags:
 updatedDate: August 10th, 2023
 heroImage:
   alt: Theta in colors of blue on a white background
-  src: ../../assets/header-image-beauty-of-mathematics-theta.jpg
+  src: /src/assets/header-image-beauty-of-mathematics-theta.jpg
 author: susan-silver
 draft: false
 thumbnail: ../../assets/header-image-beauty-of-mathematics-theta.jpg
+updateTime: 2023-08-10T13:30:58.000Z
+relatedOne:
+  title: My Favorite Video from Every Year of Numberphile
+  src: /favorite-video-every-year-numberphile
+relatedTwo:
+  title: A Valentine for Mathematics
+  src: /a-valentine-for-mathematics
+relatedThree:
+  title: The Annotated Numberphile a Retrospective by Year
+  src: /the-annotated-numberphile-a-retrospective-by-year
+show: true
 ---
 
 
 import { YouTube } from '@astro-community/astro-embed-youtube';
 import { Image } from 'astro:assets'
-import Toc from '../../components/blog/Toc.astro';
-import RelatedArticles from '../../components/blog/RelatedArticles.astro';
 
-<Toc>
-- [Interview with Dr. Tom Crawford](#InterviewwithTomCrawford)
-- [Q & A ](#QA)
-- [Future Series](#FutureSeries)
-</Toc>
+
 
 
 
@@ -167,4 +172,4 @@ Jaida Elcock (known as [@soFISHtication on Twitter](https://twitter.com/soFISHti
 tattoo? [Send me an email ](mailto:beautyofmathematics@susansilver.net)and I may feature you. 
 
 
-<RelatedArticles oneTitle="My Favorite Video from Every Year of Numberphile" oneURL="/favorite-video-every-year-numberphile" twoTitle="A Valentine for Mathematics" twoURL="/a-valentine-for-mathematics" threeTitle="The Annotated Numberphile a Retrospective by Year" threeURL="/the-annotated-numberphile-a-retrospective-by-year"  />
+
