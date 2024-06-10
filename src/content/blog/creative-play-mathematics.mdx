@@ -1,7 +1,7 @@
 ---
-layout: /src/layouts/BlogPostSingle.astro
+layout: /src/layouts/Post.astro
 title: The Role of Creative Play in Mathematics
-pubDate: 2018/10/18
+pubDate: 2018-10-18T12:53:13.000Z
 categories: memories
 tags:
   - algebra
@@ -13,22 +13,21 @@ heroImage:
 author: susan-silver
 draft: false
 thumbnail: ../../assets/header-image-beauty-of-mathematics-theta.jpg
+updateTime: 2023-01-02T13:53:47.000Z
+relatedOne:
+  title: A Writer's Illicit Love Affair With Mathematics
+  src: /a-writers-illicit-love-affair-with-mathematics
+relatedTwo:
+  title: Fostering Math Confidence and Diversity in Technology
+  src: /fostering-math-confidence-and-diversity-in-technology
+relatedThree:
+  title: "Carnival of Mathematics #221"
+  src: /carnival-of-mathematics-221
+show: true
 ---
 import { YouTube } from '@astro-community/astro-embed-youtube';
-import BlockQuoteBook from '../../components/blog/BlockQuoteBook.astro';
-import AlignRight from '../../components/blog/AlignRight.astro';
-import AlignCenter from '../../components/blog/AlignCenter.astro';
 
-import Compare from '../../assets/math-games.jpg';
-import Toc from '../../components/blog/Toc.astro';
-import RelatedArticles from '../../components/blog/RelatedArticles.astro';
 
-<Toc>
-- [A Love of Algebra](#ALoveofAlgebra)
-- [Games I Play](#GamesIPlay)
-- [The Importance of Creative Play in Mathematics](#TheImportanceofCreativePlayinMathematics)
-- [Creative Play Uses Our Imaginations](#CreativePlayUsesOurImaginations)
-</Toc>
 
 Some recent events triggered a depressive episode. For the past week, I’ve been feeling helpless and overwhelmed. 
 I admit that I started losing some hope that things would improve. Luckily, I had a math dream! I think it was 
@@ -71,7 +70,9 @@ I made up two games which both relied on the fact that letters could represent n
 
 In the first, I would assign numerical values of numbers to letters. I would then add up the value of words and compare them.
 
-<AlignCenter src={Compare} alt="Drawing of a cat and dog where letters have been turned into digits and added comparing the value of each word" caption="Adding the value of words" />
+import ImageAlign from "/src/components/typography/ImageAlign.astro";
+
+<ImageAlign src="/src/assets/math-games.jpg" alt="Drawing of a cat and dog where letters have been turned into digits and added comparing the value of each word" caption="Adding the value of words" flex="justify-center" align="caption-center" />
 
 The other was a game of logic. I would write down random equations of addition, subtraction, and multiplication. 
 I would leave one value missing so that I would have to logically guess what number would make the equation true.
@@ -116,5 +117,3 @@ I could imagine what a better life would look like. That gave me hope.
 I think, too, that using my imagination will also help me get through this dark time. I know that these things don’t last.
  That I can hold on to the love and light of my friends and family. I can see a future where things are different and that
   brings me comfort for now.
-
-  <RelatedArticles oneTitle="A Writer&#39;s Illicit Love Affair With Mathematics" oneURL="/a-writers-illicit-love-affair-with-mathematics" twoTitle="Fostering Math Confidence and Diversity in Technology" twoURL="/fostering-math-confidence-and-diversity-in-technology" threeTitle="Carnival of Mathematics #221" threeURL="/carnival-of-mathematics-221"  />

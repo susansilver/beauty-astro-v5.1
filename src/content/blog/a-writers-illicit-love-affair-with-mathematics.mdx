@@ -1,7 +1,7 @@
 ---
-layout: /src/layouts/BlogPostSingle.astro
+layout: /src/layouts/Post.astro
 title: A Writer's Illicit Love Affair With Mathematics
-pubDate: 2023/01/30
+pubDate: 2023-01-30T13:34:18.000Z
 categories: math-anxiety
 tags:
   - family
@@ -10,28 +10,29 @@ tags:
 description: Discover a writer's unique love affair with mathematics. Overcoming struggles with math anxiety, a failing grade and familial pressure, this writer leans on their love of language to find their way to a love of numbers.
 updatedDate: Feburary 14th, 2023
 heroImage:
-  src: ../../assets/r_ov6smbbyk.jpg
+  src: /src/r_ov6smbbyk.jpg
   alt: Hearts on a blurry background
 author: susan-silver
 draft: false
 thumbnail: ../../assets/r_ov6smbbyk.jpg
+updateTime: 2023-02-14T13:34:44.000Z
+relatedOne:
+  title: Math Communications as Rebellion" oneURL="/math-communication-as-rebellion
+  src: /math-communication-as-rebellion
+relatedTwo:
+  title: My Favorite Video from Every Year of Numberphile
+  src: /favorite-video-every-year-numberphile
+relatedThree:
+  title: Explore Over 100 Links and Meet the Storytellers Who Bring Mathematics to Life
+  src: /math-communication
+show: true
 ---
 
 
-import Compare from '../../assets/math-games.jpg';
-import Blue from '../../assets/blue-blocks-ones-tens-hundreds.jpg';
-import AlignCenter from '../../components/blog/AlignCenter.astro';
-import BreakoutImage from '../../components/blog/BreakoutImage.astro';
-import { Image } from 'astro:assets'
-import Toc from '../../components/blog/Toc.astro';
-import RelatedArticles from '../../components/blog/RelatedArticles.astro';
 
-<Toc>
-- [I Nearly Missed the Love of my Life](#INearlyMissedtheLoveofmyLife)
-- [Patience and Love Heals Old Wounds](#PatienceandLoveHealsOldWounds)
-- [A Love of Words Leads to A Love of Math](#ALoveofWordsLeadstoALoveofMath)
-- [Love Puts into Perspective What Matters](#LovePutsintoPerspectiveWhatMatters)
-</Toc>
+import { Image } from 'astro:assets'
+
+
 
 Note: This essay has been updated for grammar and clarity. A quote was also removed. The original was published on Medium.
 
@@ -97,7 +98,11 @@ Other people in my life did try to help. I spent many recesses with my math teac
 orange cubes. There were singles that represented ones. Sticks of cubes represented tens. And slabs made of ten sticks representing 
 hundreds.
 
-<BreakoutImage src={Blue} alt="Blue blocks in cubes of ones, tens, and hundreds" caption="Counting blue cubes"/>
+import ImageDefault from "/src/components/typography/ImageDefault.astro"
+
+<ImageDefault src="/src/assets/blue-blocks-ones-tens-hundreds.jpg"alt="Blue blocks in cubes of ones, tens, and hundreds" caption="Counting blue cubes" />
+
+
 
 
 “Okay Susan,” she says as she takes a handful of ones and sorts them “I have a group of ten cubes.”
@@ -126,9 +131,9 @@ That tiny “**x**” was staring me in the face.
 
 An equation is like a sentence. A mathematical operator is a form of grammar. You have to understand its symbolic meaning. I hadn’t yet conceptualized what that tiny little “**x**” was trying to tell me. I was counting cubes because I could only see the numbers.
 
-import BlockQuoteQuote from '../../components/blog/BlockQuoteQuote.astro';
+import RegBlockquote from '/src/components/typography/RegBlockquote.astro';
 
-<BlockQuoteQuote cite=""> I didn’t know how to read the sentence.</BlockQuoteQuote>
+<RegBlockquote> I didn’t know how to read the sentence.</RegBlockquote>
 
 
 import equation from '../../assets/mathematical-grammer.jpg';
@@ -150,7 +155,10 @@ It cannot be a mere skill that determines if we like something or not. My earlie
  focus because I had found something more in mathematics than anxiety and fear. I discovered that putting forth 
  cognitive effort could be a pleasurable experience.
 
-<AlignCenter src={Compare} alt="Drawing of a cat and dog where letters have been turned into digits and added comparing the value of each word" caption="Adding the value of words" /> 
+import ImageAlign from "/src/components/typography/ImageAlign.astro"
+
+<ImageAlign src="/src/assets/math-games.jpg" alt="Drawing of a cat and dog where letters have been turned into digits and added comparing the value of each word" caption="Adding the value of words" flex="justify-center" align="caption-center" />
+
 
 
 I developed my own puzzles as I was learning about my new love. I used my code keys to add up the values of words. 
@@ -176,9 +184,9 @@ Joy, Sadness, Disgust, Fear, and Anger really are in charge.
 Inside of me, there is a writer with a mathematical muse. The source of my inspiration is the depth of my feelings
  formed as a child learning to become math literate. These emotions have taught me an important lesson.
 
-<BlockQuoteQuote  cite=""> 
+<RegBlockquote cite=""> 
 We have to face the things which make us feel the most uncomfortable. They also have the potential to bring us our greatest loves.
-</BlockQuoteQuote>
+</RegBlockquote>
 
-<RelatedArticles oneTitle="Math Communications as Rebellion" oneURL="/math-communication-as-rebellion" twoTitle="My Favorite Video from Every Year of Numberphile" twoURL="/favorite-video-every-year-numberphile" threeTitle="Explore Over 100 Links and Meet the Storytellers Who Bring Mathematics to Life" threeURL="/math-communication"  />
+
 

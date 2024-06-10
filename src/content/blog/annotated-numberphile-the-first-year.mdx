@@ -1,12 +1,12 @@
 ---
-layout: ../../layouts/BlogPostSingle.astro
+layout: ../../layouts/Post.astro
 title: "The Annotated Numberphile #1 : The First Year"
 description: "This is the first in a series about the YouTube channel Numberphile. We are revisting each year and personally annotating our favorite videos. "
 draft: false
 pubDate: 2024-04-26T16:11:25.409Z
 updatedDate: April 26th, 2024
 heroImage:
-  alt: "The mathematicall notation for sigma on a white background in the colors of pink and green."
+  alt: The mathematicall notation for sigma on a white background in the colors of pink and green.
   src: /src/assets/header-image-beauty-of-mathematics-sigma.jpg
 tags:
   - math-communications
@@ -17,17 +17,21 @@ tags:
 categories: memories
 author: susan-silver
 thumbnail: /src/assets/header-image-beauty-of-mathematics-sigma.jpg
+updateTime: 2024-04-26T12:45:29.000Z
+relatedOne:
+  title: Turn Math Anxiety Into Awe Improving Your Health for Pi Day
+  src: /turn-math-anxiety-into-awe-and-improve-your-health-for-pi-day
+relatedTwo:
+  title: 25 Math Love Songs and Other Mathematically Themed Videos"
+  src: /math-love-songs
+relatedThree:
+  title: 10 Videos That Show the Secrets of Dice
+  src: /10-videos-secrets-of-dice
+show: true
 ---
 import { YouTube } from '@astro-community/astro-embed-youtube';
-import BlockQuoteBook from '../../components/blog/BlockQuoteBook.astro';
-import BlockQuoteQuote from '../../components/blog/BlockQuoteQuote.astro';
-import AlignRight from '../../components/blog/AlignRight.astro';
-import AlignCenter from '../../components/blog/AlignCenter.astro';
-import BreakoutImage from '../../components/blog/BreakoutImage.astro';
-import RelatedArticles from '../../components/blog/RelatedArticles.astro';
 import PlaylistOne from '../../components/numberphile/PlaylistOne.astro';
 import SeriesMenu from '../../components/numberphile/SeriesMenu.astro';
-import Toc from '../../components/blog/Toc.astro';
 import { Image } from "astro:assets";
 
 This is the start of a new series where I personally annotate every year of Numberphile. I [outlined why in a previous post](https://beautyofmathematics.com/the-annotated-numberphile-a-retrospective-by-year/) but here is a refresher. I’ve been feeling uninspired lately. My thought was by revisiting Numberphile that it would stimulate my creativity. Remind me of why I’m writing about mathematics.. What it means to me and what is important. It really is a blast watching these videos again and the memories they stimulate. 
@@ -72,9 +76,11 @@ I like this video because it shows that math doesn’t have to be useful to be f
 
 This is another video with Matt Parker discussing his investigation into math related to the number 98. This video reminded me of why I keep a math journal. Every once in a while, I get a notion about a number or mathematical fact. My journal is a place to explore that. I think it helps me think more mathematically. And extend ideas from what I already know to the unknown. I also love this quote from Matt which highlights one of the reasons why I write about math at all.
 
-<BlockQuoteQuote cite="- Matt Parker">
+import RegBlockquote from "/src/components/typography/RegBlockquote.astro"
+
+<RegBlockquote cite="Matt Parker" show>
 Because iIf you find something interesting, someone else will find something interesting.
-</ BlockQuoteQuote>
+</ RegBlockquote>
 
 (18) 1 and Prime Numbers
 
@@ -84,9 +90,9 @@ This came about because of something James Grime said about the number one in a 
 
 About the Fundamental Theorem of Arithmetic:
 
-<BlockQuoteQuote cite="- James Grime">
+<RegBlockquote cite="James Grime" show>
 You can tell this is an important theorem because it has a name. You can tell it is a very important theorem because it has a pompous name.
-</ BlockQuoteQuote>
+</ RegBlockquote>
 
 (Also, I did this [essay on the song One by Harry Nillsson](https://beautyofmathematics.com/one-harry-nilsson/) which contains the line “One is the loneliest number.”)
 
@@ -132,5 +138,5 @@ This is a trilogy of videos about the Rubik’s Cube. I wanted to take the time 
 
 Thanks for taking this trip with me down memory lane. This is the first in a series revisiting the first 12 years of Numberphile. Here is the next one in the series. 
 
-<RelatedArticles oneTitle="Turn Math Anxiety Into Awe Improving Your Health for Pi Day" oneURL="/turn-math-anxiety-into-awe-and-improve-your-health-for-pi-day" twoTitle="25 Math Love Songs and Other Mathematically Themed Videos" twoURL="/math-love-songs" threeTitle="10 Videos That Show the Secrets of Dice" threeURL="/10-videos-secrets-of-dice"  />
+
 
