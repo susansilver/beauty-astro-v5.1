@@ -139,6 +139,16 @@
               "type": "string"
             }
           ]
+        },
+        {
+          "title": "thumbnail",
+          "name": "thumbnail",
+          "type": "string"
+        },
+        {
+          "title": "show",
+          "name": "show",
+          "type": "boolean"
         }
       ]
     }

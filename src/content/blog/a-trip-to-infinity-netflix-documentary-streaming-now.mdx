@@ -1,7 +1,7 @@
 ---
-layout: /src/layouts/BlogPostSingle.astro
+layout: /src/layouts/Post.astro
 title: A Trip to Infinity Netflix Documentary Streaming Now
-pubDate: 2022/09/26
+pubDate: 2022-09-26T20:49:36.000Z
 categories: books-and-films
 tags:
   - documentary
@@ -12,22 +12,26 @@ description: Discover the mysteries of infinity with "A Trip to Infinity," a cap
 updatedDate: Feburary 14th, 2023
 heroImage:
   alt: "The night sky has streaks of light from a time-lapse photograph. "
-  src: ../../assets/streaks-in-a-starry-sky.jpg
+  src: /src/assets/streaks-in-a-starry-sky.jpg
 author: susan-silver
 draft: false
 thumbnail: ../../assets/streaks-in-a-starry-sky.jpg
+show: true
+updateTime: 2023-02-14T21:49:51.000Z
+relatedOne:
+  title: Explore Over 100 Links and Meet the Storytellers Who Bring Mathematics to Life
+  src: /math-communication
+relatedTwo:
+  title: A Writer's Illicit Love Affair With Mathematics
+  src: /a-writers-illicit-love-affair-with-mathematics
+relatedThree:
+  title: My Favorite Video from Every Year of Numberphile
+  src: /favorite-video-every-year-numberphile
+
 ---
 import { YouTube } from '@astro-community/astro-embed-youtube';
 
 import { Image } from 'astro:assets'
-import Toc from '../../components/blog/Toc.astro';
-import RelatedArticles from '../../components/blog/RelatedArticles.astro';
-
-<Toc>
-- [Infinity in High School and College](#InfinityinHighSchoolandCollege)
-- [Infinity Documentary on Netflix](#InfinityDocumentaryonNetflix)
-- [Infinity Documentary Review](#InfinityDocumentaryReview)
-</Toc>
 
 Infinity is a difficult concept to comprehend, but a new documentary streaming on Netflix called 
 "A Trip to Infinity" may help shed some light on the subject. What is infinity? We get our first sense of it when we are children. 
@@ -88,4 +92,4 @@ When mathematicians talk about their experiences with mathematics more people ca
  perspectives and a diversity of people willing to share their stories. There is something for everybody in mathematics 
  if they are willing to explore it. This infinity documentary makes that clear.
 
- <RelatedArticles oneTitle="Explore Over 100 Links and Meet the Storytellers Who Bring Mathematics to Life" oneURL="/math-communication" twoTitle="A Writer&#39;s Illicit Love Affair With Mathematics" twoURL="/a-writers-illicit-love-affair-with-mathematics" threeTitle="My Favorite Video from Every Year of Numberphile" threeURL="/favorite-video-every-year-numberphile"  />
+

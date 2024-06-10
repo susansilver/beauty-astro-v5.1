@@ -30,7 +30,8 @@ interface Props {
   }[];
 }
 
-const { frontmatter, headings, show } = Astro.props;
+const { frontmatter, headings } = Astro.props;
+const show = frontmatter.show;
 ---
 
 <html lang="en" class="scroll-smooth">
