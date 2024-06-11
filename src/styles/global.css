@@ -90,9 +90,13 @@
     } 
  */
     p{
-        margin-block-start:0.5em;
-        margin-block-end:1em;
+        margin-block:1em;
+      /*   margin-block-end:1em; */
        
+    }
+
+    h1, h2, h3 {
+      margin-block-start:1em;
     }
 
     blockquote {
