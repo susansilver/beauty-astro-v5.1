@@ -1,15 +1,18 @@
 ---
+import type { ImageMetadata } from "astro";
+import { Image } from "astro:assets";
+
 interface Props {
   caption: string;
   float?: "float-right" | "float-left" | "float-none";
   align?: "caption-right" | "caption-left" | "caption-center";
-  src: string;
+  imagePath: string;
   alt: string;
   flex?: "justify-center";
 }
 
 const {
-  src,
+  imagePath,
   alt,
   caption,
   float = "float-none",
@@ -17,9 +20,24 @@ const {
   flex,
   ...rest
 } = Astro.props;
+
+const images = import.meta.glob<{ default: ImageMetadata }>(
+  "/src/assets/*.{jpeg,jpg,png,gif}"
+);
+if (!images[imagePath])
+  throw new Error(
+    `"${imagePath}" does not exist in glob: "src/assets/*.{jpeg,jpg,png,gif}"`
+  );
 ---
 
 <figure class:list={[float, flex]} class="img-position flex" {...rest}>
-  <img src={src} alt={alt} />
+  <Image
+    src={images[imagePath]()}
+    width={600}
+    height={300}
+    format="avif"
+    quality="mid"
+    alt={alt}
+  />
   <figcaption class:list={[align, flex]} class="flex">{caption}</figcaption>
 </figure>
