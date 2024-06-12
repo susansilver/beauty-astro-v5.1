@@ -15,7 +15,8 @@
       "pageBundle": false,
       "previewPath": "'blog'",
       "filePrefix": null,
-      "clearEmpty": true,
+      "fileType": "mdx",
+      "template": "[[workspace]]/.frontmatter/templates/article.mdx",
       "fields": [
         {
           "title": "Layout",
