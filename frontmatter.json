@@ -18,9 +18,10 @@
       "clearEmpty": true,
       "fields": [
         {
-          "title": "layout",
+          "title": "Layout",
           "name": "layout",
-          "type": "string"
+          "type": "string",
+          "default": "/src/layouts/Post.astro"
         },
         {
           "title": "title",
@@ -30,12 +31,24 @@
         {
           "title": "pubDate",
           "name": "pubDate",
-          "type": "datetime"
+          "type": "datetime",
+          "default": "{{now}}",
+          "isPublishDate": true
         },
         {
-          "title": "categories",
+          "title": "Categories",
           "name": "categories",
-          "type": "categories"
+          "type": "choice",
+          "choices": [
+            "cross-stitch",
+            "interviews",
+            "memories",
+            "science-communication",
+            "music",
+            "books-and-films",
+            "math-anxiety"
+          ],
+          "default": "memories"
         },
         {
           "title": "tags",
@@ -48,14 +61,19 @@
           "type": "string"
         },
         {
-          "title": "updatedDate",
+          "title": "Updated date",
           "name": "updatedDate",
-          "type": "string"
+          "type": "datetime",
+          "dateFormat": "MMMM do, Y",
+          "default": "{{now}}",
+          "isModifiedDate": true
         },
         {
           "title": "updateTime",
           "name": "updateTime",
-          "type": "datetime"
+          "type": "datetime",
+          "default": "{{now}}",
+          "isPublishDate": true
         },
         {
           "title": "heroImage",
@@ -70,14 +88,15 @@
             {
               "title": "src",
               "name": "src",
-              "type": "string"
+              "type": "image"
             }
           ]
         },
         {
-          "title": "author",
+          "title": "Author",
           "name": "author",
-          "type": "string"
+          "type": "string",
+          "default": "susan-silver"
         },
         {
           "title": "draft",
@@ -141,16 +160,26 @@
           ]
         },
         {
-          "title": "thumbnail",
-          "name": "thumbnail",
-          "type": "string"
-        },
-        {
           "title": "show",
           "name": "show",
           "type": "boolean"
         }
       ]
     }
-  ]
+  ],
+  "frontMatter.snippets.wrapper.enabled": false,
+  "frontMatter.content.snippets": {
+    "YouTube": {
+      "description": "Embed a YouTube Video",
+      "body": "<YouTube id=\"[[&selection]]\" />",
+      "fields": [
+        {
+          "name": "selection",
+          "title": "selection",
+          "type": "string",
+          "default": "FM_SELECTED_TEXT"
+        }
+      ]
+    }
+  }
 }
