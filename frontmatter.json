@@ -186,7 +186,7 @@
       "body": [
         "<FancyBlockquote name=\"[[name]]\" cite=\"[[cite]]\">",
         "[[&selection]]",
-        "</ FancyBlockquote>"
+        "<FancyBlockquote />"
       ],
       "fields": [
         {
@@ -199,6 +199,37 @@
         {
           "name": "cite",
           "title": "cite",
+          "type": "string",
+          "single": true,
+          "default": ""
+        },
+        {
+          "name": "selection",
+          "title": "selection",
+          "type": "string",
+          "single": true,
+          "default": "FM_SELECTED_TEXT"
+        }
+      ]
+    },
+    "Regular Blockquote": {
+      "description": "A simple block quote",
+      "body": [
+        "<RegBlockquote cite=\"[[cite]]\"  [[show]]>",
+        "[[&selection]]",
+        "<RegBlockquote />"
+      ],
+      "fields": [
+        {
+          "name": "cite",
+          "title": "cite",
+          "type": "string",
+          "single": true,
+          "default": ""
+        },
+        {
+          "name": "show",
+          "title": "show",
           "type": "string",
           "single": true,
           "default": ""

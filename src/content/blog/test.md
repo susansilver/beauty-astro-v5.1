@@ -23,7 +23,3 @@ relatedThree:
 show: true
 description: ss
 ---
-
-<FancyBlockquote name="mdi:book-open-variant" cite="Susan Silver">
-We have to face what makes us the most uncomfortable. It has the potential to bring us our greatest loves. 
-</ FancyBlockquote>
