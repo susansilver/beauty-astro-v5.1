@@ -44,6 +44,7 @@ const { frontmatter } = Astro.props;
           <div class="mx-auto grid grid-cols-12">
             <div
               class="dark:prose-invert prose prose-slate prose-xl col-span-10 col-start-2 col-end-12 md:col-span-6 md:col-start-4 md:col-end-10 mx-auto"
+              id="single-article"
             >
               <slot />
             </div>
@@ -90,4 +91,9 @@ const { frontmatter } = Astro.props;
       <Footer />
     </main>
   </body>
+  <style>
+    #single-article {
+      max-width: 55ch;
+    }
+  </style>
 </html>
