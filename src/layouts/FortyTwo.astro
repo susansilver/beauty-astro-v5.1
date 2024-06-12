@@ -1,0 +1,93 @@
+---
+import BaseHead from "../components/base/BaseHead.astro";
+import Footer from "../components/base/Footer.astro";
+import Header from "../components/base/Header.astro";
+import AnimatedGradient from "../components/FortyTwo/AnimatedGradient.astro";
+import FactGenerator from "../components/FortyTwo/FactGenerator.astro";
+import AuthorBio from "../components/blog/AuthorBio.astro";
+import HeaderImage from "../components/blog/HeaderImage.astro";
+
+interface Props {
+  frontmatter: {
+    heroImage: {
+      src: string;
+      alt: string;
+    };
+    title: string;
+    updatedDate: string;
+    description: string;
+    pubDate: string;
+    updatedTime: string;
+  };
+}
+
+const { frontmatter } = Astro.props;
+---
+
+<html lang="en">
+  <head>
+    <BaseHead
+      title={frontmatter.title}
+      description={frontmatter.description}
+      image={frontmatter.heroImage.src}
+    />
+  </head><hr />
+
+  <body>
+    <Header />
+    <main class="dark:bg-black-900">
+      <article>
+        <AnimatedGradient>42</AnimatedGradient>
+        <FactGenerator class="lg:block hidden" />
+
+        <div>
+          <div class="mx-auto grid grid-cols-12">
+            <div
+              class="dark:prose-invert prose prose-slate prose-xl col-span-10 col-start-2 col-end-12 md:col-span-6 md:col-start-4 md:col-end-10 mx-auto"
+            >
+              <slot />
+            </div>
+          </div>
+        </div>
+
+        <div id="meta" style="margin-block-start:1.5em;">
+          <aside>
+            <AuthorBio />
+          </aside>
+          <header>
+            <div
+              class="flex lg:flex-row justify-stretch items-center flex-col bg-primary-200"
+              id="article-header"
+            >
+              <!-- Article Header  -->
+
+              <div
+                class="flex flex-col justify-center items-center text-balance w-full bg-primary-200 padding-xdir text-center slash"
+                id="article-title"
+              >
+                <!-- Article Title  -->
+                <small style="margin-block-start:0.5em;">
+                  <time datetime={frontmatter.updatedTime}>
+                    {frontmatter.updatedDate}
+                  </time>
+                </small>
+                <h1>{frontmatter.title}</h1>
+              </div>
+              <!-- Article Title End -->
+              <!-- Article Header Image  -->
+
+              <HeaderImage
+                imagePath={frontmatter.heroImage.src}
+                alt={frontmatter.heroImage.alt}
+              />
+
+              <!-- Article Header Image End -->
+            </div>
+            <!-- Article Header End -->
+          </header>
+        </div>
+      </article>
+      <Footer />
+    </main>
+  </body>
+</html>
