@@ -180,6 +180,37 @@
           "default": "FM_SELECTED_TEXT"
         }
       ]
+    },
+    "Fancy Blockquote": {
+      "description": "A nicely styled blockquote",
+      "body": [
+        "<FancyBlockquote name=\"[[name]]\" cite=\"[[cite]]\">",
+        "[[&selection]]",
+        "</ FancyBlockquote>"
+      ],
+      "fields": [
+        {
+          "name": "name",
+          "title": "name",
+          "type": "string",
+          "single": true,
+          "default": ""
+        },
+        {
+          "name": "cite",
+          "title": "cite",
+          "type": "string",
+          "single": true,
+          "default": ""
+        },
+        {
+          "name": "selection",
+          "title": "selection",
+          "type": "string",
+          "single": true,
+          "default": "FM_SELECTED_TEXT"
+        }
+      ]
     }
   }
 }
