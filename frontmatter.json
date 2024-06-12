@@ -242,6 +242,11 @@
           "default": "FM_SELECTED_TEXT"
         }
       ]
+    },
+    "Align Image": {
+      "description": "Align image right, left, or center",
+      "body": "<ImageAlign imagePath=\"/src/assets/[[&mediaUrl]]\" alt=\"[[alt]]\" caption=\"[[caption]]\" float=\"[[float]]\" align=\"[[align]]\" flex=\"[[flex]]\" />",
+      "isMediaSnippet": true
     }
   }
 }
