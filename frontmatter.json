@@ -245,7 +245,28 @@
     },
     "Align Image": {
       "description": "Align image right, left, or center",
-      "body": "<ImageAlign imagePath=\"/src/assets/[[&mediaUrl]]\" alt=\"[[alt]]\" caption=\"[[caption]]\" float=\"[[float]]\" align=\"[[align]]\" flex=\"[[flex]]\" />",
+      "body": "<ImageAlign imagePath=\"/src/assets[[&mediaUrl]]\" alt=\"[[alt]]\" caption=\"[[caption]]\" float=\"[[float]]\" align=\"[[align]]\" flex=\"[[flex]]\" />",
+      "isMediaSnippet": true
+    },
+    "Default Image": {
+      "description": "Align wide images with a caption below",
+      "body": "<ImageDefault imagePath=\"/src/assets[[&mediaUrl]]\" alt=\"[[alt]]\" caption=\"[[caption]]\"  />",
+      "fields": [
+        {
+          "name": "alt",
+          "title": "alt",
+          "type": "string",
+          "single": true,
+          "default": ""
+        },
+        {
+          "name": "caption",
+          "title": "caption",
+          "type": "string",
+          "single": true,
+          "default": ""
+        }
+      ],
       "isMediaSnippet": true
     }
   }
