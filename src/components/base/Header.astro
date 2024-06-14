@@ -46,6 +46,9 @@ const categories = [
     <MenuItems class="hidden lg:flex">
       <ul class="flex flex-col lg:flex-row list-none lg:items-center">
         <li>
+          <HeaderLink href="/about">About</HeaderLink>
+        </li>
+        <li>
           <HeaderLink href="/blog">Blog</HeaderLink>
         </li>
         <li>
@@ -98,14 +101,20 @@ const categories = [
           </Dropdown>
         </li>
         <li>
-          <HeaderLink href="/typography-test">Typography</HeaderLink>
+          <HeaderLink href="/press">Press</HeaderLink>
         </li>
-        <!-- <li>
+        <li>
+          <HeaderLink href="https://www.patreon.com/susansilver"
+            >Patreon</HeaderLink
+          >
+        </li>
+        <li>
           <Dropdown class="group lg:text-2xl text-xl">
             <button
               class="flex items-center border-0 rounded-none bg-transparent hover:bg-transparent text-primary-900 hover:text-secondary-900"
             >
-              <span class="lg:text-[1.563rem] med"> Follow</span>
+              <span class="lg:text-[1.563rem] med text-primary-900">Extras</span
+              >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -121,39 +130,47 @@ const categories = [
               </svg>
             </button>
             <DropdownItems class="relative">
-              <div class="lg:absolute lg:top-0">
-                <ul>
-                  <li class="flex justify-start items-start">
-                    <Icon name="mdi:mastodon" class="sma" />
-                    <a
-                      href="https://mathstodon.xyz/@suzza"
-                      class="visited:text-primary-900 hover:text-secondary-900 no-underline"
-                      >Mastodon</a
-                    >
+              <div class="lg:absolute lg:top-0 bg-white-50">
+                <ul class="list-none">
+                  <li>
+                    <HeaderLink href="/downloads">Cross Stitch</HeaderLink>
                   </li>
-                  <li class="flex justify-start items-start">
-                    <Icon name="mdi:account-circle" class="sma" />
-                    <a
-                      href="https://susansilver.net"
-                      class="visited:text-primary-900 hover:text-secondary-900 no-underline"
-                      >Suzza</a
+                  <li>
+                    <HeaderLink href="/hitchhikers-guide-to-the-galaxy/"
+                      >Hitchhiker's Guide (42)</HeaderLink
                     >
                   </li>
                 </ul>
               </div>
             </DropdownItems>
           </Dropdown>
-        </li> -->
+        </li>
         <li>
           <HeaderLink
             href="mailto:beautyofmathematics@susansilver.net"
             class="bg-slate-200 rounded-xl p-2">Contact</HeaderLink
           >
         </li>
+        <li>
+          <a href="/rss.xml"
+            ><svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="2em"
+              height="2em"
+              viewBox="0 0 24 24"
+            >
+              <path
+                fill="#ee802f"
+                d="M5 3h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2m2.5 12A1.5 1.5 0 0 0 6 16.5A1.5 1.5 0 0 0 7.5 18A1.5 1.5 0 0 0 9 16.5A1.5 1.5 0 0 0 7.5 15M6 10v2a6 6 0 0 1 6 6h2a8 8 0 0 0-8-8m0-4v2a10 10 0 0 1 10 10h2A12 12 0 0 0 6 6"
+              ></path>
+            </svg></a
+          >
+        </li>
       </ul>
     </MenuItems>
   </Astronav>
 </header>
+
 <style>
   .category {
     text-transform: capitalize;
