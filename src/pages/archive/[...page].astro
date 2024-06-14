@@ -1,0 +1,43 @@
+---
+import { getCollection } from "astro:content";
+
+import BaseHead from "../../components/base/BaseHead.astro";
+import Header from "../../components/base/Header.astro";
+import Footer from "../../components/base/Footer.astro";
+
+export async function getStaticPaths({ paginate }) {
+  const allPosts = await getCollection("blog");
+  return paginate(allPosts, { pageSize: 6 });
+}
+
+const { page } = Astro.props;
+---
+
+<html lang="en">
+  <head>
+    <BaseHead title="Blog" description="From Math Anxiety to Math Confidence" />
+  </head>
+
+  <body class="dark:bg-slate-800 dark:text-white-50">
+    <Header />
+    <main>
+      <h1 class="text-3xl p-5">Page {page.currentPage}</h1>
+
+      <!--List the array of astronaut info-->
+      <div>
+        {
+          page.data.map((blogPostEntry) => (
+            <div class="flex flex-col">
+              <a href={`/${blogPostEntry.slug}`}>{blogPostEntry.data.title}</a>
+              <img
+                src={blogPostEntry.data.heroImage.src}
+                alt={blogPostEntry.data.heroImage.alt}
+              />
+            </div>
+          ))
+        }
+      </div>
+    </main>
+    <Footer />
+  </body>
+</html>
