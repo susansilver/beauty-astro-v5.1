@@ -163,7 +163,8 @@
         {
           "title": "show",
           "name": "show",
-          "type": "boolean"
+          "type": "boolean",
+           "default": true
         }
       ]
     }

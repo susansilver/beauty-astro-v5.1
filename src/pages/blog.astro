@@ -19,12 +19,12 @@ const allTags = [
   <head>
     <BaseHead title="Blog" description="The most current essays to read" />
   </head>
-  <body class="bg-white-50">
+  <body class="bg-white-50 dark:text-white-50 dark:bg-black-900">
     <Header />
     <main>
       <div class="grid grid-cols-12 margin-top" id="blog-archive">
         <div
-          class="col-span-10 col-start-2 col-end-11 flex lg:justify-center justify-end lar p-3 bg-slate-200 rounded-xl"
+          class="col-span-10 col-start-2 col-end-11 flex lg:justify-center justify-end lar p-3 bg-slate-200 rounded-xl text-black-900"
         >
           View All ➤
         </div>
@@ -49,7 +49,7 @@ const allTags = [
                         />
                       </div>
                       <div
-                        class="absolute text-balance p-1 title"
+                        class="absolute text-balance p-1 title text-black-900"
                         id="article-title"
                       >
                         {post.data.title}
@@ -142,6 +142,7 @@ const allTags = [
           padding: 1em;
           top: 0;
           right: 15%;
+          color: #212121;
         }
 
         .tag {

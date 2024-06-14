@@ -31,11 +31,11 @@ const { frontmatter } = Astro.props;
       description={frontmatter.description}
       image={frontmatter.heroImage.src}
     />
-  </head><hr />
+  </head>
 
-  <body>
+  <body class="dark:bg-black-900">
     <Header />
-    <main class="dark:bg-black-900">
+    <main class="dark:bg-black-900 dark:text-white-50">
       <article>
         <AnimatedGradient>42</AnimatedGradient>
         <FactGenerator class="lg:block hidden" />
@@ -43,7 +43,7 @@ const { frontmatter } = Astro.props;
         <div>
           <div class="mx-auto grid grid-cols-12">
             <div
-              class="dark:prose-invert prose prose-slate prose-xl col-span-10 col-start-2 col-end-12 md:col-span-6 md:col-start-4 md:col-end-10 mx-auto"
+              class="col-span-10 col-start-2 col-end-12 md:col-span-6 md:col-start-4 md:col-end-10 mx-auto"
               id="single-article"
             >
               <slot />
@@ -63,7 +63,7 @@ const { frontmatter } = Astro.props;
               <!-- Article Header  -->
 
               <div
-                class="flex flex-col justify-center items-center text-balance w-full bg-primary-200 padding-xdir text-center slash"
+                class="flex flex-col justify-center items-center text-balance w-full bg-primary-200 padding-xdir text-center slash dark:text-black-900"
                 id="article-title"
               >
                 <!-- Article Title  -->
@@ -90,10 +90,10 @@ const { frontmatter } = Astro.props;
       </article>
       <Footer />
     </main>
+    <style>
+      #single-article {
+        max-width: 55ch;
+      }
+    </style>
   </body>
-  <style>
-    #single-article {
-      max-width: 55ch;
-    }
-  </style>
 </html>
