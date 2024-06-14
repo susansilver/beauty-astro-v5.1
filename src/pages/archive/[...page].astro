@@ -1,43 +1,144 @@
 ---
 import { getCollection } from "astro:content";
+import { Image } from "astro:assets";
+import type { CollectionEntry } from "astro:content";
 
 import BaseHead from "../../components/base/BaseHead.astro";
 import Header from "../../components/base/Header.astro";
 import Footer from "../../components/base/Footer.astro";
+import Thumbnail from "../../components/base/Thumbnail.astro";
 
-export async function getStaticPaths({ paginate }) {
+export async function getStaticPaths({ paginate }: { paginate: any }) {
   const allPosts = await getCollection("blog");
-  return paginate(allPosts, { pageSize: 6 });
+
+  // Filter out draft posts
+  const publishedPosts = allPosts.filter((post) => !post.data.draft);
+
+  // Sort posts by publication date (assuming pubDate is in ISO 8601 format)
+  publishedPosts.sort(
+    (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+  );
+
+  return paginate(publishedPosts, { pageSize: 6 });
 }
 
-const { page } = Astro.props;
+interface BlogPostEntry {
+  slug: string;
+  data: {
+    title: string;
+    description: string;
+    heroImage: {
+      src: string;
+      alt: string;
+    };
+    draft: boolean;
+    pubDate: string; // or Date if you prefer to parse it beforehand
+  };
+}
+
+interface Props {
+  page: {
+    data: BlogPostEntry[];
+    currentPage: number;
+    url: {
+      prev: string;
+      next: string;
+    };
+  };
+}
+
+const { page }: { page: Props["page"] } = Astro.props;
 ---
 
 <html lang="en">
   <head>
-    <BaseHead title="Blog" description="From Math Anxiety to Math Confidence" />
+    <BaseHead
+      title="Blog Archive"
+      description="All Essays Published on Beauty of Mathematics"
+    />
   </head>
 
   <body class="dark:bg-slate-800 dark:text-white-50">
     <Header />
     <main>
       <h1 class="text-3xl p-5">Page {page.currentPage}</h1>
-
-      <!--List the array of astronaut info-->
-      <div>
+      <div class="flex flex-row justify-around items-center box">
+        <a href={page.url.prev} class="no-underline hover:text-secondary-900"
+          ><div
+            class="lar p-3 bg-slate-200 rounded-xl text-black-900 max-w-fit"
+          >
+            ❮ Prev
+          </div>
+        </a>
+        <a href={page.url.next} class="no-underline">
+          <div class="lar p-3 bg-slate-200 rounded-xl text-black-900 max-w-fit">
+            Next ❯
+          </div>
+        </a>
+      </div>
+      <div class="grid-cols-12 grid text-balance" id="container">
         {
-          page.data.map((blogPostEntry) => (
-            <div class="flex flex-col">
-              <a href={`/${blogPostEntry.slug}`}>{blogPostEntry.data.title}</a>
-              <img
-                src={blogPostEntry.data.heroImage.src}
-                alt={blogPostEntry.data.heroImage.alt}
-              />
-            </div>
+          page.data.map((blogPostEntry: BlogPostEntry) => (
+            <>
+              <div class="col-span-8 col-start-2 col-end-10">
+                <div class="top-border">
+                  <div class="flex flex-row justify-between items-start gap-3">
+                    <Image
+                      src={blogPostEntry.data.heroImage.src}
+                      width={500}
+                      height={300}
+                      format="avif"
+                      quality="mid"
+                      alt={blogPostEntry.data.heroImage.alt}
+                    />
+                    <div class="flex flex-col gap-3">
+                      <a href={`/${blogPostEntry.slug}`}>
+                        {blogPostEntry.data.title}
+                      </a>
+                      <div>{blogPostEntry.data.description}</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </>
           ))
         }
       </div>
+      <div class="flex flex-row justify-around items-center box">
+        <a href={page.url.prev} class="no-underline hover:text-secondary-900"
+          ><div
+            class="lar p-3 bg-slate-200 rounded-xl text-black-900 max-w-fit"
+          >
+            ❮ Prev
+          </div>
+        </a>
+        <a href={page.url.next} class="no-underline">
+          <div class="lar p-3 bg-slate-200 rounded-xl text-black-900 max-w-fit">
+            Next ❯
+          </div>
+        </a>
+      </div>
     </main>
     <Footer />
+    <style>
+      .top-border {
+        border: 3px solid;
+        border-image-slice: 1;
+        border-width: 5px;
+        border-image-source: linear-gradient(to right, #0d47a1, #f48fb1);
+        border-left: 0;
+        border-right: 0;
+        border-bottom: 0;
+        padding: 1em;
+      }
+
+      #container > div:nth-child(even) {
+        background-color: #e2e8f0;
+      }
+
+      .box {
+        margin-block: 1.5em;
+      }
+    </style>
   </body>
 </html>
