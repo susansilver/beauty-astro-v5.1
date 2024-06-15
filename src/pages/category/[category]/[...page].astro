@@ -3,17 +3,25 @@ import { getCollection } from "astro:content";
 import BaseHead from "../../../components/base/BaseHead.astro";
 import Header from "../../../components/base/Header.astro";
 import Footer from "../../../components/base/Footer.astro";
+import { Image } from "astro:assets";
 
-export async function getStaticPaths({ paginate }) {
+export async function getStaticPaths({ paginate }: { paginate: any }) {
   const allPosts = await getCollection("blog");
 
+  const sortedPosts = allPosts
+    .filter((post) => !post.data.draft) // Filter out drafts
+    .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()); // Sort by pubDate descending
+
+  // Ensure allPosts have defined categories
   const allCategories = [
-    ...new Set(allPosts.flatMap((post) => post.data.categories)),
+    ...new Set(
+      sortedPosts.flatMap((post) => post.data.categories || []) // Default to an empty array if undefined
+    ),
   ];
 
   return allCategories.flatMap((category) => {
-    const filteredPosts = allPosts.filter((post) =>
-      post.data.categories.includes(category)
+    const filteredPosts = allPosts.filter(
+      (post) => post.data.categories && post.data.categories.includes(category)
     );
     return paginate(filteredPosts, {
       params: { category },
@@ -33,6 +41,7 @@ interface BlogPostEntry {
     };
     draft: boolean;
     pubDate: string; // or Date if you prefer to parse it beforehand
+    categories: string[];
   };
 }
 
@@ -48,6 +57,7 @@ interface Props {
 }
 
 const { page }: { page: Props["page"] } = Astro.props;
+const { params } = Astro;
 ---
 
 <html lang="en">
@@ -61,11 +71,11 @@ const { page }: { page: Props["page"] } = Astro.props;
   <body class="dark:bg-slate-800 dark:text-white-50">
     <Header />
     <main>
-      <h1 class="text-3xl p-5">
-        Category: {params.category.toLowerCase().replace(/-/g, " ")}
+      <h1 class="text-3xl p-5 capitalize">
+        Category: {params.category.replace(/-/g, " ")}
       </h1>
 
-      <h2 class="text-3xl p-5">Page {page.currentPage}</h2>
+      <h3 class="text-3xl p-5">Page {page.currentPage}</h3>
       <div class="flex flex-row justify-around items-center box">
         <a href={page.url.prev} class="no-underline hover:text-secondary-900"
           ><div
@@ -82,31 +92,30 @@ const { page }: { page: Props["page"] } = Astro.props;
       </div>
       <div class="grid-cols-12 grid text-balance" id="container">
         {
-          page.data
-            .filter((blogPostEntry) => !blogPostEntry.data.draft)
-            .sort((a, b) => a.data.title.localeCompare(b.data.title))
-
-            .map((blogPostEntry) => (
-              <div class="relative p-3">
-                <Card
-                  url={`/${blogPostEntry.slug}`}
-                  img={blogPostEntry.data.heroImage.src}
-                  alt={blogPostEntry.data.heroImage.alt}
-                  title={blogPostEntry.data.title}
-                  footer=""
-                >
-                  <p class="m-5">{blogPostEntry.data.description}</p>
-                </Card>
-                <button>
-                  <a
-                    href={`/${blogPostEntry.slug}`}
-                    class="absolute hidden md:flex bottom-5 right-5 outline-1 outline-accent-900 mt-8 mx-3 md:text-2xl p-2 text-black-900 bg-accent-400 rounded hover:rounded-xl hover:bg-accent-600"
-                  >
-                    Read More
-                  </a>
-                </button>
+          page.data.map((blogPostEntry: BlogPostEntry) => (
+            <>
+              <div class="col-span-8 col-start-2 col-end-10">
+                <div class="top-border">
+                  <div class="flex flex-col lg:flex-row justify-between items-start gap-3">
+                    <Image
+                      src={blogPostEntry.data.heroImage.src}
+                      width={500}
+                      height={300}
+                      format="avif"
+                      quality="mid"
+                      alt={blogPostEntry.data.heroImage.alt}
+                    />
+                    <div class="flex flex-col gap-3">
+                      <a href={`/${blogPostEntry.slug}`}>
+                        {blogPostEntry.data.title}
+                      </a>
+                      <div>{blogPostEntry.data.description}</div>
+                    </div>
+                  </div>
+                </div>
               </div>
-            ))
+            </>
+          ))
         }
       </div>
       <div class="flex flex-row justify-around items-center box">
@@ -144,6 +153,10 @@ const { page }: { page: Props["page"] } = Astro.props;
 
       .box {
         margin-block: 1.5em;
+      }
+
+      .capitalize {
+        text-transform: capitalize;
       }
     </style>
   </body>
