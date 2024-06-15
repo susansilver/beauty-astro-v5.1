@@ -19,7 +19,7 @@ export default defineConfig({
   integrations: [favicons({
     masterPicture: "public/favicon.png",
     emitAssets: true,
-    faviconsDarkMode: true,
+    faviconsDarkMode: false,
     appName: "Beauty of Mathematics",
     // Your application's name. `string`
     appShortName: "Beauty of Mathematics",
