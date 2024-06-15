@@ -220,7 +220,18 @@
     a:hover, a:visited{
         color:#880E4F;
     }
+    @media (prefers-color-scheme: dark) {
+      a {
+        text-decoration: underline;
+        color:#1E88E5; 
+    }
 
+    a:hover, a:visited{
+        color: #EC407A;
+    }
+
+    
+    }
     article a[href^="http://"]:not([href*="beautyofmathematics.com"]),
     article  a[href^="https://"]:not([href*="beautyofmathematics.com"]), 
     article  a[href^="//"]:not([href*="beautyofmathematics.com"]){
