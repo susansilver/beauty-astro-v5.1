@@ -59,7 +59,8 @@ const { page }: { page: Props["page"] } = Astro.props;
   <body class="dark:bg-black-900 dark:text-white-50">
     <Header />
     <main>
-      <h1 class="text-3xl p-5">Archive Page {page.currentPage}</h1>
+      <h1 class="text-3xl p-5">Archive</h1>
+      <h3 class="xl p-5">Page {page.currentPage}</h3>
       <div class="flex flex-row justify-around items-center box">
         <a href={page.url.prev} class="no-underline hover:text-secondary-900"
           ><div

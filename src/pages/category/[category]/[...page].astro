@@ -75,7 +75,7 @@ const { params } = Astro;
         Category: {params.category.replace(/-/g, " ")}
       </h1>
 
-      <h3 class="text-3xl p-5">Page {page.currentPage}</h3>
+      <h3 class="xl p-5">Page {page.currentPage}</h3>
       <div class="flex flex-row justify-around items-center box">
         <a href={page.url.prev} class="no-underline hover:text-secondary-900"
           ><div
@@ -154,7 +154,6 @@ const { params } = Astro;
       .box {
         margin-block: 1.5em;
       }
-
       .capitalize {
         text-transform: capitalize;
       }

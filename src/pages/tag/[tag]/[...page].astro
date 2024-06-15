@@ -5,14 +5,21 @@ import Header from "../../../components/base/Header.astro";
 import Footer from "../../../components/base/Footer.astro";
 import { Image } from "astro:assets";
 
-export async function getStaticPaths({ paginate }) {
+export async function getStaticPaths({ paginate }: { paginate: any }) {
   const allPosts = await getCollection("blog");
 
-  const allTags = [...new Set(allPosts.flatMap((post) => post.data.tags))];
+  const sortedPosts = allPosts
+    .filter((post) => !post.data.draft) // Filter out drafts
+    .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()); // Sort by pubDate descending
+
+  // Use optional chaining and default value to avoid undefined tags
+  const allTags = [
+    ...new Set(sortedPosts.flatMap((post) => post.data.tags ?? [])),
+  ];
 
   return allTags.flatMap((tag) => {
     const filteredPosts = allPosts.filter((post) =>
-      post.data.tags.includes(tag)
+      (post.data.tags ?? []).includes(tag)
     );
     return paginate(filteredPosts, {
       params: { tag },
@@ -33,6 +40,7 @@ interface BlogPostEntry {
     draft: boolean;
     pubDate: string; // or Date if you prefer to parse it beforehand
     tags: string[];
+    tag: string;
   };
 }
 
@@ -54,16 +62,18 @@ const { params } = Astro;
 <html lang="en">
   <head>
     <BaseHead
-      title={tag.toLowerCase().replace(/-/g, " ")}
-      description={`Tag archive for ${tag.toLowerCase().replace(/-/g, " ")}`}
+      title={params.tag.toLowerCase().replace(/-/g, " ")}
+      description={`Tag archive for ${params.tag.toLowerCase().replace(/-/g, " ")}`}
     />
   </head>
 
   <body class="dark:bg-slate-800 dark:text-white-50">
     <Header />
     <main>
-      <h1 class="text-3xl p-5 capitalize">Tag: {tag.replace(/-/g, " ")}</h1>
-      <h3 class="text-3xl p-5">Page {page.currentPage}</h3>
+      <h1 class="text-3xl p-5 capitalize">
+        Tag: {params.tag.replace(/-/g, " ")}
+      </h1>
+      <h3 class="xl p-5">Page {page.currentPage}</h3>
       <div class="flex flex-row justify-around items-center box">
         <a href={page.url.prev} class="no-underline hover:text-secondary-900"
           ><div
@@ -79,80 +89,73 @@ const { params } = Astro;
         </a>
       </div>
       <div class="grid-cols-12 grid text-balance" id="container">
-        <!--List the array of astronaut info-->
-        <div
-          class="md:grid lg:grid-cols-3 md:grid-cols-2 md:gap-4 md:mx-auto text-lg"
-        >
-          {
-            page.data.map((blogPostEntry: BlogPostEntry) => (
-              <>
-                <div class="col-span-8 col-start-2 col-end-10">
-                  <div class="top-border">
-                    <div class="flex flex-col lg:flex-row justify-between items-start gap-3">
-                      <Image
-                        src={blogPostEntry.data.heroImage.src}
-                        width={500}
-                        height={300}
-                        format="avif"
-                        quality="mid"
-                        alt={blogPostEntry.data.heroImage.alt}
-                      />
-                      <div class="flex flex-col gap-3">
-                        <a href={`/${blogPostEntry.slug}`}>
-                          {blogPostEntry.data.title}
-                        </a>
-                        <div>{blogPostEntry.data.description}</div>
-                      </div>
+        {
+          page.data.map((blogPostEntry: BlogPostEntry) => (
+            <>
+              <div class="col-span-8 col-start-2 col-end-10">
+                <div class="top-border">
+                  <div class="flex flex-col lg:flex-row justify-between items-start gap-3">
+                    <Image
+                      src={blogPostEntry.data.heroImage.src}
+                      width={500}
+                      height={300}
+                      format="avif"
+                      quality="mid"
+                      alt={blogPostEntry.data.heroImage.alt}
+                    />
+                    <div class="flex flex-col gap-3">
+                      <a href={`/${blogPostEntry.slug}`}>
+                        {blogPostEntry.data.title}
+                      </a>
+                      <div>{blogPostEntry.data.description}</div>
                     </div>
                   </div>
                 </div>
-              </>
-            ))
-          }
-        </div>
-        <div class="flex flex-row justify-around items-center box">
-          <a href={page.url.prev} class="no-underline hover:text-secondary-900"
-            ><div
-              class="lar p-3 bg-slate-200 rounded-xl text-black-900 max-w-fit"
-            >
-              ❮ Prev
-            </div>
-          </a>
-          <a href={page.url.next} class="no-underline">
-            <div
-              class="lar p-3 bg-slate-200 rounded-xl text-black-900 max-w-fit"
-            >
-              Next ❯
-            </div>
-          </a>
-        </div>
+              </div>
+            </>
+          ))
+        }
       </div>
-      <Footer />
-      <style>
-        .top-border {
-          border: 3px solid;
-          border-image-slice: 1;
-          border-width: 5px;
-          border-image-source: linear-gradient(to right, #0d47a1, #f48fb1);
-          border-left: 0;
-          border-right: 0;
-          border-bottom: 0;
-          padding: 1em;
-        }
-
-        #container > div:nth-child(even) {
-          background-color: #e2e8f0;
-          color: #212121;
-        }
-
-        .box {
-          margin-block: 1.5em;
-        }
-
-        .capitalize {
-          text-transform: capitalize;
-        }
-      </style>
+      <div class="flex flex-row justify-around items-center box">
+        <a href={page.url.prev} class="no-underline hover:text-secondary-900"
+          ><div
+            class="lar p-3 bg-slate-200 rounded-xl text-black-900 max-w-fit"
+          >
+            ❮ Prev
+          </div>
+        </a>
+        <a href={page.url.next} class="no-underline">
+          <div class="lar p-3 bg-slate-200 rounded-xl text-black-900 max-w-fit">
+            Next ❯
+          </div>
+        </a>
+      </div>
     </main>
+    <Footer />
+    <style>
+      .top-border {
+        border: 3px solid;
+        border-image-slice: 1;
+        border-width: 5px;
+        border-image-source: linear-gradient(to right, #0d47a1, #f48fb1);
+        border-left: 0;
+        border-right: 0;
+        border-bottom: 0;
+        padding: 1em;
+      }
+
+      #container > div:nth-child(even) {
+        background-color: #e2e8f0;
+        color: #212121;
+      }
+
+      .box {
+        margin-block: 1.5em;
+      }
+
+      .capitalize {
+        text-transform: capitalize;
+      }
+    </style>
   </body>
 </html>
