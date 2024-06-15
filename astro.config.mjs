@@ -3,8 +3,11 @@ import tailwind from "@astrojs/tailwind";
 import favicons from "astro-favicons";
 import mdx from "@astrojs/mdx";
 import icon from "astro-icon";
-
 import sitemap from "@astrojs/sitemap";
+import betterImageService from "astro-better-image-service";
+import compress from "astro-compress";
+
+import compressor from "astro-compressor";
 
 // https://astro.build/config
 export default defineConfig({
@@ -13,8 +16,8 @@ export default defineConfig({
     shikiConfig: {
       // Choose from Shiki's built-in themes (or add your own)
       // https://shiki.style/themes
-      theme: 'night-owl',
-    },
+      theme: 'night-owl'
+    }
   },
   integrations: [favicons({
     masterPicture: "public/favicon.png",
@@ -46,5 +49,11 @@ export default defineConfig({
     windows: true,
     // Create Windows 8 tile icons. `boolean` or `{ offset, background }` or an array of sources
     yandex: true // Create Yandex browser icon. `boolean` or `{ offset, background }` or an array of sources
-  }), tailwind(), mdx(), icon(), sitemap()]
+  }), tailwind(), mdx(), icon(), sitemap(), betterImageService(), compress({
+    CSS: true,
+    HTML: true,
+    Image: false,
+    JavaScript: true,
+    SVG: false
+  }), compressor()]
 });
