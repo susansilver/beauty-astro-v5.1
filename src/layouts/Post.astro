@@ -98,7 +98,7 @@ const show = frontmatter.show;
             <nav aria-label="Table of Contents">
               {
                 show && headings && headings.length > 0 && (
-                  <details class="md:hidden block fixed bottom-0 left-0 w-full bg-accent-50 border-accent-300 border-4 z-10 mobile-toc">
+                  <details class="md:hidden block fixed bottom-0 left-0 w-full bg-accent-50 border-accent-300 border-4 z-10 mobile-toc dark:text-black-900">
                     <summary class="p-3">Table of Contents</summary>
                     <span class="margin-top">
                       <TOC headings={headings} />
