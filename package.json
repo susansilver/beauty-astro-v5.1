@@ -12,15 +12,15 @@
   "dependencies": {
     "@astro-community/astro-embed-youtube": "^0.5.2",
     "@astrojs/check": "^0.7.0",
-    "@astrojs/mdx": "^3.0.1",
+    "@astrojs/mdx": "^3.1.0",
     "@astrojs/rss": "^4.0.6",
     "@astrojs/sitemap": "^3.1.5",
     "@astrojs/tailwind": "^5.1.0",
-    "astro": "^4.9.2",
+    "astro": "^4.10.2",
     "astro-favicons": "^2.0.2",
     "astro-font": "^0.0.81",
     "astro-icon": "^1.1.0",
-    "astro-navbar": "^2.3.2",
+    "astro-navbar": "^2.3.3",
     "tailwindcss": "^3.4.3",
     "typescript": "^5.4.5"
   },
