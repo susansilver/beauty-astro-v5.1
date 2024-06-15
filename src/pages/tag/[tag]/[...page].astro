@@ -1,0 +1,158 @@
+---
+import { getCollection } from "astro:content";
+import BaseHead from "../../../components/base/BaseHead.astro";
+import Header from "../../../components/base/Header.astro";
+import Footer from "../../../components/base/Footer.astro";
+import { Image } from "astro:assets";
+
+export async function getStaticPaths({ paginate }) {
+  const allPosts = await getCollection("blog");
+
+  const allTags = [...new Set(allPosts.flatMap((post) => post.data.tags))];
+
+  return allTags.flatMap((tag) => {
+    const filteredPosts = allPosts.filter((post) =>
+      post.data.tags.includes(tag)
+    );
+    return paginate(filteredPosts, {
+      params: { tag },
+      pageSize: 6,
+    });
+  });
+}
+
+interface BlogPostEntry {
+  slug: string;
+  data: {
+    title: string;
+    description: string;
+    heroImage: {
+      src: string;
+      alt: string;
+    };
+    draft: boolean;
+    pubDate: string; // or Date if you prefer to parse it beforehand
+    tags: string[];
+  };
+}
+
+interface Props {
+  page: {
+    data: BlogPostEntry[];
+    currentPage: number;
+    url: {
+      prev: string;
+      next: string;
+    };
+  };
+}
+
+const { page }: { page: Props["page"] } = Astro.props;
+const { params } = Astro;
+---
+
+<html lang="en">
+  <head>
+    <BaseHead
+      title={tag.toLowerCase().replace(/-/g, " ")}
+      description={`Tag archive for ${tag.toLowerCase().replace(/-/g, " ")}`}
+    />
+  </head>
+
+  <body class="dark:bg-slate-800 dark:text-white-50">
+    <Header />
+    <main>
+      <h1 class="text-3xl p-5 capitalize">Tag: {tag.replace(/-/g, " ")}</h1>
+      <h3 class="text-3xl p-5">Page {page.currentPage}</h3>
+      <div class="flex flex-row justify-around items-center box">
+        <a href={page.url.prev} class="no-underline hover:text-secondary-900"
+          ><div
+            class="lar p-3 bg-slate-200 rounded-xl text-black-900 max-w-fit"
+          >
+            ❮ Prev
+          </div>
+        </a>
+        <a href={page.url.next} class="no-underline">
+          <div class="lar p-3 bg-slate-200 rounded-xl text-black-900 max-w-fit">
+            Next ❯
+          </div>
+        </a>
+      </div>
+      <div class="grid-cols-12 grid text-balance" id="container">
+        <!--List the array of astronaut info-->
+        <div
+          class="md:grid lg:grid-cols-3 md:grid-cols-2 md:gap-4 md:mx-auto text-lg"
+        >
+          {
+            page.data.map((blogPostEntry: BlogPostEntry) => (
+              <>
+                <div class="col-span-8 col-start-2 col-end-10">
+                  <div class="top-border">
+                    <div class="flex flex-col lg:flex-row justify-between items-start gap-3">
+                      <Image
+                        src={blogPostEntry.data.heroImage.src}
+                        width={500}
+                        height={300}
+                        format="avif"
+                        quality="mid"
+                        alt={blogPostEntry.data.heroImage.alt}
+                      />
+                      <div class="flex flex-col gap-3">
+                        <a href={`/${blogPostEntry.slug}`}>
+                          {blogPostEntry.data.title}
+                        </a>
+                        <div>{blogPostEntry.data.description}</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </>
+            ))
+          }
+        </div>
+        <div class="flex flex-row justify-around items-center box">
+          <a href={page.url.prev} class="no-underline hover:text-secondary-900"
+            ><div
+              class="lar p-3 bg-slate-200 rounded-xl text-black-900 max-w-fit"
+            >
+              ❮ Prev
+            </div>
+          </a>
+          <a href={page.url.next} class="no-underline">
+            <div
+              class="lar p-3 bg-slate-200 rounded-xl text-black-900 max-w-fit"
+            >
+              Next ❯
+            </div>
+          </a>
+        </div>
+      </div>
+      <Footer />
+      <style>
+        .top-border {
+          border: 3px solid;
+          border-image-slice: 1;
+          border-width: 5px;
+          border-image-source: linear-gradient(to right, #0d47a1, #f48fb1);
+          border-left: 0;
+          border-right: 0;
+          border-bottom: 0;
+          padding: 1em;
+        }
+
+        #container > div:nth-child(even) {
+          background-color: #e2e8f0;
+          color: #212121;
+        }
+
+        .box {
+          margin-block: 1.5em;
+        }
+
+        .capitalize {
+          text-transform: capitalize;
+        }
+      </style>
+    </main>
+  </body>
+</html>
