@@ -82,7 +82,7 @@ const allTags = [
                     return (
                       <li class="m-3">
                         <a
-                          class="tag"
+                          class="tag dark:text-white-50 dark:hover:text-white-50 dark:visited:text-white-50"
                           href={`/tag/${tag}`}
                           title={`View posts tagged "${tag}"`}
                         >
@@ -162,6 +162,12 @@ const allTags = [
         @media (prefers-color-scheme: dark) {
           .tag {
             background-color: #880e4f;
+          }
+
+          .tag a,
+          .tag a:hover,
+          .tag a:visited {
+            color: #fafafa !important;
           }
         }
       </style>
