@@ -24,7 +24,7 @@ const allTags = [
     <main>
       <div class="grid grid-cols-12 margin-top" id="blog-archive">
         <div
-          class="col-span-10 col-start-2 col-end-11 lar p-3 bg-slate-200 rounded-xl text-black-900"
+          class="col-span-10 col-start-2 col-end-11 lar p-3 bg-slate-200 dark:bg-slate-700 rounded-xl text-black-900"
         >
           <a
             href="/archive"
@@ -157,6 +157,12 @@ const allTags = [
           text-decoration: none;
           padding: 0.5em;
           border-radius: 5px;
+        }
+
+        @media (prefers-color-scheme: dark) {
+          .tag {
+            background-color: #880e4f;
+          }
         }
       </style>
     </main>

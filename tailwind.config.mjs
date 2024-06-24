@@ -46,7 +46,7 @@ export default {
 			  },
 		  'white-50': '#FAFAFA',
 		  'black-900': '#212121',
-		  'dark-links': '#1E88E5',
+		  'dark-links': '#a4c4f4',
 		}},
 	},
 	plugins: [],
