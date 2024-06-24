@@ -3,7 +3,10 @@ const { heading } = Astro.props;
 ---
 
 <li class="margin-xdir-sma">
-  <a href={"#" + heading.slug}>
+  <a
+    href={"#" + heading.slug}
+    class="dark:text-primary-900 dark:hover:text-secondary-900 dark:visited:text-secondary-900"
+  >
     {heading.text}
   </a>
   {
