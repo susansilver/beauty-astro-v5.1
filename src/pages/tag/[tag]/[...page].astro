@@ -149,6 +149,13 @@ const { params } = Astro;
         color: #212121;
       }
 
+      @media (prefers-color-scheme: dark) {
+        #container > div:nth-child(even) {
+          background-color: #0f172a;
+          color: #fafafa;
+        }
+      }
+
       .box {
         margin-block: 1.5em;
       }
