@@ -1,0 +1,10 @@
+{
+    "redirects": [
+      { "source": "/love-and-mathematics-music-playlist", "destination": "/math-love-songs", "statusCode": 301 },
+      { "source": "/infinity-netflix-documentary", "destination": "/a-trip-to-infinity-netflix-documentary-streaming-now", "statusCode": 301 },
+      { "source": "/math--science-tattoo-inspiration-tom-crawford", "destination": "/math-science-tattoo-inspiration-tom-crawford", "statusCode": 301 },
+      { "source": "/pride-cross-stitch-patterns-velebrating-the-beauty-of-math", "destination": "/pride-cross-stitch-patterns-celebrating-the-beauty-of-math", "statusCode": 301 },
+      { "source": "/25-science-gifts/", "destination": "/category/memories/", "statusCode": 301 },
+      { "source": "/carnival-of--mathematics/", "destination": "/carnival-of-mathematics-221", "statusCode": 301 }
+    ]
+  }
