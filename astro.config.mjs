@@ -12,6 +12,14 @@ import compressor from "astro-compressor";
 // https://astro.build/config
 export default defineConfig({
   site: 'https://beautyofmathematics.com',
+  redirects: {
+    '/love-and-mathematics-music-playlist': '/math-love-songs',
+    '/infinity-netflix-documentary': '/a-trip-to-infinity-netflix-documentary-streaming-now',
+    '/math--science-tattoo-inspiration-tom-crawford': '/math-science-tattoo-inspiration-tom-crawford',
+    '/pride-cross-stitch-patterns-velebrating-the-beauty-of-math': '/pride-cross-stitch-patterns-celebrating-the-beauty-of-math',
+    '/25-science-gifts/': '/category/memories/',
+    '/carnival-of--mathematics/': '/carnival-of-mathematics-221'
+  },
   markdown: {
     shikiConfig: {
       // Choose from Shiki's built-in themes (or add your own)
