@@ -32,6 +32,7 @@ show: true
 import { YouTube } from '@astro-community/astro-embed-youtube';
 import SeriesMenu from "/src/components/numberphile/SeriesMenu.astro";
 import Playlists from "/src/components/numberphile/Playlists.astro";
+import NavigationBtn from "/src/components/blog/NavigationBtn.astro";
 
 
 The Annotated Numberphile is a new project that I am working on. I’ve wanted to go back through the series to the beginning and binge-watch all the videos. There are plenty that I have missed over the years. I’m a subscriber but I only watch those whose title or thumbnail interests me. Yet, I know there are a few gems that would appeal to me even if I don’t know it yet. In this way, I can say that I have seen each Numberphile video at least once. 
@@ -84,3 +85,4 @@ You can navigate to any published year.
 
 <SeriesMenu />
 
+<NavigationBtn prev="" next="/annotated-numberphile-the-first-year" />
