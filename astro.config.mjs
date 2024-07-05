@@ -6,7 +6,7 @@ import icon from "astro-icon";
 import sitemap from "@astrojs/sitemap";
 import betterImageService from "astro-better-image-service";
 import compress from "astro-compress";
-
+import pagefind from "astro-pagefind";
 import compressor from "astro-compressor";
 
 // https://astro.build/config
@@ -63,5 +63,5 @@ export default defineConfig({
     Image: false,
     JavaScript: true,
     SVG: false
-  }), compressor()]
+  }),  compressor(), pagefind()]
 });

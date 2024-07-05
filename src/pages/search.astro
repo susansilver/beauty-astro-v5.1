@@ -1,0 +1,38 @@
+---
+import BaseHead from "../components/base/BaseHead.astro";
+import Header from "../components/base/Header.astro";
+import Footer from "../components/base/Footer.astro";
+---
+
+<html lang="en">
+  <head>
+    <BaseHead title="Search" description="Find what you are looking for" />
+  </head>
+  <body class="bg-white-50 dark:text-white-50 dark:bg-black-900">
+    <Header />
+    <main>
+      <div class="grid grid-cols-12 margin-top-sma">
+        <div class="md:col-start-5 md:col-span-6 col-span-10 col-start-2">
+          <h1>Search for anything</h1>
+
+          <div id="search"></div>
+          <script>
+            window.addEventListener("DOMContentLoaded", (event) => {
+              new PagefindUI({ element: "#search", showSubResults: true });
+            });
+          </script>
+        </div>
+      </div>
+
+      <Footer />
+
+      <!-- Article Body End -->
+    </main>
+
+    <style>
+      #search {
+        border: 2px solid black;
+      }
+    </style>
+  </body>
+</html>
