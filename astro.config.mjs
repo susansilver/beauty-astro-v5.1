@@ -8,6 +8,7 @@ import betterImageService from "astro-better-image-service";
 import compress from "astro-compress";
 import pagefind from "astro-pagefind";
 import compressor from "astro-compressor";
+import sectionize from '@hbsnow/rehype-sectionize';
 
 // https://astro.build/config
 export default defineConfig({
@@ -25,7 +26,8 @@ export default defineConfig({
       // Choose from Shiki's built-in themes (or add your own)
       // https://shiki.style/themes
       theme: 'night-owl'
-    }
+    },
+    rehypePlugins: [sectionize],
   },
   integrations: [favicons({
     masterPicture: "public/favicon.png",

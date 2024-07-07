@@ -5,7 +5,7 @@ const { heading } = Astro.props;
 <li class="margin-xdir-sma">
   <a
     href={"#" + heading.slug}
-    class="dark:text-primary-900 dark:hover:text-secondary-900 dark:visited:text-secondary-900"
+    class="dark:text-primary-900 dark:hover:text-secondary-900 dark:visited:text-secondary-900 no-underline"
   >
     {heading.text}
   </a>
@@ -19,3 +19,9 @@ const { heading } = Astro.props;
     )
   }
 </li>
+
+<style>
+  .active {
+    border-bottom: 2px solid #0d47a1;
+  }
+</style>

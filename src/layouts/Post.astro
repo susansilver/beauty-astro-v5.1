@@ -78,10 +78,7 @@ const show = frontmatter.show;
           <!-- Article Body  -->
           <div class="md:col-span-2 md:col-start-2" id="article-nav">
             <!-- Table of Contents -->
-            <nav
-              class="article-toc sticky top-0 md:block hidden"
-              aria-labelledby="toc-title"
-            >
+            <div class="article-toc sticky top-0 md:block hidden">
               {
                 show && headings && headings.length > 0 && (
                   <>
@@ -90,8 +87,8 @@ const show = frontmatter.show;
                   </>
                 )
               }
-            </nav>
-            <nav aria-label="Table of Contents">
+            </div>
+            <div>
               {
                 show && headings && headings.length > 0 && (
                   <details class="md:hidden block fixed bottom-0 left-0 w-full bg-accent-50 border-accent-300 border-4 z-10 mobile-toc dark:text-black-900">
@@ -102,11 +99,11 @@ const show = frontmatter.show;
                   </details>
                 )
               }
-            </nav>
+            </div>
           </div>
           <!-- End Table of Contents -->
           <div
-            class="md:col-start-5 md:col-span-6 col-span-10 col-start-2"
+            class="md:col-start-5 md:col-span-6 col-span-10 col-start-2 article-content"
             id="single-article"
           >
             <!-- Article Text and Meta -->
@@ -226,5 +223,34 @@ const show = frontmatter.show;
         }
       </style>
     </main>
+    <script>
+      // Create an IntersectionObserver to watch the sections of the
+      // article as they scroll in and out of view
+      addIntersectionObserver();
+
+      function addIntersectionObserver() {
+        const observer = new IntersectionObserver((sections) => {
+          sections.forEach((section) => {
+            const heading = section.target.querySelector("h2");
+            if (!heading) return;
+            const id = heading.getAttribute("id");
+
+            // Get the link to this section's heading
+            const link = document.querySelector(`nav.toc li a[href="#${id}"]`);
+            if (!link) return;
+
+            // Add/remove the .active class based on whether the
+            // section is visible
+            const addRemove = section.intersectionRatio > 0 ? "add" : "remove";
+            link.classList[addRemove]("active");
+          });
+        });
+
+        // Observe all the sections of the article
+        document.querySelectorAll("article section").forEach((section) => {
+          observer.observe(section);
+        });
+      }
+    </script>
   </body>
 </html>
