@@ -22,6 +22,7 @@ interface Props {
     pubDate: string;
     updatedTime: string;
     show: boolean;
+    publicSrc: string;
   };
   headings: {
     slug: string;
@@ -39,7 +40,7 @@ const show = frontmatter.show;
     <BaseHead
       title={frontmatter.title}
       description={frontmatter.description}
-      image={frontmatter.heroImage.src}
+      image={frontmatter.publicSrc}
     />
   </head>
 

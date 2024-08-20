@@ -1,43 +1,51 @@
 /* import { imageMetadata } from 'astro/assets/utils'; */
-import { defineCollection, z } from 'astro:content';
+import { defineCollection, z } from "astro:content";
 
 const blog = defineCollection({
-	// Type-check frontmatter using a schema
-	schema:({ image }) => z.object({
-		title: z.string(),
-		description: z.string(),
-		draft: z.boolean(),
-		// Transform string to Date object
-		pubDate: z
-			.string()
-			.or(z.date())
-			.transform((val) => new Date(val)),
-		updatedDate: z
-			.string()
-			.optional(),
-		updatedTime: z.coerce.string().datetime().optional(),
-		heroImage: z.object({
-				src: image().refine((img) => img.height = 2160).refine((img) => img.width = 3000),
-				alt: z.string(),
-			  }),
-		categories: z.string().optional(),
-		tags: z.array(z.string()).optional(),
-		author: z.string(),
-		feature: z.boolean().optional(),
-		relatedOne: z.object({
-			title: z.string(),
-			src: z.string(),
-		  }).optional(),
-		  relatedTwo: z.object({
-			title: z.string(),
-			src: z.string(),
-		  }).optional(),
-		  relatedThree: z.object({
-			title: z.string(),
-			src: z.string(),
-		  }).optional(),
-		  show: z.boolean(),
-	}),
+  // Type-check frontmatter using a schema
+  schema: ({ image }) =>
+    z.object({
+      title: z.string(),
+      description: z.string(),
+      draft: z.boolean(),
+      // Transform string to Date object
+      pubDate: z
+        .string()
+        .or(z.date())
+        .transform((val) => new Date(val)),
+      updatedDate: z.string().optional(),
+      updatedTime: z.coerce.string().datetime().optional(),
+      heroImage: z.object({
+        src: image()
+          .refine((img) => (img.height = 2160))
+          .refine((img) => (img.width = 3000)),
+        alt: z.string(),
+      }),
+      categories: z.string().optional(),
+      tags: z.array(z.string()).optional(),
+      author: z.string(),
+      feature: z.boolean().optional(),
+      relatedOne: z
+        .object({
+          title: z.string(),
+          src: z.string(),
+        })
+        .optional(),
+      relatedTwo: z
+        .object({
+          title: z.string(),
+          src: z.string(),
+        })
+        .optional(),
+      relatedThree: z
+        .object({
+          title: z.string(),
+          src: z.string(),
+        })
+        .optional(),
+      show: z.boolean(),
+      publicSrc: z.string().optional(),
+    }),
 });
 
 /* const authors = defineCollection({

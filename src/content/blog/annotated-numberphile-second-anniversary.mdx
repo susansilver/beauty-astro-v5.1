@@ -31,6 +31,7 @@ updateTime: 2024-06-28T16:47:10.681Z
 show: true
 feature: false
 type: default
+publicSrc: /headers/header-image-beauty-of-mathematics-theta.jpg
 ---
 
 import { YouTube } from "@astro-community/astro-embed-youtube";
@@ -39,7 +40,6 @@ import RegBlockquote from "/src/components/typography/RegBlockquote.astro";
 import ImageAlign from "/src/components/typography/ImageAlign.astro";
 import ImageDefault from "/src/components/typography/ImageDefault.astro";
 import NavigationBtn from "/src/components/blog/NavigationBtn.astro";
-
 
 import SeriesMenu from "/src/components/numberphile/SeriesMenu.astro";
 
@@ -147,5 +147,7 @@ This is the longest video on the list at 30 minutes. This is the video that I wa
 
 This year speaks to me more than any other year so far. I'm still looking forward to reviewing them all. There are sure to be more gems that I've forgotten about. You can read the next post in the series here.
 
-
-<NavigationBtn prev="/annotated-numberphile-first-anniversary" next="/annotated-numberphile-third-anniversary" />
+<NavigationBtn
+  prev="/annotated-numberphile-first-anniversary"
+  next="/annotated-numberphile-third-anniversary"
+/>
