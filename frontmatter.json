@@ -168,6 +168,11 @@
           "name": "show",
           "type": "boolean",
           "default": true
+        },
+        {
+          "title": "OG Image",
+          "name": "publicSrc",
+          "type": "string"
         }
       ]
     }
