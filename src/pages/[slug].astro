@@ -8,6 +8,9 @@ import AuthorBio from "../components/blog/AuthorBio.astro";
 import Support from "../components/blog/PaymentButtons.astro";
 import BaseHead from "../components/base/BaseHead.astro";
 import Footer from "../components/base/Footer.astro";
+
+import { Image } from "astro:assets";
+
 // 1. Generate a new path for every collection entry
 export async function getStaticPaths() {
   const blogEntries = await getCollection("blog");
@@ -19,11 +22,6 @@ export async function getStaticPaths() {
 
 interface Props {
   entry: CollectionEntry<"blog">;
-  headings: {
-    slug: string;
-    text: string;
-    depth: number;
-  }[];
 }
 
 // 2. When it's time to render, you can get the entry directly from the prop
@@ -56,10 +54,17 @@ const relatedPosts = await getEntries(entry.data.related);
 
             <!-- Article Header Image  -->
 
-            <!--  <HeaderImage
-              imagePath={entry.data.heroImage.src}
-              alt={entry.data.heroImage.alt}
-            /> -->
+            <div class="wrap" id="header-image">
+              <Image
+                src={entry.data.heroImage.src}
+                width={950}
+                height={300}
+                format="avif"
+                quality="mid"
+                alt={entry.data.heroImage.alt}
+              />
+            </div>
+
             <!-- Article Header Image End -->
             <div
               class="flex flex-col justify-center items-center text-balance w-full bg-primary-200 padding-xdir text-center slash dark:text-black-900"
