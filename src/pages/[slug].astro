@@ -1,5 +1,13 @@
 ---
-import { getCollection } from "astro:content";
+import { getEntries } from "astro:content";
+import { getCollection, type CollectionEntry } from "astro:content";
+import Header from "../components/base/Header.astro";
+import HeaderImage from "../components/blog/HeaderImage.astro";
+import TOC from "../components/TableOfContents.astro";
+import AuthorBio from "../components/blog/AuthorBio.astro";
+import Support from "../components/blog/PaymentButtons.astro";
+import BaseHead from "../components/base/BaseHead.astro";
+import Footer from "../components/base/Footer.astro";
 // 1. Generate a new path for every collection entry
 export async function getStaticPaths() {
   const blogEntries = await getCollection("blog");
@@ -8,9 +16,257 @@ export async function getStaticPaths() {
     props: { entry },
   }));
 }
+
+interface Props {
+  entry: CollectionEntry<"blog">;
+  headings: {
+    slug: string;
+    text: string;
+    depth: number;
+  }[];
+}
+
 // 2. When it's time to render, you can get the entry directly from the prop
-const { entry } = Astro.props;
+const { entry, headings } = Astro.props;
 const { Content } = await entry.render();
+
+const show = entry.data.show;
+const relatedPosts = await getEntries(entry.data.related);
 ---
 
-<Content />
+<html lang="en" class="scroll-smooth">
+  <head>
+    <BaseHead
+      title={entry.data.title}
+      description={entry.data.description}
+      image={entry.data.publicSrc}
+    />
+  </head>
+
+  <body class="bg-white-50 dark:bg-black-900 dark:text-white-50">
+    <Header />
+    <main class="margin-top padding-bottom-xxl">
+      <article>
+        <header>
+          <div
+            class="flex lg:flex-row justify-stretch items-center flex-col bg-primary-200"
+            id="article-header"
+          >
+            <!-- Article Header  -->
+
+            <!-- Article Header Image  -->
+
+            <HeaderImage
+              imagePath={entry.data.heroImage.src}
+              alt={entry.data.heroImage.alt}
+            />
+            <!-- Article Header Image End -->
+            <div
+              class="flex flex-col justify-center items-center text-balance w-full bg-primary-200 padding-xdir text-center slash dark:text-black-900"
+              id="article-title"
+            >
+              <!-- Article Title  -->
+              <small>
+                <time datetime={new Date(entry.data.updatedDate).toISOString()}>
+                  Updated on {
+                    new Date(entry.data.updatedDate).toLocaleDateString(
+                      undefined,
+                      {
+                        dateStyle: "medium",
+                        timeZone: "UTC",
+                      }
+                    )
+                  }
+                </time>
+              </small>
+              <h1>{entry.data.title}</h1>
+            </div>
+            <!-- Article Title End -->
+          </div>
+          <!-- Article Header End -->
+        </header>
+        <div class="grid grid-cols-12 margin-top-sma" id="article-body">
+          <!-- Article Body  -->
+          <!--   <div class="md:col-span-2 md:col-start-2" id="article-nav">
+           
+            <div class="article-toc sticky top-0 md:block hidden">
+              {
+                show && headings && headings.length > 0 && (
+                  <>
+                    <h3 id="toc-title">Table of Contents</h3>
+                    <TOC headings={headings} />
+                  </>
+                )
+              }
+            </div>
+            <div>
+              {
+                show && headings && headings.length > 0 && (
+                  <details class="md:hidden block fixed bottom-0 left-0 w-full bg-accent-50 border-accent-300 border-4 z-10 mobile-toc dark:text-black-900">
+                    <summary class="p-3">Table of Contents</summary>
+                    <span class="margin-top">
+                      <TOC headings={headings} />
+                    </span>
+                  </details>
+                )
+              }
+            </div>
+          </div> -->
+
+          <div
+            class="md:col-start-5 md:col-span-6 col-span-10 col-start-2 article-content"
+            id="single-article"
+          >
+            <!-- Article Text and Meta -->
+            <aside>
+              <AuthorBio />
+            </aside>
+            <Content />
+            <aside>
+              <Support />
+            </aside>
+            <aside>
+              <h3>Continue Reading</h3>
+              <ol>
+                {
+                  relatedPosts.map((post) => (
+                    <li>
+                      <a href={`/${post.slug}`}>{post.data.title}</a>
+                    </li>
+                  ))
+                }
+              </ol>
+            </aside>
+            <aside>
+              <h3>More Like This</h3>
+              <div id="article-footer">
+                <!-- Tags and Categories -->
+                <ul class="list-none flex justify-start gap-4">
+                  <li class="category">
+                    Category: {
+                      entry.data.categories ? (
+                        <a
+                          class="underline"
+                          href={`/category/${entry.data.categories}`}
+                          title={`View posts in "${entry.data.categories}"`}
+                        >
+                          {entry.data.categories.replace(/-/g, " ")}
+                        </a>
+                      ) : (
+                        "No category found"
+                      )
+                    }
+                  </li>
+                  <li class="tags flex flex-row">
+                    <span>Explore:</span>
+                    <ul class="list-none flex flex-row flex-wrap">
+                      {
+                        Array.isArray(entry.data.tags) ? (
+                          entry.data.tags.map((tag) => (
+                            <li class="tag">
+                              <a
+                                class="hover:text-black-900 visited:text-black-900 text-black-900 underline"
+                                href={`/tag/${tag}`}
+                                title={`View posts tagged "${tag}"`}
+                              >
+                                #{tag.replace(/-/g, " ")}
+                              </a>
+                            </li>
+                          ))
+                        ) : (
+                          <li class="tag">No tags found.</li>
+                        )
+                      }
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+              <!-- End Tags and Categories -->
+            </aside>
+          </div>
+          <!-- Article Text and Meta End -->
+        </div>
+        <!-- Article Body End -->
+      </article>
+      <Footer />
+      <style>
+        #single-article {
+          max-width: 65ch;
+        }
+
+        .mobile-toc {
+          border-top-left-radius: 15px;
+          border-bottom-right-radius: 15px;
+        }
+
+        details summary {
+          cursor: pointer;
+        }
+
+        details:not([open]):hover,
+        details:not([open]):focus {
+          background: #4db6ac;
+        }
+
+        .category,
+        .tags {
+          text-transform: capitalize;
+        }
+        .tag {
+          background-color: #f8bbd0;
+          padding: 0.5em;
+          border-radius: 5px;
+          margin: 0.5em;
+        }
+
+        @media (prefers-color-scheme: dark) {
+          .tag {
+            background-color: #880e4f;
+          }
+
+          .tag a,
+          .tag a:hover,
+          .tag a:visited {
+            color: #fafafa;
+          }
+        }
+
+        #article-title {
+          margin-block-start: 0.5em;
+        }
+      </style>
+    </main>
+    <script>
+      // Create an IntersectionObserver to watch the sections of the
+      // article as they scroll in and out of view
+      addIntersectionObserver();
+
+      function addIntersectionObserver() {
+        const observer = new IntersectionObserver((sections) => {
+          sections.forEach((section) => {
+            const heading = section.target.querySelector("h2");
+            if (!heading) return;
+            const id = heading.getAttribute("id");
+
+            // Get the link to this section's heading
+            const link = document.querySelector(`nav.toc li a[href="#${id}"]`);
+            if (!link) return;
+
+            // Add/remove the .active class based on whether the
+            // section is visible
+            const addRemove = section.intersectionRatio > 0 ? "add" : "remove";
+            link.classList[addRemove]("active");
+          });
+        });
+
+        // Observe all the sections of the article
+        document.querySelectorAll("article section").forEach((section) => {
+          observer.observe(section);
+        });
+      }
+    </script>
+  </body>
+</html>
+
+>
+

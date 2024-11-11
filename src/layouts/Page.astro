@@ -51,8 +51,18 @@ const { frontmatter } = Astro.props;
             >
               <!-- Article Title  -->
               <small>
-                <time datetime={frontmatter.updatedTime}>
-                  {frontmatter.updatedDate}
+                <time
+                  datetime={new Date(frontmatter.updatedDate).toISOString()}
+                >
+                  Updated on {
+                    new Date(frontmatter.updatedDate).toLocaleDateString(
+                      undefined,
+                      {
+                        dateStyle: "medium",
+                        timeZone: "UTC",
+                      }
+                    )
+                  }
                 </time>
               </small>
               <h1>{frontmatter.title}</h1>
