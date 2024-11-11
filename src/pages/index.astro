@@ -3,7 +3,6 @@ import { getCollection } from "astro:content";
 import { Image } from "astro:assets";
 import BaseHead from "../components/base/BaseHead.astro";
 import Footer from "../components/base/Footer.astro";
-import HeaderImage from "../components/blog/HeaderImage.astro";
 
 const allPosts = (await getCollection("blog"))
   .filter((post) => !post.data.draft)
@@ -31,9 +30,13 @@ const allPosts = (await getCollection("blog"))
                 >
                   <div class="pile">
                     <div class="wrap" id="featured-image">
-                      <img
+                      <Image
                         src={post.data.heroImage.src}
                         alt={post.data.heroImage.alt}
+                        width={1200}
+                        height={300}
+                        format="avif"
+                        quality="mid"
                       />
                     </div>
                     <div
