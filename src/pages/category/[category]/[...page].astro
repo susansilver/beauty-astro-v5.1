@@ -97,13 +97,10 @@ const { params } = Astro;
               <div class="col-span-8 col-start-2 col-end-10">
                 <div class="top-border">
                   <div class="flex flex-col lg:flex-row justify-between items-start gap-3">
-                    <Image
+                    <img
                       src={blogPostEntry.data.heroImage.src}
-                      width={500}
-                      height={300}
-                      format="avif"
-                      quality="mid"
                       alt={blogPostEntry.data.heroImage.alt}
+                      style="width:500px;height:300px;"
                     />
                     <div class="flex flex-col gap-3">
                       <a href={`/${blogPostEntry.slug}`}>

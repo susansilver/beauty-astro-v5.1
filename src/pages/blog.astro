@@ -4,6 +4,7 @@ import { Image } from "astro:assets";
 import BaseHead from "../components/base/BaseHead.astro";
 import Header from "../components/base/Header.astro";
 import Footer from "../components/base/Footer.astro";
+import HeaderImage from "../components/blog/HeaderImage.astro";
 
 const allPosts = (await getCollection("blog"))
   .filter((post) => !post.data.draft)
@@ -45,13 +46,10 @@ const allTags = [
                   <a href={`/${post.slug}`} class="no-underline">
                     <div class="relative lg:text-[1.563rem] med pile">
                       <div class="wrap flex justify-stretch" id="header-image">
-                        <Image
+                        <img
                           src={post.data.heroImage.src}
                           alt={post.data.heroImage.alt}
-                          width={500}
-                          height={300}
-                          format="avif"
-                          quality="mid"
+                          style="height:450px;width:900px;"
                         />
                       </div>
                       <div
@@ -117,26 +115,6 @@ const allTags = [
         .title {
           max-width: 55ch;
           padding: 0 1.5em;
-        }
-
-        #container > div:first-child {
-          width: 100%;
-        }
-
-        #container > div:first-child img {
-          width: 900px;
-          height: 450px;
-        }
-
-        @media screen and (max-width: 600px) {
-          #container {
-            max-width: fit-content;
-            padding: 0 0;
-          }
-          #container > div:first-child img {
-            width: 450px;
-            height: 300px;
-          }
         }
 
         #container > div:first-child::after {
