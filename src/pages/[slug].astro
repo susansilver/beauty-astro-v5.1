@@ -25,7 +25,7 @@ interface Props {
 }
 
 // 2. When it's time to render, you can get the entry directly from the prop
-const { entry, headings } = Astro.props;
+const { entry } = Astro.props;
 const { Content } = await entry.render();
 
 const show = entry.data.show;
