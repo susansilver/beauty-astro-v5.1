@@ -8,24 +8,35 @@ import AuthorBio from "../components/blog/AuthorBio.astro";
 import Support from "../components/blog/PaymentButtons.astro";
 import BaseHead from "../components/base/BaseHead.astro";
 import Footer from "../components/base/Footer.astro";
+import type { MarkdownHeading } from "astro";
 
 import { Image } from "astro:assets";
+import TableOfContents from "../components/TableOfContents.astro";
 
 // 1. Generate a new path for every collection entry
 export async function getStaticPaths() {
   const blogEntries = await getCollection("blog");
-  return blogEntries.map((entry) => ({
+
+  const headings = await Promise.all(
+    blogEntries.map(async (post) => {
+      const data = await post.render();
+      return data.headings;
+    })
+  );
+
+  return blogEntries.map((entry, index) => ({
     params: { slug: entry.slug },
-    props: { entry },
+    props: { entry, headings: headings[index] },
   }));
 }
 
 interface Props {
   entry: CollectionEntry<"blog">;
+  headings: MarkdownHeading[];
 }
 
 // 2. When it's time to render, you can get the entry directly from the prop
-const { entry } = Astro.props;
+const { entry, headings } = Astro.props;
 const { Content } = await entry.render();
 
 const show = entry.data.show;
@@ -92,14 +103,13 @@ const relatedPosts = await getEntries(entry.data.related);
         </header>
         <div class="grid grid-cols-12 margin-top-sma" id="article-body">
           <!-- Article Body  -->
-          <!--   <div class="md:col-span-2 md:col-start-2" id="article-nav">
-           
+          <div class="md:col-span-2 md:col-start-2" id="article-nav">
             <div class="article-toc sticky top-0 md:block hidden">
               {
                 show && headings && headings.length > 0 && (
                   <>
-                    <h3 id="toc-title">Table of Contents</h3>
-                    <TOC headings={headings} />
+                    <h3>Table of Contents</h3>
+                    <TableOfContents headings={headings} />
                   </>
                 )
               }
@@ -110,13 +120,13 @@ const relatedPosts = await getEntries(entry.data.related);
                   <details class="md:hidden block fixed bottom-0 left-0 w-full bg-accent-50 border-accent-300 border-4 z-10 mobile-toc dark:text-black-900">
                     <summary class="p-3">Table of Contents</summary>
                     <span class="margin-top">
-                      <TOC headings={headings} />
+                      <TableOfContents headings={headings} />
                     </span>
                   </details>
                 )
               }
             </div>
-          </div> -->
+          </div>
 
           <div
             class="md:col-start-5 md:col-span-6 col-span-10 col-start-2 article-content"
@@ -241,35 +251,6 @@ const relatedPosts = await getEntries(entry.data.related);
         }
       </style>
     </main>
-    <script>
-      // Create an IntersectionObserver to watch the sections of the
-      // article as they scroll in and out of view
-      addIntersectionObserver();
-
-      function addIntersectionObserver() {
-        const observer = new IntersectionObserver((sections) => {
-          sections.forEach((section) => {
-            const heading = section.target.querySelector("h2");
-            if (!heading) return;
-            const id = heading.getAttribute("id");
-
-            // Get the link to this section's heading
-            const link = document.querySelector(`nav.toc li a[href="#${id}"]`);
-            if (!link) return;
-
-            // Add/remove the .active class based on whether the
-            // section is visible
-            const addRemove = section.intersectionRatio > 0 ? "add" : "remove";
-            link.classList[addRemove]("active");
-          });
-        });
-
-        // Observe all the sections of the article
-        document.querySelectorAll("article section").forEach((section) => {
-          observer.observe(section);
-        });
-      }
-    </script>
   </body>
 </html>
 
