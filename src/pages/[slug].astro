@@ -160,16 +160,13 @@ const relatedPosts = await getEntries(entry.data.related);
                   <li class="category col-span-2">
                     Category: {
                       entry.data.categories ? (
-                        <p>
-                          {" "}
-                          <a
-                            class="underline"
-                            href={`/category/${entry.data.categories}`}
-                            title={`View posts in "${entry.data.categories}"`}
-                          >
-                            {entry.data.categories.replace(/-/g, " ")}
-                          </a>
-                        </p>
+                        <a
+                          class="underline"
+                          href={`/category/${entry.data.categories}`}
+                          title={`View posts in "${entry.data.categories}"`}
+                        >
+                          {entry.data.categories.replace(/-/g, " ")}
+                        </a>
                       ) : (
                         "No category found"
                       )
