@@ -154,10 +154,10 @@ const relatedPosts = await getEntries(entry.data.related);
             </aside>
             <aside>
               <h3>More Like This</h3>
-              <div id="article-footer">
+              <div id="article-footer" class="grid">
                 <!-- Tags and Categories -->
-                <ul class="list-none flex justify-start gap-4">
-                  <li class="category">
+                <ul class="list-none flex justify-start gap-4 grid grid-cols-4">
+                  <li class="category col-span-2">
                     Category: {
                       entry.data.categories ? (
                         <p>
@@ -175,7 +175,7 @@ const relatedPosts = await getEntries(entry.data.related);
                       )
                     }
                   </li>
-                  <li class="tags flex flex-row">
+                  <li class="tags flex flex-row col-span-2">
                     <span>Explore:</span>
                     <ul class="list-none flex flex-row flex-wrap">
                       {
