@@ -55,7 +55,7 @@ interface Props {
   };
 }
 
-const { page }: { page: Props["page"] } = Astro.props;
+const { page } = Astro.props;
 const { params } = Astro;
 ---
 
@@ -90,7 +90,7 @@ const { params } = Astro;
       </div>
       <div class="grid-cols-12 grid text-balance" id="container">
         {
-          page.data.map((blogPostEntry: BlogPostEntry) => (
+          page.data.map((blogPostEntry) => (
             <>
               <div class="col-span-8 col-start-2 col-end-10">
                 <div class="top-border">

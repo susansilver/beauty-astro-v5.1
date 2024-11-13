@@ -5,6 +5,10 @@
   "dir": "auto",
   "lang": "en-US",
   "display": "standalone",
+  "display_override": [
+    "window-controls-overlay",
+    "standalone"
+  ],
   "orientation": "any",
   "start_url": "/?homescreen=1",
   "background_color": "#fff",
@@ -20,7 +24,7 @@
       "src": "/android-chrome-512x512.png",
       "sizes": "512x512",
       "type": "image/png",
-      "purpose": "any"
+      "purpose": "maskable"
     }
   ]
 }
