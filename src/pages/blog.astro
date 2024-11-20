@@ -128,14 +128,16 @@ const allTags = [
           height: 450px;
         }
 
-        @media screen and (max-width: 600px) {
+        @media screen and (max-width: 900px) {
           #container {
             max-width: fit-content;
             padding: 0 0;
           }
           #container > div:first-child img {
-            width: 450px;
-            height: 300px;
+            width: auto;
+            height: auto;
+            aspect-ratio: 16/9;
+            object-fit: cover;
           }
         }
 
